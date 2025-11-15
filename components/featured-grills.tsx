@@ -1,47 +1,51 @@
-import { Star } from "lucide-react"
+import { Star } from 'lucide-react'
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 const grills = [
   {
     id: 1,
-    name: "Weber Genesis II E-335",
+    name: "Blackstone 2450AZ 28 Omnivore Griddle Bundle",
     category: "Gas Grills",
-    image: "/weber-gas-grill-stainless-steel-three-burners.jpg",
+    image: "https://m.media-amazon.com/images/I/71QLgJ5R+IL._AC_SX679_.jpg",
     rating: 4.8,
-    summary: "Our favorite gas grill delivers consistent heat and exceptional build quality.",
-    author: "Alice Thompson",
-    href: "/products/weber-genesis-ii-e-335",
+    summary: "Perfect for camping, backyard cooking, or tailgating.",
+    author: "Sarah Martinez",
+    href: "/reviews/blackstone-2450az-28-omnivore-griddle-bundle",
+    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1",
   },
   {
     id: 2,
-    name: "Traeger Pro 575",
+    name: "PIT BOSS 10697 Table Top Wood Grill With Temperature Control",
     category: "Pellet Grills",
-    image: "/traeger-pellet-grill-smoker-black-outdoor.jpg",
-    rating: 4.7,
-    summary: "WiFi-enabled pellet grill perfect for low and slow cooking with consistent results.",
-    author: "Jordan Martinez",
-    href: "/products/traeger-pro-575",
+    image: "https://m.media-amazon.com/images/I/71EATm+utGL._AC_SX679_.jpg",
+    rating: 4.5,
+    summary: "Portable pellet grill combining wood-fired flavor with digital precision in a compact design.",
+    author: "Michael Chang",
+    href: "/reviews/pit-boss-10697-table-top",
+    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M",
   },
   {
     id: 3,
-    name: "Kamado Joe Classic III",
-    category: "Ceramic Grills",
-    image: "/kamado-joe-ceramic-grill-red-outdoor-cooking.jpg",
+    name: "Weber Original Kettle 22-Inch Charcoal Grill",
+    category: "Charcoal Grills",
+    image: "https://m.media-amazon.com/images/I/71CYJCS4+qL._AC_SY879_.jpg",
     rating: 4.9,
-    summary: "Premium ceramic grill that excels at grilling, smoking, and even baking pizza.",
-    author: "Casey Woo",
-    href: "/products/kamado-joe-classic-iii",
+    summary: "The classic charcoal grill that delivers authentic BBQ flavor.",
+    author: "Patricia Lee",
+    href: "/reviews/weber-original-kettle",
+    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU",
   },
   {
     id: 4,
-    name: "Weber Original Kettle",
-    category: "Charcoal Grills",
-    image: "/weber-kettle-charcoal-grill-black-classic.jpg",
+    name: "BIG HORN OUTDOORS 1500°F Small Infrared Propane Gas Grill",
+    category: "Gas Grills",
+    image: "https://m.media-amazon.com/images/I/81JStQrSSNL._AC_SX679_.jpg",
     rating: 4.6,
-    summary: "The classic charcoal grill that delivers authentic BBQ flavor.",
-    author: "Melanie Chow",
-    href: "/products/weber-original-kettle",
+    summary: "Compact infrared powerhouse delivering steakhouse-quality searing in a portable package.",
+    author: "Robert Kim",
+    href: "/reviews/big-horn-outdoors-1500",
+    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF",
   },
 ]
 
@@ -58,13 +62,14 @@ export function FeaturedGrills() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {grills.map((grill) => (
-            <article key={grill.id} className="group">
-              <Link href={grill.href} className="block">
+            <article key={grill.id} className="group flex flex-col">
+              <Link href={grill.href} className="block flex-1">
                 <div className="relative mb-4 aspect-square overflow-hidden bg-muted">
                   <img
                     src={grill.image || "/placeholder.svg"}
                     alt={grill.name}
-                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                    className="w-full h-48 object-contain transition-transform group-hover:scale-105 bg-white"
+
                   />
                 </div>
                 <div className="space-y-2">
@@ -82,6 +87,15 @@ export function FeaturedGrills() {
                   <p className="text-xs text-muted-foreground">by {grill.author}</p>
                 </div>
               </Link>
+              {grill.amazonUrl && (
+                <div className="mt-4">
+                  <Button size="sm" className="w-full bg-black hover:bg-gray-800 text-white font-semibold" asChild>
+                    <a href={grill.amazonUrl} target="_blank" rel="noopener noreferrer">
+                      View on Amazon
+                    </a>
+                  </Button>
+                </div>
+              )}
             </article>
           ))}
         </div>

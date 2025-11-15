@@ -1,5 +1,6 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Button } from "@/components/ui/button"
 
 const allProducts = [
   // Gas Grills
@@ -10,7 +11,8 @@ const allProducts = [
     image: "/weber-gas-grill-stainless-steel-three-burners.jpg",
     rating: 4.8,
     summary: "Our favorite gas grill delivers consistent heat and exceptional build quality.",
-    author: "Blake Harrison", // Updated author name
+    author: "Blake Harrison",
+    amazonUrl: "https://www.amazon.com/s?k=Weber+Genesis+II+E-335", // Added Amazon URL
   },
   {
     slug: "blackstone-2450az-28-omnivore-griddle-bundle",
@@ -19,7 +21,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/71QLgJ5R+IL._AC_SX679_.jpg",
     rating: 4.9,
     summary: "Perfect for camping, backyard cooking, or tailgating.",
-    author: "Morgan Fletcher", // Updated author name
+    author: "Morgan Fletcher",
+    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1", // Added Amazon URL
   },
   {
     slug: "sophia-william-propane-gas-grill",
@@ -28,7 +31,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/61nq7SidALL._AC_SY300_SX300_QL70_FMwebp_.jpg",
     rating: 4.8,
     summary: "Perfect for families, backyard BBQ lovers, and weekend entertainers.",
-    author: "Reese Sullivan", // Updated author name
+    author: "Reese Sullivan",
+    amazonUrl: "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL", // Added Amazon URL
   },
   {
     slug: "napoleon-prestige-500",
@@ -37,7 +41,8 @@ const allProducts = [
     image: "/napoleon-gas-grill.jpg",
     rating: 4.7,
     summary: "Premium gas grill with infrared burners and excellent heat distribution.",
-    author: "Blake Harrison", // Updated author name
+    author: "Blake Harrison",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "big-horn-outdoors-1500",
@@ -46,7 +51,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/81JStQrSSNL._AC_SX679_.jpg",
     rating: 4.9,
     summary: "If you're serious about grilling and want restaurant-quality.",
-    author: "Parker Bennett", // Updated author name
+    author: "Parker Bennett",
+    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF", // Added Amazon URL
   },
   // Pellet Grills
   {
@@ -56,7 +62,8 @@ const allProducts = [
     image: "/traeger-pellet-grill-smoker-black-outdoor.jpg",
     rating: 4.7,
     summary: "WiFi-enabled pellet grill perfect for low and slow cooking with consistent results.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "pit-boss-10697-table-top",
@@ -65,7 +72,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/71EATm+utGL._AC_SX679_.jpg",
     rating: 4.6,
     summary: "Solid choice for anyone who wants woody, smoky flavor in a small-footprint unit.",
-    author: "Quinn Reynolds", // Updated author name
+    author: "Quinn Reynolds",
+    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M", // Added Amazon URL
   },
   {
     slug: "camp-chef-smokepro-dlx",
@@ -74,7 +82,8 @@ const allProducts = [
     image: "/camp-chef-pellet-grill.jpg",
     rating: 4.5,
     summary: "Affordable pellet grill with excellent temperature control and large cooking area.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "", // Added empty Amazon URL
   },
   // Ceramic Grills
   {
@@ -84,7 +93,8 @@ const allProducts = [
     image: "/kamado-joe-ceramic-grill-red-outdoor-cooking.jpg",
     rating: 4.9,
     summary: "Premium ceramic grill that excels at grilling, smoking, and even baking pizza.",
-    author: "Sage Montgomery", // Updated author name
+    author: "Sage Montgomery",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "big-green-egg-large",
@@ -93,7 +103,8 @@ const allProducts = [
     image: "/big-green-egg-ceramic-grill.jpg",
     rating: 4.8,
     summary: "The original ceramic grill with exceptional heat retention and versatility.",
-    author: "Sage Montgomery", // Updated author name
+    author: "Sage Montgomery",
+    amazonUrl: "", // Added empty Amazon URL
   },
   // Charcoal Grills
   {
@@ -103,16 +114,18 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/61B4Vt96xQL._AC_SX679_.jpg",
     rating: 4.7,
     summary: "A compact, heavy-duty grill that doubles as a true Texas-style smoker.",
-    author: "River Caldwell", // Updated author name
+    author: "River Caldwell",
+    amazonUrl: "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS", // Added Amazon URL
   },
   {
-    slug: "weber-original-kettle", // Fixed slug to match review detail page
+    slug: "weber-original-kettle",
     name: "Weber Original Kettle 22-Inch Charcoal Grill",
     category: "Charcoal Grills",
     image: "https://m.media-amazon.com/images/I/71CYJCS4+qL._AC_SY879_.jpg",
     rating: 4.7,
     summary: "A timeless classic reinvented for the modern backyard cook.",
-    author: "Parker Bennett", // Updated author name
+    author: "Parker Bennett",
+    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU", // Added Amazon URL
   },
 
   // Electric Grills
@@ -123,7 +136,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/81QXVkhCpwL._AC_SX679_.jpg",
     rating: 4.7,
     summary: "Enjoy real grill flavor — indoors, anytime.",
-    author: "River Caldwell", // Updated author name
+    author: "River Caldwell",
+    amazonUrl: "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW", // Added Amazon URL
   },
   {
     slug: "chefman-xl-electric-griddle-with-removable-temperature-control",
@@ -132,7 +146,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/61-Mjaq73QL._AC_SX679_.jpg",
     rating: 4.5,
     summary: "For home cooks looking to replicate a griddle-style cooking experience indoors.",
-    author: "River Caldwell", // Updated author name
+    author: "River Caldwell",
+    amazonUrl: "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9", // Added Amazon URL
   },
 
   // Accessories
@@ -143,7 +158,8 @@ const allProducts = [
     image: "/oxo-good-grips-16-inch-locking-tongs.jpg",
     rating: 4.8,
     summary: "Best overall grilling tongs with comfortable grip and precise control.",
-    author: "Blake Harrison", // Updated author name
+    author: "Blake Harrison",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "weber-original-spatula",
@@ -152,7 +168,8 @@ const allProducts = [
     image: "/weber-stainless-steel-spatula-grilling-tool.jpg",
     rating: 4.6,
     summary: "Durable stainless steel spatula with angled head for easy flipping.",
-    author: "Blake Harrison", // Updated author name
+    author: "Blake Harrison",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "thermo-tp826-500ft-ireless-meat",
@@ -161,7 +178,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/71MNNzM6hdL._AC_SX679_.jpg",
     rating: 4.8,
     summary: "Reliable, long-range temperature monitoring for the perfect cook every time.",
-    author: "Morgan Fletcher", // Updated author name
+    author: "Morgan Fletcher",
+    amazonUrl: "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF", // Added Amazon URL
   },
   {
     slug: "grill-heat-aid-gloves",
@@ -170,7 +188,8 @@ const allProducts = [
     image: "/grill-heat-aid-extreme-heat-resistant-bbq-gloves.jpg",
     rating: 4.7,
     summary: "Heat-resistant gloves rated to 932°F for safe handling of hot items.",
-    author: "Quinn Reynolds", // Updated author name
+    author: "Quinn Reynolds",
+    amazonUrl: "", // Added empty Amazon URL
   },
   // Brushes
   {
@@ -180,7 +199,8 @@ const allProducts = [
     image: "/weber-3-sided-stainless-steel-grill-brush.jpg",
     rating: 4.7,
     summary: "Best overall grill brush with three-sided design for efficient cleaning.",
-    author: "Reese Sullivan", // Updated author name
+    author: "Reese Sullivan",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "grill-rescue-brush",
@@ -189,7 +209,8 @@ const allProducts = [
     image: "/grill-rescue-wire-free-cleaning-brush.jpg",
     rating: 4.6,
     summary: "Bristle-free brush that's safe and effective for all grate types.",
-    author: "Reese Sullivan", // Updated author name
+    author: "Reese Sullivan",
+    amazonUrl: "", // Added empty Amazon URL
   },
   // Covers
   {
@@ -199,7 +220,8 @@ const allProducts = [
     image: "/weber-premium-black-grill-cover-on-outdoor-grill.jpg",
     rating: 4.8,
     summary: "Best overall grill cover with heavy-duty construction and perfect fit.",
-    author: "Parker Bennett", // Updated author name
+    author: "Parker Bennett",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "classic-accessories-veranda",
@@ -208,7 +230,8 @@ const allProducts = [
     image: "/classic-accessories-veranda-cappuccino-brown-grill.jpg",
     rating: 4.6,
     summary: "Budget-friendly cover with good weather protection and ventilation.",
-    author: "Parker Bennett", // Updated author name
+    author: "Parker Bennett",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "icover-grill-cover-for-weber-22-inch-charcoal-kettle",
@@ -217,7 +240,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/61clk-BFGlL._AC_SX679_.jpg",
     rating: 4.4,
     summary: "Cover for Weber 22 Inch Charcoal Kettle.",
-    author: "Parker Bennett", // Updated author name
+    author: "Parker Bennett",
+    amazonUrl: "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG", // Added Amazon URL
   },
   // Sauces
   {
@@ -227,7 +251,8 @@ const allProducts = [
     image: "/sweet-baby-rays-original-bbq-sauce-bottle.jpg",
     rating: 4.5,
     summary: "Classic sweet and tangy sauce that's perfect for ribs and chicken.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "stubbs-original-bar-b-q-sauce",
@@ -236,16 +261,18 @@ const allProducts = [
     image: "/stubbs-original-bbq-sauce-bottle-texas-style.jpg",
     rating: 4.6,
     summary: "Texas-style sauce with bold flavor and natural ingredients.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "", // Added empty Amazon URL
   },
   {
     slug: "o-food-gochujang-authentic-koren-red-chili-paste",
-    name: "O’food Gochujang – Authentic Korean Red Chili Paste",
+    name: "O'food Gochujang – Authentic Korean Red Chili Paste",
     category: "Sauces",
     image: "https://m.media-amazon.com/images/I/61EvTGTXcWL._SX679_.jpg",
     rating: 4.5,
     summary: "Made with all-natural ingredients.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4", // Added Amazon URL
   },
   {
     slug: "kraft-sweet-brown-sugar-slow-simmered-brbeque-sauce",
@@ -254,7 +281,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/71lBhl5zPaL._SX679_.jpg",
     rating: 3.9,
     summary: "Classic barbecue sauce.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA", // Added Amazon URL
   },
   {
     slug: "hickory-brown-sugar-bbq-sauce",
@@ -263,7 +291,8 @@ const allProducts = [
     image: "https://m.media-amazon.com/images/I/41nJ2DbovlL._SX679_.jpg",
     rating: 4.2,
     summary: "Classic American barbecue experience.",
-    author: "Avery Mitchell", // Updated author name
+    author: "Avery Mitchell",
+    amazonUrl: "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP", // Added Amazon URL
   },
 ]
 
@@ -368,18 +397,19 @@ export default function ReviewsPage() {
                 <h2 className="mb-8 text-3xl font-bold">{categoryInfo.name}</h2>
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
                   {categoryProducts.map((product) => (
-                    <a
+                    <div
                       key={product.slug}
-                      href={`/reviews/${product.slug}`}
                       className="group block overflow-hidden border border-border transition-all hover:border-foreground hover:shadow-lg"
                     >
-                      <div className="relative h-64 overflow-hidden bg-muted">
-                        <img
-                          src={product.image || "/placeholder.svg"}
-                          alt={product.name}
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                      </div>
+                      <a href={`/reviews/${product.slug}`}>
+                        <div className="relative h-64 overflow-hidden bg-muted">
+                          <img
+                            src={product.image || "/placeholder.svg"}
+                            alt={product.name}
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                        </div>
+                      </a>
                       <div className="p-6">
                         <div className="mb-2 flex items-center gap-2">
                           <div className="flex items-center">
@@ -388,12 +418,25 @@ export default function ReviewsPage() {
                           </div>
                           <span className="text-sm text-muted-foreground">• {product.author}</span>
                         </div>
-                        <h3 className="mb-2 text-xl font-bold leading-tight group-hover:text-primary">
-                          {product.name}
-                        </h3>
-                        <p className="text-sm leading-relaxed text-muted-foreground">{product.summary}</p>
+                        <a href={`/reviews/${product.slug}`}>
+                          <h3 className="mb-2 text-xl font-bold leading-tight group-hover:text-primary">
+                            {product.name}
+                          </h3>
+                        </a>
+                        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{product.summary}</p>
+                        {product.amazonUrl && (
+                          <Button
+                            size="sm"
+                            className="w-full bg-black hover:bg-gray-800 text-white font-semibold"
+                            asChild
+                          >
+                            <a href={product.amazonUrl} target="_blank" rel="noopener noreferrer">
+                              View on Amazon
+                            </a>
+                          </Button>
+                        )}
                       </div>
-                    </a>
+                    </div>
                   ))}
                 </div>
               </section>
