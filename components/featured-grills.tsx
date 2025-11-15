@@ -12,7 +12,7 @@ const grills = [
     summary: "Perfect for camping, backyard cooking, or tailgating.",
     author: "Sarah Martinez",
     href: "/reviews/blackstone-2450az-28-omnivore-griddle-bundle",
-    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1",
+    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const grills = [
     summary: "Portable pellet grill combining wood-fired flavor with digital precision in a compact design.",
     author: "Michael Chang",
     href: "/reviews/pit-boss-10697-table-top",
-    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M",
+    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const grills = [
     summary: "The classic charcoal grill that delivers authentic BBQ flavor.",
     author: "Patricia Lee",
     href: "/reviews/weber-original-kettle",
-    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU",
+    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl",
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const grills = [
     summary: "Compact infrared powerhouse delivering steakhouse-quality searing in a portable package.",
     author: "Robert Kim",
     href: "/reviews/big-horn-outdoors-1500",
-    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF",
+    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl",
   },
 ]
 

@@ -1,8 +1,8 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { Star, CheckCircle2, XCircle } from "lucide-react"
+import { Star, CheckCircle2, XCircle } from 'lucide-react'
 import Link from "next/link"
-import { notFound } from "next/navigation"
+import { notFound } from 'next/navigation'
 import { Button } from "@/components/ui/button"
 
 const allProducts = [
@@ -12,8 +12,7 @@ const allProducts = [
     category: "Gas Grills",
     image: "/weber-gas-grill-stainless-steel-three-burners.jpg",
     rating: 4.9,
-    amazonUrl: "https://www.amazon.com/s?k=Weber+Genesis+II+E-335",
-    summary: "Premium three-burner gas grill with innovative GS4 grilling system and superior craftsmanship.",
+    amazonUrl: "",
     author: "Marcus Chen",
     publishDate: "November 2, 2025",
     fullReview:
@@ -50,7 +49,7 @@ const allProducts = [
     category: "Gas Grills",
     image: "https://m.media-amazon.com/images/I/71QLgJ5R+IL._AC_SX679_.jpg",
     rating: 4.8,
-    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1",
+    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl",
     summary: "Versatile flat-top griddle with integrated hood and wind guards for superior outdoor cooking.",
     author: "Sarah Martinez",
     publishDate: "November 5, 2025",
@@ -90,7 +89,7 @@ const allProducts = [
     category: "Gas Grills",
     image: "https://m.media-amazon.com/images/I/61nq7SidALL._AC_SY300_SX300_QL70_FMwebp_.jpg",
     rating: 4.7,
-    amazonUrl: "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL",
+    amazonUrl: "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=7984f9bd63c0ba17fde9991da7b7c17c&language=en_US&ref_=as_li_ss_tl",
     summary: "Innovative dual-zone cooking system combining traditional grill and flat-top griddle functionality.",
     author: "David Thompson",
     publishDate: "November 8, 2025",
@@ -169,7 +168,7 @@ const allProducts = [
     category: "Gas Grills",
     image: "https://m.media-amazon.com/images/I/81JStQrSSNL._AC_SX679_.jpg",
     rating: 4.6,
-    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF",
+    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl",
     summary: "Compact infrared powerhouse delivering steakhouse-quality searing in a portable package.",
     author: "Robert Kim",
     publishDate: "November 15, 2025",
@@ -249,7 +248,7 @@ const allProducts = [
     category: "Pellet Grills",
     image: "https://m.media-amazon.com/images/I/71EATm+utGL._AC_SX679_.jpg",
     rating: 4.5,
-    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M",
+    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl",
     summary: "Portable pellet grill combining wood-fired flavor with digital precision in a compact design.",
     author: "Michael Chang",
     publishDate: "November 22, 2025",
@@ -280,7 +279,7 @@ const allProducts = [
       Weight: "42.5 pounds",
     },
     testingProcess:
-      "Testing focused on portability and performance over eight weeks. We transported the grill to various locations including camping sites, tailgate parties, and small patios to evaluate true portability. Cooking tests included low-temperature smoking of ribs and pork shoulder, mid-range roasting of chicken, and high-heat searing using the slide plate system. Temperature accuracy was verified with calibrated thermometers, and we monitored pellet consumption rates. Ash accumulation and cleanup requirements were documented after each use.",
+      "Testing focused on portability and performance over eight weeks. We transported the grill to various locations including camping sites, tailgate parties, and small patios to evaluate true portability. Cooking tests included low-temperature smoking of ribs and pork shoulder, mid-range roasting of chicken, high-heat searing using the slide plate system. Temperature accuracy was verified with calibrated thermometers, and we monitored pellet consumption rates. Ash accumulation and cleanup requirements were documented after each use.",
   },
   {
     slug: "camp-chef-smokepro-dlx",
@@ -328,7 +327,7 @@ const allProducts = [
     category: "Charcoal Grills",
     image: "/char-griller-portable-charcoal-grill-black.jpg",
     rating: 4.6,
-    amazonUrl: "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS",
+    amazonUrl: "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=07a0889d6d5077873b3624d335e692b6&language=en_US&ref_=as_li_ss_tl",
     summary: "Versatile portable charcoal grill that doubles as an offset smoker attachment for ultimate flexibility.",
     author: "James Wilson",
     publishDate: "November 28, 2025",
@@ -368,9 +367,9 @@ const allProducts = [
     category: "Charcoal Grills",
     image: "https://m.media-amazon.com/images/I/71CYJCS4+qL._AC_SY879_.jpg",
     rating: 4.9,
-    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU",
+    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl",
     author: "Patricia Lee",
-    publishDate: "December 1, 2025",
+    publishDate: "November 1, 2025",
     fullReview:
       "The Weber Original Kettle 22-Inch Charcoal Grill has remained largely unchanged for over 70 years because the original design got so much right. This latest iteration maintains the classic kettle shape while incorporating subtle improvements that enhance usability without compromising the authentic charcoal grilling experience.\n\nThe porcelain-enameled bowl and lid are built to withstand decades of outdoor use, resisting rust and weather damage while retaining heat efficiently. The 363 square inch cooking area strikes the perfect balance—large enough for family meals and small gatherings (up to 13 burgers) while remaining manageable for everyday use. The plated steel cooking grate creates excellent sear marks and is easy to clean.\n\nThe adjustable dampers on the lid and bottom provide intuitive temperature control. During our testing, we found it easy to maintain steady temperatures for low-and-slow smoking or crank up the heat for high-temperature searing. The one-touch cleaning system is brilliantly simple—rotating the handle sweeps ash into the removable aluminum catcher, making cleanup quick and mess-free. The hinged cooking grate allows easy charcoal addition during extended cooks without removing food.",
     pros: [
@@ -409,7 +408,7 @@ const allProducts = [
     amazonUrl: "",
     summary: "Premium ceramic kamado featuring revolutionary SlōRoller technology and Air Lift Hinge system.",
     author: "Christopher Davis",
-    publishDate: "December 5, 2025",
+    publishDate: "November 5, 2025",
     fullReview:
       "The Kamado Joe Classic III represents the evolution of ceramic kamado grilling, incorporating innovative technologies that address traditional kamado limitations while maintaining the exceptional heat retention and versatility that define the category.\n\nThe SlōRoller Hyperbolic Smoke Chamber is a game-changing innovation that transforms smoke circulation inside the grill. Traditional kamados create a direct path from fire to food, resulting in uneven heat and smoke distribution. The SlōRoller creates a rolling, hyperbolic smoke pattern that distributes heat and smoke evenly throughout the cooking chamber. During our testing, this resulted in noticeably more consistent bark formation on smoked meats and eliminated hot spots that plague traditional kamados.\n\nThe Air Lift Hinge system addresses another common kamado complaint—the heavy ceramic lid. Using a gas-spring mechanism, the Air Lift makes the 68-pound lid feel nearly weightless, allowing one-finger opening and closing. This dramatically improves safety and convenience, especially during long cooking sessions requiring frequent lid access. The Kontrol Tower top vent provides micro-adjustable airflow control with a rain-resistant design that maintains temperature stability even in adverse weather.\n\nThe Divide & Conquer flexible cooking system uses multi-level, half-moon grates that create distinct heat zones. This allows simultaneous cooking at different temperatures—searing steaks on one side while slow-roasting vegetables on the other. The 304 stainless steel grates are built to last and provide excellent heat retention.",
     pros: [
@@ -421,7 +420,7 @@ const allProducts = [
       "Lifetime warranty on ceramic components",
     ],
     cons: [
-      "Premium $1,800+ price point",
+      "Premium price point $1,800+",
       "250+ pound total weight requires permanent placement",
       "Learning curve for temperature control techniques",
       "Ceramic can crack if dropped or thermally shocked",
@@ -450,7 +449,7 @@ const allProducts = [
     amazonUrl: "",
     summary: "Legendary ceramic kamado grill delivering unmatched versatility and lifetime durability.",
     author: "Elizabeth Martinez",
-    publishDate: "December 8, 2025",
+    publishDate: "November 8, 2025",
     fullReview:
       "The Big Green Egg Large is the original ceramic kamado that sparked the American outdoor cooking revolution. For over 45 years, the Big Green Egg has maintained its position as the gold standard through exceptional build quality, unmatched versatility, and a passionate community of devoted users.\n\nThe proprietary ceramic blend used in the Big Green Egg provides superior heat retention and insulation compared to metal grills and even competing kamados. This allows the Egg to maintain rock-solid temperatures for hours with minimal fuel consumption. During our testing, we consistently achieved 12+ hour smoking sessions on a single load of lump charcoal, with temperature fluctuations of less than 10 degrees once stabilized.\n\nThe 256 square inch cooking area is perfectly sized for families and small gatherings. We regularly cooked for 6-8 people without feeling cramped. The cast iron cooking grate provides excellent heat retention and creates beautiful sear marks. The adjustable top and bottom vents offer precise temperature control—we found it easy to maintain steady smoking temperatures around 225°F or crank up the heat to 700°F+ for pizza and searing.\n\nWhat truly sets the Big Green Egg apart is its versatility. This isn't just a grill—it's a complete outdoor cooking system. We successfully grilled steaks, smoked brisket and ribs, roasted whole chickens and turkeys, baked pizzas and bread, and even made desserts. The extensive accessory ecosystem allows you to customize the Egg for specific cooking styles.",
     pros: [
@@ -488,10 +487,10 @@ const allProducts = [
     category: "Electric Grills",
     image: "https://m.media-amazon.com/images/I/81QXVkhCpwL._AC_SX679_.jpg",
     rating: 4.6,
-    amazonUrl: "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW",
+    amazonUrl: "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0bf433546b8fa4c609f9542429084e42&language=en_US&ref_=as_li_ss_tl",
     summary: "High-temperature indoor electric grill delivering authentic sear marks without outdoor setup.",
     author: "Daniel Foster",
-    publishDate: "December 12, 2025",
+    publishDate: "November 12, 2025",
     fullReview:
       "The Hamilton Beach Electric Indoor Searing Grill brings authentic grilling experience indoors with impressive high-heat capability that rivals outdoor grills. This countertop unit solves a common problem for apartment dwellers and those in climates where year-round outdoor grilling isn't practical.\n\nThe adjustable temperature control reaches up to 450°F, enabling true high-heat searing that creates the Maillard reaction responsible for that coveted caramelized crust on steaks and burgers. During our testing, we achieved grill marks comparable to outdoor gas grills, with excellent browning and flavor development. The 118 square inch nonstick cooking surface comfortably accommodates four burgers or two steaks, making it suitable for couples or small families.\n\nThe viewing window is a thoughtful feature that allows monitoring without opening the lid and losing heat. This proved particularly valuable when cooking steaks to precise doneness levels. The PFAS-free nonstick coating performed excellently throughout testing, releasing food easily and requiring minimal oil. The removable grate and drip tray are dishwasher-safe, making cleanup remarkably simple for an indoor cooking appliance.\n\nThe grill produces minimal smoke when used properly, though we recommend using the range hood for optimal ventilation. The stainless steel exterior looks professional and wipes clean easily.",
     pros: [
@@ -528,10 +527,10 @@ const allProducts = [
     category: "Electric Grills",
     image: "https://m.media-amazon.com/images/I/61-Mjaq73QL._AC_SX679_.jpg",
     rating: 4.7,
-    amazonUrl: "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9",
+    amazonUrl: "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=cd8548605d59124fbe570707bb2c3864&language=en_US&ref_=as_li_ss_tl",
     summary: "Extra-large electric griddle with immersible cooking surface for versatile indoor flat-top cooking.",
     author: "Rachel Green",
-    publishDate: "December 15, 2025",
+    publishDate: "November 15, 2025",
     fullReview:
       "The Chefman XL Electric Griddle transforms indoor cooking with its generous 10 x 20 inch flat-top surface that brings restaurant-style griddle cooking to your kitchen. This versatile appliance excels at everything from breakfast spreads to dinner entrees, offering consistent heat distribution and easy cleanup that makes it a valuable addition to any kitchen.\n\nThe 200 square inch cooking surface provides ample space for cooking complete meals simultaneously. During our testing, we regularly prepared breakfast for four people with room for pancakes, eggs, bacon, and hash browns all cooking at once. The adjustable temperature control ranges from 200°F to 420°F, offering versatility for gentle warming, standard cooking, and high-heat searing. The nonstick surface performed excellently throughout testing, requiring minimal oil and releasing food easily.\n\nThe removable temperature control probe is a standout feature that makes the entire cooking surface immersible and dishwasher-safe. This dramatically simplifies cleanup compared to traditional electric griddles. The slide-out drip tray efficiently collects excess grease and liquids, contributing to healthier cooking and easier maintenance. The 1500-watt heating element provides consistent, even heat distribution across the entire surface—we measured temperature variations of less than 15 degrees from edge to center.",
     pros: [
@@ -702,7 +701,7 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/71MNNzM6hdL._AC_SX679_.jpg",
     rating: 4.8,
-    amazonUrl: "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF",
+    amazonUrl: "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0be3736575a2c6b1a8eed5f94de3e181&language=en_US&ref_=as_li_ss_tl",
     summary: "Reliable, long-range temperature monitoring for the perfect cook every time",
     author: "Monica Anderson",
     publishDate: "October 12, 2025",
@@ -904,7 +903,7 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/61EvTGTXcWL._SX679_.jpg",
     rating: 4.5,
-    amazonUrl: "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4",
+    amazonUrl: "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=323b47602a0e29d76a8deb2f059999cf&language=en_US&ref_=as_li_ss_tl",
     summary: "Made with all-natural ingredients.",
     author: "Avery Wilson",
     publishDate: "October 11, 2025",
@@ -942,7 +941,7 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/71lBhl5zPaL._SX679_.jpg",
     rating: 4.5,
-    amazonUrl: "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA",
+    amazonUrl: "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=a83c6cbb37c37fb7a4e4913c001e3290&language=en_US&ref_=as_li_ss_tl",
     summary: "Classic barbecue sauce.",
     author: "Avery Wilson",
     publishDate: "October 15, 2025",
@@ -979,7 +978,7 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/41nJ2DbovlL._SX679_.jpg",
     rating: 4.2,
-    amazonUrl: "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP",
+    amazonUrl: "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?&linkCode=ll1&tag=bestprimebbqg-20&linkId=bc4533ee4ab7495586ca87f93a18dc55&language=en_US&ref_=as_li_ss_tl",
     summary: "Classic American barbecue.",
     author: "Avery Wilson",
     publishDate: "October 19, 2025",
@@ -1015,7 +1014,7 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/61sVtZeZ4sL._AC_SX679_.jpg",
     rating: 4.4,
-    amazonUrl: "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG",
+    amazonUrl: "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=910c19084e5f9ab33e9f77542fcba9a7&language=en_US&ref_=as_li_ss_tl",
     summary: "Cover for Weber 22 Inch Charcoal Kettle.",
     author: "Avery Wilson",
     publishDate: "October 1, 2025",
@@ -1054,7 +1053,7 @@ const allProducts = [
     category: "Gas Grills",
     image: "/weber-gas-grill-stainless-steel-three-burners.jpg",
     rating: 4.8,
-    amazonUrl: "https://www.amazon.com/s?k=Weber+Genesis+II+E-335",
+    amazonUrl: "",
     summary: "Our favorite gas grill delivers consistent heat and exceptional build quality.",
     author: "Alice Thompson",
     publishDate: "October 15, 2025",
@@ -1291,7 +1290,7 @@ const allProducts = [
     specs: {
       Brand: "PIT BOSS",
       Color: "Mahogany",
-      "Fuel Type": "Wood",
+      "Fuel Type": "Wood pellets",
       Material: "Metal",
       "Item Weight": "42.5 Pounds",
       "Cooking Area": "256 sq in",
@@ -1305,7 +1304,7 @@ const allProducts = [
     name: "Camp Chef SmokePro DLX Pellet Grill",
     category: "Pellet Grills",
     image: "/camp-chef-smokepro-dlx-pellet-grill-black.jpg",
-    rating: 4.7,
+    rating: 4.8,
     amazonUrl: "",
     summary: "Versatile pellet grill with ash cleanout system and sear box compatibility.",
     author: "Jordan Martinez",
@@ -1329,7 +1328,7 @@ const allProducts = [
     specs: {
       "Cooking Area": "570 sq in",
       "Temperature Range": "160°F - 500°F",
-      "Hopper Capacity": "18 lbs",
+      "Hopper Capacity": "18 pounds",
       Material: "Powder-coated steel",
       "Grate Material": "Porcelain-coated cast iron",
       Weight: "140 pounds",
@@ -1349,7 +1348,7 @@ const allProducts = [
     author: "Melanie Chow",
     publishDate: "October 20, 2025",
     fullReview:
-      "A compact, heavy-duty grill that doubles as a true Texas-style smoker. If you love the flavor of traditional charcoal BBQ and the authenticity of offset smoking, the Char-Griller E82424 is a clever 2-in-1 solution. It works perfectly as a stand-alone portable charcoal grill or as a side fire box for your existing Char-Griller barrel smoker, offering unbeatable versatility for backyard cooking, camping, or tailgating.\n\nDual-Purpose Design: Grill or Smoker. What makes this model unique is its modular design. You can use it as a compact tabletop grill for burgers, ribs, or veggies, or attach it to a larger Char-Griller barrel grill to transform it into a Texas-style offset smoker. It fits seamlessly with models 5030, 5050, 5650, 2121, 2123, 2137, 2827, and 2828, giving you professional-grade smoking performance in a compact frame.\n\n250 sq. in. Cooking Surface: Don't let the small footprint fool you. The 250 square-inch grilling area provides enough space to cook up to 12 burgers at once. The heavy cast-iron grates retain heat beautifully, creating deep sear marks and consistent cooking temperatures across the entire surface. Perfect for small gatherings, road trips, or backyard meals where you still want real charcoal flavor without the bulk of a full-size smoker.\n\nHeavy-Duty Construction for Serious Heat: Built from thick, powder-coated steel, the Char-Griller E82424 delivers durability and superior heat retention. It's designed to handle high temperatures without warping, making it suitable for both direct-heat grilling and low-and-slow smoking. The rugged build ensures this grill can stand up to years of outdoor use, whether it's parked on your patio or riding in your RV.\n\nEasy Heat Control & Cleanup: Managing airflow is simple thanks to the dual adjustable dampers, giving you precise control over your cooking temperature. When you're done grilling, the Easy Dump ash pan slides out for quick cleanup with no messy scraping or heavy lifting required. It's a thoughtful feature that makes post-cook maintenance fast and hassle-free.",
+      "A compact, heavy-duty grill that doubles as a true Texas-style smoker. If you love the flavor of traditional charcoal BBQ and the authenticity of offset smoking, the Char-Griller E82424 is a clever 2-in-1 solution. It works perfectly as a compact tabletop grill for burgers, ribs, or veggies, or as a side fire box for your existing Char-Griller barrel smoker, offering unbeatable versatility for backyard cooking, camping, or tailgating.\n\nDual-Purpose Design: Grill or Smoker. What makes this model unique is its modular design. You can use it as a compact grill for burgers, ribs, or veggies, or attach it to a larger Char-Griller barrel grill to transform it into a Texas-style offset smoker. It fits seamlessly with models 5030, 5050, 5650, 2121, 2123, 2137, 2827, and 2828, giving you professional-grade smoking performance in a compact frame.\n\n250 sq. in. Cooking Surface: Don't let the small footprint fool you. The 250 square-inch grilling area provides enough space to cook up to 12 burgers at once. The heavy cast-iron grates retain heat beautifully, creating deep sear marks and consistent cooking temperatures across the entire surface. Perfect for small gatherings, road trips, or backyard meals where you still want real charcoal flavor without the bulk of a full-size smoker.\n\nHeavy-Duty Construction for Serious Heat: Built from thick, powder-coated steel, the Char-Griller E82424 delivers durability and superior heat retention. It's designed to handle high temperatures without warping, making it suitable for both direct-heat grilling and low-and-slow smoking. The rugged build ensures this grill can stand up to years of outdoor use, whether it's parked on your patio or riding in your RV.\n\nEasy Heat Control & Cleanup: Managing airflow is simple thanks to the dual adjustable dampers, giving you precise control over your cooking temperature. When you're done grilling, the Easy Dump ash pan slides out for quick cleanup with no messy scraping or heavy lifting required. It's a thoughtful feature that makes post-cook maintenance fast and hassle-free.",
     pros: [
       "Dual-purpose (portable grill + side fire box)",
       "Heavy-duty steel with great heat retention",
@@ -1418,32 +1417,31 @@ const allProducts = [
       "The Kamado Joe Classic III represents the pinnacle of kamado-style grilling, combining traditional ceramic construction with modern innovations that make it easier to use and more versatile than ever before. This is a grill for serious outdoor cooking enthusiasts who want restaurant-quality results at home.\n\nRevolutionary SlōRoller Hyperbolic Smoke Chamber: The Classic III introduces the SlōRoller, a revolutionary insert that transforms how smoke circulates inside the grill. By creating a rolling, hyperbolic smoke pattern, it distributes heat and smoke more evenly than traditional kamado designs. The result is perfectly smoked meats with consistent bark formation and no hot spots.\n\nAir Lift Hinge System: One of the biggest improvements over previous models is the Air Lift Hinge, which makes the 68-pound ceramic lid feel nearly weightless. This patented system uses a gas-spring mechanism that allows you to open and close the lid with just one finger, eliminating the strain and safety concerns of traditional kamado hinges.\n\nUnmatched Heat Retention and Efficiency: The thick ceramic walls provide exceptional insulation, allowing the Classic III to maintain stable temperatures for hours with minimal fuel consumption. Whether you're searing steaks at 700°F or smoking brisket at 225°F for 12+ hours, the ceramic construction holds temperature rock-solid. A single load of lump charcoal can last for multiple cooks.\n\nKontrol Tower Top Vent: The redesigned top vent provides precise airflow control with a rain-resistant design. The lever mechanism allows for micro-adjustments, giving you the ability to dial in exact temperatures. Combined with the bottom vent, you have complete control over your cooking environment.\n\nDivide & Conquer Flexible Cooking System: The multi-level, half-moon cooking grates let you create different heat zones simultaneously. Sear steaks on one side while slow-roasting vegetables on the other, or use the heat deflector plates for true indirect cooking.",
     pros: [
       "SlōRoller technology for superior smoke circulation",
-      "Air Lift Hinge makes heavy lid effortless to open",
+      "Air Lift Hinge makes 68-pound lid effortless to operate",
       "Exceptional heat retention and fuel efficiency",
-      "Divide & Conquer flexible cooking system",
+      "Divide & Conquer system creates versatile cooking zones",
       "Precise temperature control with Kontrol Tower vent",
       "Lifetime warranty on ceramic components",
-      "Can grill, smoke, roast, and bake",
     ],
     cons: [
       "Premium price point ($1,800+)",
       "Heavy and not portable (250+ pounds total)",
       "Requires learning curve for temperature control",
-      "Ceramic can crack if dropped or impacted",
-      "Long heat-up time compared to gas grills",
+      "Ceramic can crack if dropped or thermally shocked",
+      "30-45 minute heat-up time for high-temperature cooking",
     ],
     specs: {
       "Cooking Area": "250 sq in (main grate)",
       "Grill Diameter": "18 inches",
       "Temperature Range": "225°F - 750°F",
-      Material: "Thick-wall ceramic",
+      Material: "Thick-wall ceramic construction",
       "Grate Material": "304 stainless steel",
-      "Total Weight": "250+ pounds",
+      "Total Weight": "250+ pounds with stand",
       "Charcoal Capacity": "9 pounds lump charcoal",
       Warranty: "Lifetime on ceramic, 5 years on metal components",
     },
     testingProcess:
-      "We tested the Kamado Joe Classic III over six months with dozens of cooks including low-and-slow brisket, hot-and-fast pizza, reverse-sear steaks, whole chickens, and even bread baking. We evaluated temperature stability, fuel efficiency, ease of use, and the effectiveness of the SlōRoller and Air Lift Hinge systems.",
+      "Our evaluation spanned six months with over 80 cooking sessions testing the full range of kamado capabilities. We conducted low-and-slow brisket smokes lasting 14+ hours, high-heat pizza cooking at 700°F, reverse-sear steaks, whole chickens, and bread baking. Temperature stability was monitored using data-logging thermometers throughout extended cooks. We evaluated the effectiveness of the SlōRoller system by comparing smoke distribution to traditional kamados. The Air Lift Hinge was tested extensively for reliability and ease of use. Fuel efficiency was measured by tracking charcoal consumption across various cooking temperatures.",
   },
   {
     slug: "big-green-egg-large",
@@ -1476,9 +1474,9 @@ const allProducts = [
       "Long heat-up time compared to gas grills",
     ],
     specs: {
-      "Cooking Area": "256 sq in",
+      "Cooking Area": "256 square inches",
       "Grill Diameter": "18.25 inches",
-      "Temperature Range": "200°F - 750°F",
+      "Temperature Range": "200°F - 750°F+",
       Material: "Proprietary ceramic blend",
       "Grate Material": "Cast iron",
       "Egg Weight": "162 pounds",
@@ -1487,9 +1485,8 @@ const allProducts = [
       Warranty: "Lifetime on ceramic, limited on metal parts",
     },
     testingProcess:
-      "We tested the Big Green Egg Large over eight months with over 100 cooks including low-and-slow brisket and ribs, high-heat pizza and steaks, whole turkeys, bread baking, and everything in between. We evaluated temperature stability, fuel efficiency, ease of use, versatility, and long-term durability.",
+      "We conducted comprehensive testing over eight months with over 100 cooking sessions including low-and-slow brisket and ribs, high-heat pizza and steaks, whole turkeys, bread baking, and everything in between. We evaluated temperature stability, fuel efficiency, ease of use, versatility, and long-term durability.",
   },
-
   {
     slug: "hmilton-bech-electric-indoor-searing-grill",
     name: "Hamilton Beach Electric Indoor Searing Grill with Viewing Window",
@@ -2032,6 +2029,7 @@ const allProducts = [
     ],
     specs: {
       Brand: "Chefman",
+      "Product Dimensions": '12.4"D x 20"W x 3.5"H',
       "Cooking Surface": "10 x 20 inches (200 sq in)",
       "Temperature Range": "200°F - 420°F",
       Power: "1500 Watts / 120 Volts",
