@@ -13,6 +13,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
+      <FeaturedGrills />
       <div className="border-t border-border bg-muted/30 py-3">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm leading-relaxed text-muted-foreground">
@@ -23,7 +24,6 @@ export default function Home() {
       <BBQGuideSections />
       <GrillTopics />
       <CategoryGrid />
-      <FeaturedGrills />
       <BBQNews />
       <LatestArticles />
       <Footer />
