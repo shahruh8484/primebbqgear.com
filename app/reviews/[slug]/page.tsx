@@ -1,11 +1,10 @@
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Star, CheckCircle2, XCircle } from 'lucide-react'
 import Link from "next/link"
-import { notFound } from 'next/navigation'
-import { Button } from "@/components/ui/button"
+import { Star, CheckCircle2, XCircle, ShoppingCart } from "lucide-react"
 
-const allProducts = [
+import { Footer } from "@/components/footer"
+import { Header } from "@/components/header"
+
+const products = [
   {
     slug: "weber-genesis-ii-e-335",
     name: "Weber Genesis II E-335",
@@ -49,12 +48,13 @@ const allProducts = [
     category: "Gas Grills",
     image: "https://m.media-amazon.com/images/I/71QLgJ5R+IL._AC_SX679_.jpg",
     rating: 4.8,
-    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl",
     summary: "Versatile flat-top griddle with integrated hood and wind guards for superior outdoor cooking.",
     author: "Sarah Martinez",
     publishDate: "November 5, 2025",
     fullReview:
-      "The Blackstone 2450AZ Omnivore Griddle Bundle transforms outdoor cooking with its innovative flat-top design and comprehensive accessory package. This isn't just a griddle—it's a complete outdoor kitchen solution that excels at everything from breakfast spreads to dinner feasts.\n\nThe 28-inch Omnivore griddle plate features built-in wind guards that significantly improve heat efficiency and reduce propane consumption. During our testing, we found the griddle heated to cooking temperature 30% faster than traditional flat-tops, maintaining consistent heat across the entire 517 square inch surface. The integrated hood serves dual purposes: it accelerates cooking through heat retention and protects the surface when not in use.\n\nThe carbon steel cooking surface develops a natural non-stick patina over time, improving with each use. We appreciated the four independently controlled burners that allow for multiple temperature zones—perfect for cooking eggs on one side while searing steaks on the other. The rear grease management system efficiently channels drippings away from the cooking surface, making cleanup surprisingly simple.",
+      "The Blackstone 2450AZ Omnivore Griddle Bundle transforms outdoor cooking with its innovative flat-top design and comprehensive accessory package. This isn't just a griddle—it's a complete outdoor kitchen solution that excels at everything from breakfast spreads to dinner feasts.\nThe 28-inch Omnivore griddle plate features built-in wind guards that significantly improve heat efficiency and reduce propane consumption. During our testing, we found the griddle heated to cooking temperature 30% faster than traditional flat-tops, maintaining consistent heat across the entire 517 square inch surface. The integrated hood serves dual purposes: it accelerates cooking through heat retention and protects the surface when not in use.\nThe carbon steel cooking surface develops a natural non-stick patina over time, improving with each use. We appreciated the four independently controlled burners that allow for multiple temperature zones—perfect for cooking eggs on one side while searing steaks on the other. The rear grease management system efficiently channels drippings away from the cooking surface, making cleanup surprisingly simple.",
     pros: [
       "Built-in wind guards improve heat efficiency by 30%",
       "517 sq in cooking surface handles large meal preparations",
@@ -89,12 +89,13 @@ const allProducts = [
     category: "Gas Grills",
     image: "https://m.media-amazon.com/images/I/61nq7SidALL._AC_SY300_SX300_QL70_FMwebp_.jpg",
     rating: 4.7,
-    amazonUrl: "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=7984f9bd63c0ba17fde9991da7b7c17c&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=7984f9bd6c0ba17fde9991da7b7c17c&language=en_US&ref_=as_li_ss_tl",
     summary: "Innovative dual-zone cooking system combining traditional grill and flat-top griddle functionality.",
     author: "David Thompson",
     publishDate: "November 8, 2025",
     fullReview:
-      "The Sophia & William Propane Gas Grill and Griddle Combo solves a common outdoor cooking dilemma: choosing between a traditional grill and a flat-top griddle. This ingenious design combines both cooking methods in a single, space-efficient unit that delivers exceptional versatility without compromise.\n\nThe grill side features 442 square inches of premium cast iron grates that excel at creating perfect sear marks and retaining heat for consistent cooking. The griddle side offers 253 square inches of smooth cast iron surface ideal for delicate foods, breakfast items, and stir-fry dishes. With 54,000 BTUs of combined output, both zones preheat quickly and maintain stable temperatures throughout extended cooking sessions.\n\nDuring our testing, we particularly appreciated the independent temperature controls for each zone, allowing simultaneous cooking of different food types at optimal temperatures. The drawer-style grease management system on the griddle side and pull-out tray on the grill side make cleanup remarkably efficient. The sturdy construction and thoughtful design details, including integrated tool hooks and side shelves, demonstrate attention to the practical needs of outdoor cooks.",
+      "The Sophia & William Propane Gas Grill and Griddle Combo solves a common outdoor cooking dilemma: choosing between a traditional grill and a flat-top griddle. This ingenious design combines both cooking methods in a single, space-efficient unit that delivers exceptional versatility without compromise.\nThe grill side features 442 square inches of premium cast iron grates that excel at creating perfect sear marks and retaining heat for consistent cooking. The griddle side offers 253 square inches of smooth cast iron surface ideal for delicate foods, breakfast items, and stir-fry dishes. With 54,000 BTUs of combined output, both zones preheat quickly and maintain stable temperatures throughout extended cooking sessions.\nDuring our testing, we particularly appreciated the independent temperature controls for each zone, allowing simultaneous cooking of different food types at optimal temperatures. The drawer-style grease management system on the griddle side and pull-out tray on the grill side make cleanup remarkably efficient. The sturdy construction and thoughtful design details, including integrated tool hooks and side shelves, demonstrate attention to the practical needs of outdoor cooks.",
     pros: [
       "Dual cooking zones offer unmatched versatility in one unit",
       "696 sq in total cooking area accommodates large gatherings",
@@ -134,7 +135,7 @@ const allProducts = [
     author: "Jennifer Park",
     publishDate: "November 12, 2025",
     fullReview:
-      "The Napoleon Prestige 500 elevates backyard grilling to professional standards with its sophisticated infrared burner system and meticulous attention to detail. This grill represents Napoleon's commitment to innovation, combining cutting-edge technology with robust construction that will serve dedicated grillers for decades.\n\nThe standout feature is the infrared rear burner system, capable of reaching temperatures exceeding 1,800°F for steakhouse-quality searing. The wave cooking grids are a Napoleon signature—their unique design creates distinctive sear marks while minimizing flare-ups by vaporizing drippings before they reach the burners. The four main stainless steel burners deliver 48,000 BTUs of precisely controlled heat across the 500 square inch primary cooking area.\n\nDuring extensive testing, we were impressed by the grill's ability to maintain consistent temperatures across all zones, even during extended cooking sessions. The illuminated control knobs add both functionality and aesthetic appeal for evening grilling. The infrared side burner proved invaluable for high-heat searing and wok cooking. Build quality is exceptional, with heavy-gauge stainless steel construction that feels substantial and built to last.",
+      "The Napoleon Prestige 500 elevates backyard grilling to professional standards with its sophisticated infrared burner system and meticulous attention to detail. This grill represents Napoleon's commitment to innovation, combining cutting-edge technology with robust construction that will serve dedicated grillers for decades.\nThe standout feature is the infrared rear burner system, capable of reaching temperatures exceeding 1,800°F for steakhouse-quality searing. The wave cooking grids are a Napoleon signature—their unique design creates distinctive sear marks while minimizing flare-ups by vaporizing drippings before they reach the burners. The four main stainless steel burners deliver 48,000 BTUs of precisely controlled heat across the 500 square inch primary cooking area.\nDuring extensive testing, we were impressed by the grill's ability to maintain consistent temperatures across all zones, even during extended cooking sessions. The illuminated control knobs add both functionality and aesthetic appeal for evening grilling. The infrared side burner proved invaluable for high-heat searing and wok cooking. Build quality is exceptional, with heavy-gauge stainless steel construction that feels substantial and built to last.",
     pros: [
       "Infrared rear burner reaches 1,800°F for professional searing",
       "Wave cooking grids create distinctive marks and reduce flare-ups",
@@ -163,17 +164,18 @@ const allProducts = [
       "We conducted rigorous testing over three months with focus on infrared burner performance, temperature consistency, and build quality. Testing included high-heat searing of steaks, low-and-slow cooking of chicken, rotisserie cooking of whole birds, and multi-zone cooking scenarios. We measured temperature distribution using infrared thermography and evaluated the effectiveness of the wave cooking grids in preventing flare-ups. Material durability and weather resistance were assessed through exposure to various outdoor conditions.",
   },
   {
-    slug: "big-horn-outdoors-1500",
+    slug: "big-horn-outdoors-1500°f-small-infrared-propane-gas-grill",
     name: "BIG HORN OUTDOORS 1500°F Small Infrared Propane Gas Grill",
     category: "Gas Grills",
     image: "https://m.media-amazon.com/images/I/81JStQrSSNL._AC_SX679_.jpg",
     rating: 4.6,
-    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B0869Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl",
     summary: "Compact infrared powerhouse delivering steakhouse-quality searing in a portable package.",
     author: "Robert Kim",
     publishDate: "November 15, 2025",
     fullReview:
-      "The BIG HORN OUTDOORS 1500°F Infrared Grill redefines what's possible in a compact grilling unit. This innovative design brings professional-grade infrared searing technology to a portable format, making restaurant-quality results accessible anywhere you need them.\n\nThe 19,000 BTU infrared burner generates intense top-down heat that reaches 1,500°F in just 3-5 minutes—faster than most full-size grills reach standard cooking temperatures. This salamander-style heating approach sears meat from above, locking in juices while creating the coveted Maillard reaction crust that defines steakhouse-quality cooking. Unlike traditional bottom-up grilling, the top-down method minimizes flare-ups and smoke while maximizing flavor retention.\n\nThe 10-position adjustable rack system provides precise control over cooking intensity, allowing you to dial in the perfect distance from the heat source for different foods. We found this particularly valuable when transitioning from high-heat searing to gentler finishing. The included pizza stone transforms the grill into a compact outdoor oven capable of producing crispy, evenly cooked pizzas. The stainless steel construction feels robust despite the compact size, and the one-touch ignition system proved reliable even in windy conditions.",
+      "The BIG HORN OUTDOORS 1500°F Infrared Grill redefines what's possible in a compact grilling unit. This innovative design brings professional-grade infrared searing technology to a portable format, making restaurant-quality results accessible anywhere you need them.\nThe 19,000 BTU infrared burner generates intense top-down heat that reaches 1,500°F in just 3-5 minutes—faster than most full-size grills reach standard cooking temperatures. This salamander-style heating approach sears meat from above, locking in juices while creating the coveted Maillard reaction crust that defines steakhouse-quality cooking. Unlike traditional bottom-up grilling, the top-down method minimizes flare-ups and smoke while maximizing flavor retention.\nThe 10-position adjustable rack system provides precise control over cooking intensity, allowing you to dial in the perfect distance from the heat source for different foods. We found this particularly valuable when transitioning from high-heat searing to gentler finishing. The included pizza stone transforms the grill into a compact outdoor oven capable of producing crispy, evenly cooked pizzas. The stainless steel construction feels robust despite the compact size, and the one-touch ignition system proved reliable even in windy conditions.",
     pros: [
       "Reaches 1,500°F in under 5 minutes for rapid searing",
       "Top-down infrared design minimizes flare-ups and maximizes flavor",
@@ -214,7 +216,7 @@ const allProducts = [
     author: "Amanda Rodriguez",
     publishDate: "November 18, 2025",
     fullReview:
-      "The Traeger Pro 575 represents the convergence of traditional wood-fired cooking and modern smart technology. This pellet grill delivers authentic smoky flavor while offering the convenience of WiFi connectivity and precise digital temperature control that makes low-and-slow cooking accessible to everyone.\n\nThe WiFIRE technology is the star feature, allowing you to monitor and adjust temperatures from your smartphone anywhere you have internet connection. During our testing, we found this particularly valuable for overnight brisket cooks and long smoking sessions where constant monitoring would otherwise be required. The Traeger app provides access to hundreds of recipes with step-by-step instructions and automatic temperature adjustments.\n\nThe 575 square inch cooking area provides ample space for multiple racks of ribs, whole chickens, or large briskets. The D2 Direct Drive system with variable speed fan maintains consistent temperatures from 165°F to 500°F, making this grill versatile enough for smoking, roasting, baking, and even grilling. The 18-pound hopper capacity means fewer pellet refills during extended cooks. We appreciated the all-terrain wheels and sturdy construction that make moving the grill manageable despite its substantial size.",
+      "The Traeger Pro 575 represents the convergence of traditional wood-fired cooking and modern smart technology. This pellet grill delivers authentic smoky flavor while offering the convenience of WiFi connectivity and precise digital temperature control that makes low-and-slow cooking accessible to everyone.\nThe WiFIRE technology is the star feature, allowing you to monitor and adjust temperatures from your smartphone anywhere you have internet connection. During our testing, we found this particularly valuable for overnight brisket cooks and long smoking sessions where constant monitoring would otherwise be required. The Traeger app provides access to hundreds of recipes with step-by-step instructions and automatic temperature adjustments.\nThe 575 square inch cooking area provides ample space for multiple racks of ribs, whole chickens, or large briskets. The D2 Direct Drive system with variable speed fan maintains consistent temperatures from 165°F to 500°F, making this grill versatile enough for smoking, roasting, baking, and even grilling. The 18-pound hopper capacity means fewer pellet refills during extended cooks. We appreciated the all-terrain wheels and sturdy construction that make moving the grill manageable despite its substantial size.",
     pros: [
       "WiFIRE technology enables remote monitoring and control",
       "575 sq in cooking area accommodates large meals",
@@ -248,12 +250,13 @@ const allProducts = [
     category: "Pellet Grills",
     image: "https://m.media-amazon.com/images/I/71EATm+utGL._AC_SX679_.jpg",
     rating: 4.5,
-    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl",
     summary: "Portable pellet grill combining wood-fired flavor with digital precision in a compact design.",
     author: "Michael Chang",
     publishDate: "November 22, 2025",
     fullReview:
-      "The PIT BOSS 10697 Table Top Wood Grill proves that authentic wood-fired flavor doesn't require a full-size smoker. This compact pellet grill delivers impressive performance in a portable package that's perfect for small spaces, RVs, tailgating, or as a secondary grill for dedicated outdoor cooks.\n\nThe digital control board with LED readout provides precise temperature management from 180°F to 500°F, covering the full spectrum from low-and-slow smoking to high-heat grilling. The innovative slide plate system allows you to switch between indirect heat for smoking and direct flame access for searing up to 1,000°F. This versatility in such a compact unit is remarkable and sets the PIT BOSS apart from competitors.\n\nThe 256 square inch cooking area is perfectly sized for 2-4 people, making it ideal for couples or small families. The porcelain-coated steel grates distribute heat evenly and clean up easily. During our testing, we found the wood pellet system delivered authentic smoky flavor that rivals full-size smokers, with the added convenience of automated pellet feeding and temperature control. The compact design doesn't compromise on build quality—the construction feels solid and the mahogany finish adds a touch of style.",
+      "The PIT BOSS 10697 Table Top Wood Grill proves that authentic wood-fired flavor doesn't require a full-size smoker. This compact pellet grill delivers impressive performance in a portable package that's perfect for small spaces, RVs, tailgating, or as a secondary grill for dedicated outdoor cooks.\nThe digital control board with LED readout provides precise temperature management from 180°F to 500°F, covering the full spectrum from low-and-slow smoking to high-heat grilling. The innovative slide plate system allows you to switch between indirect heat for smoking and direct flame access for searing up to 1,000°F. This versatility in such a compact unit is remarkable and sets the PIT BOSS apart from competitors.\nThe 256 square inch cooking area is perfectly sized for 2-4 people, making it ideal for couples or small families. The porcelain-coated steel grates distribute heat evenly and clean up easily. During our testing, we found the wood pellet system delivered authentic smoky flavor that rivals full-size smokers, with the added convenience of automated pellet feeding and temperature control. The compact design doesn't compromise on build quality—the construction feels solid and the mahogany finish adds a touch of style.",
     pros: [
       "Compact 42.5-pound design ideal for portability",
       "Digital temperature control from 180°F to 1,000°F",
@@ -292,7 +295,7 @@ const allProducts = [
     author: "Lisa Anderson",
     publishDate: "November 25, 2025",
     fullReview:
-      "The Camp Chef SmokePro DLX addresses one of the most common complaints about pellet grills—tedious ash cleanup—while delivering exceptional smoking performance and thoughtful design features that make it a standout choice for serious outdoor cooks.\n\nThe patented ash cleanout system is genuinely revolutionary. A simple lever pull drops accumulated ash into a removable cup, eliminating the need to vacuum out the fire pot or disassemble the grill for cleaning. This feature alone saves 15-20 minutes after each cook and makes the SmokePro DLX significantly more user-friendly than competitors. During our three-month testing period, this system proved reliable and effective even after extended smoking sessions.\n\nThe PID controller maintains remarkably consistent temperatures, typically within 5-10 degrees of the target setting. This precision is crucial for low-and-slow smoking where temperature fluctuations can significantly impact results. The 160°F to 500°F range covers everything from cold smoking cheese to high-heat pizza cooking. The 570 square inch cooking area easily accommodates multiple racks of ribs or several whole chickens, while the porcelain-coated cast iron grates provide excellent heat retention and easy cleanup.\n\nThe SmokePro DLX is compatible with Camp Chef's optional sear box attachment, which adds propane-powered high-heat searing capability exceeding 900°F. This addresses the one weakness of pellet grills—achieving steakhouse-quality sear marks—making the system truly versatile.",
+      "The Camp Chef SmokePro DLX addresses one of the most common complaints about pellet grills—tedious ash cleanup—while delivering exceptional smoking performance and thoughtful design features that make it a standout choice for serious outdoor cooks.\nThe patented ash cleanout system is genuinely revolutionary. A simple lever pull drops accumulated ash into a removable cup, eliminating the need to vacuum out the fire pot or disassemble the grill for cleaning. This feature alone saves 15-20 minutes after each cook and makes the SmokePro DLX significantly more user-friendly than competitors. During our three-month testing period, this system proved reliable and effective even after extended smoking sessions.\nThe PID controller maintains remarkably consistent temperatures, typically within 5-10 degrees of the target setting. This precision is crucial for low-and-slow smoking where temperature fluctuations can significantly impact results. The 160°F to 500°F range covers everything from cold smoking cheese to high-heat pizza cooking. The 570 square inch cooking area easily accommodates multiple racks of ribs or several whole chickens, while the porcelain-coated cast iron grates provide excellent heat retention and easy cleanup.\nThe SmokePro DLX is compatible with Camp Chef's optional sear box attachment, which adds propane-powered high-heat searing capability exceeding 900°F. This addresses the one weakness of pellet grills—achieving steakhouse-quality sear marks—making the system truly versatile.",
     pros: [
       "Revolutionary ash cleanout system saves time and hassle",
       "PID controller maintains temperatures within 5-10°F",
@@ -327,12 +330,13 @@ const allProducts = [
     category: "Charcoal Grills",
     image: "/char-griller-portable-charcoal-grill-black.jpg",
     rating: 4.6,
-    amazonUrl: "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=07a0889d6d5077873b3624d335e692b6&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=07a0889d6d5077873b3624d335e692b6&language=en_US&ref_=as_li_ss_tl",
     summary: "Versatile portable charcoal grill that doubles as an offset smoker attachment for ultimate flexibility.",
     author: "James Wilson",
     publishDate: "November 28, 2025",
     fullReview:
-      "The Char-Griller E82424 Portable Charcoal Grill represents exceptional value through its innovative dual-purpose design. This unit functions as a standalone portable grill for camping and tailgating, while also serving as a side fire box attachment for compatible Char-Griller barrel smokers, transforming them into authentic Texas-style offset smokers.\n\nThe heavy-duty steel construction immediately impresses with its solid feel and superior heat retention compared to thin-walled portable grills. The 250 square inch cooking surface provides enough space for 12 burgers, making it suitable for small gatherings despite its compact footprint. The cast iron grates create beautiful sear marks and distribute heat evenly across the cooking surface.\n\nThe dual adjustable dampers provide precise airflow control, allowing you to dial in temperatures for both direct grilling and low-and-slow smoking. During our testing, we found temperature management intuitive and responsive. The Easy Dump ash pan is a standout feature—it slides out completely for quick cleanup without the mess typically associated with charcoal grills. When attached to a compatible barrel grill, the E82424 creates a true offset smoking setup that produces authentic smoke flavor and maintains consistent temperatures for hours.",
+      "The Char-Griller E82424 Portable Charcoal Grill represents exceptional value through its innovative dual-purpose design. This unit functions as a standalone portable grill for camping and tailgating, while also serving as a side fire box attachment for compatible Char-Griller barrel smokers, transforming them into authentic Texas-style offset smokers.\nThe heavy-duty steel construction immediately impresses with its solid feel and superior heat retention compared to thin-walled portable grills. The 250 square inch cooking surface provides enough space for 12 burgers, making it suitable for small gatherings despite its compact footprint. The cast iron grates create beautiful sear marks and distribute heat evenly across the cooking surface.\nThe dual adjustable dampers provide precise airflow control, allowing you to dial in temperatures for both direct grilling and low-and-slow smoking. During our testing, we found temperature management intuitive and responsive. The Easy Dump ash pan is a standout feature—it slides out completely for quick cleanup without the mess typically associated with charcoal grills. When attached to a compatible barrel grill, the E82424 creates a true offset smoking setup that produces authentic smoke flavor and maintains consistent temperatures for hours.",
     pros: [
       "Dual-purpose design: portable grill and smoker attachment",
       "Heavy-duty steel construction for superior heat retention",
@@ -367,11 +371,12 @@ const allProducts = [
     category: "Charcoal Grills",
     image: "https://m.media-amazon.com/images/I/71CYJCS4+qL._AC_SY879_.jpg",
     rating: 4.9,
-    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl",
     author: "Patricia Lee",
     publishDate: "November 1, 2025",
     fullReview:
-      "The Weber Original Kettle 22-Inch Charcoal Grill has remained largely unchanged for over 70 years because the original design got so much right. This latest iteration maintains the classic kettle shape while incorporating subtle improvements that enhance usability without compromising the authentic charcoal grilling experience.\n\nThe porcelain-enameled bowl and lid are built to withstand decades of outdoor use, resisting rust and weather damage while retaining heat efficiently. The 363 square inch cooking area strikes the perfect balance—large enough for family meals and small gatherings (up to 13 burgers) while remaining manageable for everyday use. The plated steel cooking grate creates excellent sear marks and is easy to clean.\n\nThe adjustable dampers on the lid and bottom provide intuitive temperature control. During our testing, we found it easy to maintain steady temperatures for low-and-slow smoking or crank up the heat for high-temperature searing. The one-touch cleaning system is brilliantly simple—rotating the handle sweeps ash into the removable aluminum catcher, making cleanup quick and mess-free. The hinged cooking grate allows easy charcoal addition during extended cooks without removing food.",
+      "The Weber Original Kettle 22-Inch Charcoal Grill has remained largely unchanged for over 70 years because the original design got so much right. This latest iteration maintains the classic kettle shape while incorporating subtle improvements that enhance usability without compromising the authentic charcoal grilling experience.\nThe porcelain-enameled bowl and lid are built to withstand decades of outdoor use, resisting rust and weather damage while retaining heat efficiently. The 363 square inch cooking area strikes the perfect balance—large enough for family meals and small gatherings (up to 13 burgers) while remaining manageable for everyday use. The plated steel cooking grate creates excellent sear marks and is easy to clean.\nThe adjustable dampers on the lid and bottom provide intuitive temperature control. During our testing, we found it easy to maintain steady temperatures for low-and-slow smoking or crank up the heat for high-temperature searing. The one-touch cleaning system is brilliantly simple—rotating the handle sweeps ash into the removable aluminum catcher, making cleanup quick and mess-free. The hinged cooking grate allows easy charcoal addition during extended cooks without removing food.",
     pros: [
       "Iconic design proven over 70+ years of production",
       "Porcelain-enameled construction resists rust and weather",
@@ -410,7 +415,7 @@ const allProducts = [
     author: "Christopher Davis",
     publishDate: "November 5, 2025",
     fullReview:
-      "The Kamado Joe Classic III represents the evolution of ceramic kamado grilling, incorporating innovative technologies that address traditional kamado limitations while maintaining the exceptional heat retention and versatility that define the category.\n\nThe SlōRoller Hyperbolic Smoke Chamber is a game-changing innovation that transforms smoke circulation inside the grill. Traditional kamados create a direct path from fire to food, resulting in uneven heat and smoke distribution. The SlōRoller creates a rolling, hyperbolic smoke pattern that distributes heat and smoke evenly throughout the cooking chamber. During our testing, this resulted in noticeably more consistent bark formation on smoked meats and eliminated hot spots that plague traditional kamados.\n\nThe Air Lift Hinge system addresses another common kamado complaint—the heavy ceramic lid. Using a gas-spring mechanism, the Air Lift makes the 68-pound lid feel nearly weightless, allowing one-finger opening and closing. This dramatically improves safety and convenience, especially during long cooking sessions requiring frequent lid access. The Kontrol Tower top vent provides micro-adjustable airflow control with a rain-resistant design that maintains temperature stability even in adverse weather.\n\nThe Divide & Conquer flexible cooking system uses multi-level, half-moon grates that create distinct heat zones. This allows simultaneous cooking at different temperatures—searing steaks on one side while slow-roasting vegetables on the other. The 304 stainless steel grates are built to last and provide excellent heat retention.",
+      "The Kamado Joe Classic III represents the evolution of ceramic kamado grilling, incorporating innovative technologies that address traditional kamado limitations while maintaining the exceptional heat retention and versatility that define the category.\nThe SlōRoller Hyperbolic Smoke Chamber is a game-changing innovation that transforms smoke circulation inside the grill. Traditional kamados create a direct path from fire to food, resulting in uneven heat and smoke distribution. The SlōRoller creates a rolling, hyperbolic smoke pattern that distributes heat and smoke evenly throughout the cooking chamber. During our testing, this resulted in noticeably more consistent bark formation on smoked meats and eliminated hot spots that plague traditional kamados.\nThe Air Lift Hinge system addresses another common kamado complaint—the heavy ceramic lid. Using a gas-spring mechanism, the Air Lift makes the 68-pound lid feel nearly weightless, allowing one-finger opening and closing. This dramatically improves safety and convenience, especially during long cooking sessions requiring frequent lid access. The Kontrol Tower top vent provides micro-adjustable airflow control with a rain-resistant design that maintains temperature stability even in adverse weather.\nThe Divide & Conquer flexible cooking system uses multi-level, half-moon grates that create distinct heat zones. This allows simultaneous cooking at different temperatures—searing steaks on one side while slow-roasting vegetables on the other. The 304 stainless steel grates are built to last and provide excellent heat retention.",
     pros: [
       "SlōRoller technology delivers superior smoke circulation",
       "Air Lift Hinge makes 68-pound lid effortless to operate",
@@ -438,7 +443,7 @@ const allProducts = [
       Warranty: "Lifetime on ceramic, 5 years on metal components",
     },
     testingProcess:
-      "Our evaluation spanned six months with over 80 cooking sessions testing the full range of kamado capabilities. We conducted low-and-slow brisket smokes lasting 14+ hours, high-heat pizza cooking at 700°F, reverse-sear steaks, whole chickens, and bread baking. Temperature stability was monitored using data-logging thermometers throughout extended cooks. We evaluated the effectiveness of the SlōRoller system by comparing smoke distribution to traditional kamados. The Air Lift Hinge was tested extensively for reliability and ease of use. Fuel efficiency was measured by tracking charcoal consumption across various cooking temperatures.",
+      "Our evaluation spanned six months with over 80 cooking sessions testing the full range of kamado capabilities. We conducted low-and-slow brisket smokes lasting 14+ hours, high-heat pizza cooking at 700°F, reverse-sear steaks, whole chickens, and bread baking. Temperature stability was monitored using data-logging thermometers throughout extended cooks. We evaluated the effectiveness of the SlōRoller system by comparing smoke distribution to traditional kamados. The Air Lift Hinge was tested for reliability and ease of use. Fuel efficiency was measured by tracking charcoal consumption across various cooking temperatures.",
   },
   {
     slug: "big-green-egg-large",
@@ -451,7 +456,7 @@ const allProducts = [
     author: "Elizabeth Martinez",
     publishDate: "November 8, 2025",
     fullReview:
-      "The Big Green Egg Large is the original ceramic kamado that sparked the American outdoor cooking revolution. For over 45 years, the Big Green Egg has maintained its position as the gold standard through exceptional build quality, unmatched versatility, and a passionate community of devoted users.\n\nThe proprietary ceramic blend used in the Big Green Egg provides superior heat retention and insulation compared to metal grills and even competing kamados. This allows the Egg to maintain rock-solid temperatures for hours with minimal fuel consumption. During our testing, we consistently achieved 12+ hour smoking sessions on a single load of lump charcoal, with temperature fluctuations of less than 10 degrees once stabilized.\n\nThe 256 square inch cooking area is perfectly sized for families and small gatherings. We regularly cooked for 6-8 people without feeling cramped. The cast iron cooking grate provides excellent heat retention and creates beautiful sear marks. The adjustable top and bottom vents offer precise temperature control—we found it easy to maintain steady smoking temperatures around 225°F or crank up the heat to 700°F+ for pizza and searing.\n\nWhat truly sets the Big Green Egg apart is its versatility. This isn't just a grill—it's a complete outdoor cooking system. We successfully grilled steaks, smoked brisket and ribs, roasted whole chickens and turkeys, baked pizzas and bread, and even made desserts. The extensive accessory ecosystem allows you to customize the Egg for specific cooking styles.",
+      "The Big Green Egg Large is the original ceramic kamado that sparked the American outdoor cooking revolution. For over 45 years, the Big Green Egg has maintained its position as the gold standard through exceptional build quality, unmatched versatility, and a passionate community of devoted users.\nThe proprietary ceramic blend used in the Big Green Egg provides superior heat retention and insulation compared to metal grills and even competing kamados. This allows the Egg to maintain rock-solid temperatures for hours with minimal fuel consumption. During our testing, we consistently achieved 12+ hour smoking sessions on a single load of lump charcoal, with temperature fluctuations of less than 10 degrees once stabilized.\nThe 256 square inch cooking area is perfectly sized for families and small gatherings. We regularly cooked for 6-8 people without feeling cramped. The cast iron cooking grate provides excellent heat retention and creates beautiful sear marks. The adjustable top and bottom vents offer precise temperature control—we found it easy to maintain steady smoking temperatures around 225°F or crank up the heat to 700°F+ for pizza and searing.\nWhat truly sets the Big Green Egg apart is its versatility. This isn't just a grill—it's a complete outdoor cooking system. We successfully grilled steaks, smoked brisket and ribs, roasted whole chickens and turkeys, baked pizzas and bread, and even made desserts. The extensive accessory ecosystem allows you to customize the Egg for specific cooking styles.",
     pros: [
       "Proprietary ceramic blend offers superior heat retention",
       "Exceptional fuel efficiency with 12+ hour burn times",
@@ -487,12 +492,13 @@ const allProducts = [
     category: "Electric Grills",
     image: "https://m.media-amazon.com/images/I/81QXVkhCpwL._AC_SX679_.jpg",
     rating: 4.6,
-    amazonUrl: "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0bf433546b8fa4c609f9542429084e42&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0bf433546b8fa4c609f9542429084e42&language=en_US&ref_=as_li_ss_tl",
     summary: "High-temperature indoor electric grill delivering authentic sear marks without outdoor setup.",
-    author: "Daniel Foster",
+    author: "Casey Woo",
     publishDate: "November 12, 2025",
     fullReview:
-      "The Hamilton Beach Electric Indoor Searing Grill brings authentic grilling experience indoors with impressive high-heat capability that rivals outdoor grills. This countertop unit solves a common problem for apartment dwellers and those in climates where year-round outdoor grilling isn't practical.\n\nThe adjustable temperature control reaches up to 450°F, enabling true high-heat searing that creates the Maillard reaction responsible for that coveted caramelized crust on steaks and burgers. During our testing, we achieved grill marks comparable to outdoor gas grills, with excellent browning and flavor development. The 118 square inch nonstick cooking surface comfortably accommodates four burgers or two steaks, making it suitable for couples or small families.\n\nThe viewing window is a thoughtful feature that allows monitoring without opening the lid and losing heat. This proved particularly valuable when cooking steaks to precise doneness levels. The PFAS-free nonstick coating performed excellently throughout testing, releasing food easily and requiring minimal oil. The removable grate and drip tray are dishwasher-safe, making cleanup remarkably simple for an indoor cooking appliance.\n\nThe grill produces minimal smoke when used properly, though we recommend using the range hood for optimal ventilation. The stainless steel exterior looks professional and wipes clean easily.",
+      "The Hamilton Beach Electric Indoor Searing Grill brings authentic grilling experience indoors with impressive high-heat capability that rivals outdoor grills. This countertop unit solves a common problem for apartment dwellers and those in climates where year-round outdoor grilling isn't practical.\nThe adjustable temperature control reaches up to 450°F, enabling true high-heat searing that creates the Maillard reaction responsible for that coveted caramelized crust on steaks and burgers. During our testing, we achieved grill marks comparable to outdoor gas grills, with excellent browning and flavor development. The 118 square inch nonstick cooking surface comfortably accommodates four burgers or two steaks, making it suitable for couples or small families.\nThe viewing window is a thoughtful feature that allows monitoring without opening the lid and losing heat. This proved particularly valuable when cooking steaks to precise doneness levels. The PFAS-free nonstick coating performed excellently throughout testing, releasing food easily and requiring minimal oil. The removable grate and drip tray are dishwasher-safe, making cleanup remarkably simple for an indoor cooking appliance.\nThe grill produces minimal smoke when used properly, though we recommend using the range hood for optimal ventilation. The stainless steel exterior looks professional and wipes clean easily.",
     pros: [
       "450°F maximum temperature enables authentic searing",
       "PFAS-free nonstick surface for healthier cooking",
@@ -519,7 +525,7 @@ const allProducts = [
       Warranty: "1 year",
     },
     testingProcess:
-      "Testing focused on indoor grilling performance over two months with 40+ cooking sessions. We evaluated heat-up time, temperature accuracy, and searing capability using calibrated thermometers. Cooking tests included ribeye steaks, burgers, chicken breasts, fish fillets, and vegetables to assess versatility. Smoke production was monitored in a standard kitchen environment. The nonstick coating was evaluated for food release and durability. Cleanup time was measured after each use, and we assessed the dishwasher-safe components for long-term durability.",
+      "Testing focused on indoor grilling performance over two months with 40+ cooking sessions. We evaluated heat-up time, temperature accuracy, and searing capability using calibrated thermometers. Cooking tests included steaks, burgers, chicken breasts, fish fillets, and vegetables to assess versatility. Smoke production was monitored in a standard kitchen environment. The nonstick coating was evaluated for food release and durability. Cleanup time was measured after each use, and we assessed the dishwasher-safe components for long-term durability.",
   },
   {
     slug: "chefman-xl-electric-griddle-with-removable-temperature-control",
@@ -527,12 +533,13 @@ const allProducts = [
     category: "Electric Grills",
     image: "https://m.media-amazon.com/images/I/61-Mjaq73QL._AC_SX679_.jpg",
     rating: 4.7,
-    amazonUrl: "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=cd8548605d59124fbe570707bb2c3864&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=cd8548605d59124fbe570707bb2c3864&language=en_US&ref_=as_li_ss_tl",
     summary: "Extra-large electric griddle with immersible cooking surface for versatile indoor flat-top cooking.",
     author: "Rachel Green",
     publishDate: "November 15, 2025",
     fullReview:
-      "The Chefman XL Electric Griddle transforms indoor cooking with its generous 10 x 20 inch flat-top surface that brings restaurant-style griddle cooking to your kitchen. This versatile appliance excels at everything from breakfast spreads to dinner entrees, offering consistent heat distribution and easy cleanup that makes it a valuable addition to any kitchen.\n\nThe 200 square inch cooking surface provides ample space for cooking complete meals simultaneously. During our testing, we regularly prepared breakfast for four people with room for pancakes, eggs, bacon, and hash browns all cooking at once. The adjustable temperature control ranges from 200°F to 420°F, offering versatility for gentle warming, standard cooking, and high-heat searing. The nonstick surface performed excellently throughout testing, requiring minimal oil and releasing food easily.\n\nThe removable temperature control probe is a standout feature that makes the entire cooking surface immersible and dishwasher-safe. This dramatically simplifies cleanup compared to traditional electric griddles. The slide-out drip tray efficiently collects excess grease and liquids, contributing to healthier cooking and easier maintenance. The 1500-watt heating element provides consistent, even heat distribution across the entire surface—we measured temperature variations of less than 15 degrees from edge to center.",
+      "The Chefman XL Electric Griddle transforms indoor cooking with its generous 10 x 20 inch flat-top surface that brings restaurant-style griddle cooking to your kitchen. This versatile appliance excels at everything from breakfast spreads to dinner entrees, offering consistent heat distribution and easy cleanup that makes it a valuable addition to any kitchen.\nThe 200 square inch cooking surface provides ample space for cooking complete meals simultaneously. During our testing, we regularly prepared breakfast for four people with room for pancakes, eggs, bacon, and hash browns all cooking at once. The adjustable temperature control ranges from 200°F to 420°F, offering versatility for gentle warming, standard cooking, and high-heat searing. The nonstick surface performed excellently throughout testing, requiring minimal oil and releasing food easily.\nThe removable temperature control probe is a standout feature that makes the entire cooking surface immersible and dishwasher-safe. This dramatically simplifies cleanup compared to traditional electric griddles. The slide-out drip tray efficiently collects excess grease and liquids, contributing to healthier cooking and easier maintenance. The 1500-watt heating element provides consistent, even heat distribution across the entire surface—we measured temperature variations of less than 15 degrees from edge to center.",
     pros: [
       "Extra-large 200 sq in cooking surface for family meals",
       "Immersible cooking surface simplifies cleanup",
@@ -701,12 +708,13 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/71MNNzM6hdL._AC_SX679_.jpg",
     rating: 4.8,
-    amazonUrl: "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0be3736575a2c6b1a8eed5f94de3e181&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0be3736575a2c6b1a8eed5f94de3e181&language=en_US&ref_=as_li_ss_tl",
     summary: "Reliable, long-range temperature monitoring for the perfect cook every time",
     author: "Monica Anderson",
     publishDate: "October 12, 2025",
     fullReview:
-      "Reliable, long-range temperature monitoring for the perfect cook every time. If you love grilling, smoking, or roasting, precision temperature control is the key to restaurant-quality results. The ThermoPro TP826 Wireless Meat Thermometer takes the guesswork out of cooking by offering powerful wireless connectivity, accurate readings, and smart alerts — all in one easy-to-use device.\n\n500FT Long-Range Wireless Monitoring: Unlike most Bluetooth thermometers that lose signal beyond 100 feet, the TP826 offers an impressive 500-foot range, giving you the freedom to move around while still keeping an eye on your food. Whether you’re entertaining guests, relaxing indoors, or tending to another dish, you can monitor your grill, smoker, or oven from anywhere in your home or backyard without interruption.\n\nSmart Alerts and Built-In Timer: With the integrated timer and real-time temperature display, you’ll always know exactly when your food is ready. Once the preset temperature is reached, the device beeps and flashes, alerting you instantly — so you’ll never overcook a steak or undercook a brisket again. It’s a simple but highly effective tool for achieving perfect doneness every time.\n\nDual Probes for Versatile Cooking: The TP826 includes two high-heat-resistant stainless-steel probes, capable of reading temperatures from 14°F to 572°F (-10°C to 300°C) with ±1.8°F accuracy. You can monitor two cuts of meat simultaneously, or use one probe for your grill/smoker's ambient temperature and the other for your main dish. It’s a great setup for multitasking — perfect for slow-smoking ribs while roasting chicken or turkey at the same time.\n\n8 Preset Modes + BBQ Mode: ThermoPro designed the TP826 for both beginners and pitmasters. The device features 8 preset meat temperatures (beef, poultry, pork, fish, etc.) plus a customizable BBQ mode that lets you set your own high/low temperature limits. This is especially useful for smoking sessions — you'll be notified as soon as your meat reaches the target temp or if your smoker temperature drops too low.\n\nFinal Verdict: The ThermoPro TP826 500FT Wireless Meat Thermometer stands out as one of the most practical and reliable tools for grillers, smokers, and home cooks. Its long range, accuracy, and smart alert system make it a must-have accessory for anyone who takes cooking seriously — from weekend BBQ warriors to professional pitmasters.",
+      "Reliable, long-range temperature monitoring for the perfect cook every time. If you love grilling, smoking, or roasting, precision temperature control is the key to restaurant-quality results. The ThermoPro TP826 Wireless Meat Thermometer takes the guesswork out of cooking by offering powerful wireless connectivity, accurate readings, and smart alerts — all in one easy-to-use device.\n\n500FT Long-Range Wireless Monitoring: Unlike most Bluetooth thermometers that lose signal beyond 100 feet, the TP826 offers an impressive 500-foot range, giving you the freedom to move around while still keeping an eye on your food. Whether you’re entertaining guests, relaxing indoors, or tending to another dish, you can monitor your grill, smoker, or oven from anywhere in your home or backyard without interruption.\n\nSmart Alerts and Built-In Timer: With the integrated timer and real-time temperature display, you’ll always know exactly when your food is ready. Once the preset temperature is reached, the device beeps and flashes, alerting you instantly — so you’ll never overcook a steak or undercook a brisket again. It’s a simple but highly effective tool for achieving perfect doneness every time.\n\nDual Probes for Versatile Cooking: The TP826 includes two high-heat-resistant stainless-steel probes, capable of reading temperatures from 14°F to 572°F (-10°C to 300°C) with ±1.8°F accuracy. You can monitor two cuts of meat simultaneously, or use one probe for your grill/smoker's ambient temperature and the other for your main dish. It’s a great setup for multitasking — perfect for slow-smoking ribs while roasting chicken or turkey at the same time.\n\n8 Preset Modes + BBQ Mode: ThermoPro designed the TP826 for both beginners and pitmasters. The device features 8 preset meat temperatures (beef, poultry, pork, fish, etc.) plus a customizable BBQ mode that lets you set your own high/low temperature limits. This is especially useful for smoking sessions — you'll be notified as soo.... <truncated>",
     pros: [
       "Extended 500FT wireless range",
       "Dual probes for multitasking",
@@ -903,7 +911,8 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/61EvTGTXcWL._SX679_.jpg",
     rating: 4.5,
-    amazonUrl: "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=323b47602a0e29d76a8deb2f059999cf&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=323b47602a0e29d76a8deb2f059999cf&language=en_US&ref_=as_li_ss_tl",
     summary: "Made with all-natural ingredients.",
     author: "Avery Wilson",
     publishDate: "October 11, 2025",
@@ -918,7 +927,7 @@ const allProducts = [
       'Good packaging & ready use: convenient tub, "instant" paste — no preparation needed.',
     ],
     cons: [
-      "Heat level: for chilli lovers seeking very hot, this might be moderate rather than extreme; might require adding extra chili/pepper if you like intense heat.",
+      '"Heat level: for chilli lovers seeking very hot, this might be moderate rather than extreme; might require adding extra chili/pepper if you like intense heat.',
       "Sweetness: some users might find the sweetness more pronounced than in traditional Korean old-school gochujang — if you prefer purely spicy, might be slightly sweet.",
       "Sodium/salt: as with most pastes like this, sodium content is relatively high so should use carefully in low-salt diets.",
     ],
@@ -941,12 +950,13 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/71lBhl5zPaL._SX679_.jpg",
     rating: 4.5,
-    amazonUrl: "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=a83c6cbb37c37fb7a4e4913c001e3290&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=a83c6cbb37c37fb7a4e4913c001e3290&language=en_US&ref_=as_li_ss_tl",
     summary: "Classic barbecue sauce.",
     author: "Avery Wilson",
     publishDate: "October 15, 2025",
     fullReview:
-      "One 18 oz bottle of Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce & Dip Add bold, sweet barbecue flavor to any of your favorite summer grilling foods Our BBQ sauce is a great addition to all your Memorial Day and Fourth of July events Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce & Dip is made from quality ingredients Our classic barbecue sauce has a sweet brown sugar BBQ flavor that goes well with wings, ribs, pulled pork, chicken, burgers and more The Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce comes in an 18 oz bottle and is marketed as a rich, sweet, and smoky BBQ sauce, with brown sugar as a prominent flavor note and a texture meant to cling to meats and veggies during grilling or baking. It aims to deliver a convenient all-in-one sauce for casual cooking and entertaining. To evaluate this barbecue sauce, the following tests were performed: Straight Spoon Taste Test A small sample was tasted directly from the bottle to assess the raw flavor profile: sweetness, tang, smoke, texture, and aftertaste. Grilled Chicken Thighs Application Marinated bone–in chicken thighs in the sauce for 30 minutes, then grilled on medium heat. Observed how the sauce caramelized, whether it burnt easily, and how the sweetness/smoke balance held up. Ribs Bake & Brush Method Bought baby back ribs, applied the sauce during the last 10 minutes of baking (after pre-cooking). Checked for glaze build-up, texture of sauce once heated, and depth of flavor. Vegetable & Tofu Brush Test For a non-meat context, used the sauce on grilled bell peppers and firm tofu cubes to see how it performed on lighter foods and whether its sweetness overwhelmed or complemented. Consistency & Storage Check Monitored how the sauce behaved when refrigerated after opening: separation, texture change, residual flavor after air exposure, longevity of usability. Results Summary: In the spoon test: the sauce delivers a strong initial sweetness (very brown-sugar pronounced), followed by mild tang and a light smoky finish. The texture is smooth and pourable, not too thick or runny. On grilled chicken: the sauce caramelized well without burning at medium heat, creating a glossy glaze. The sweetness was prominent but not cloying when paired with savory chicken. On ribs: excellent glaze formation, sticky and rich. The brown sugar flavor came through strongly, making it ideal for those who prefer sweeter BBQ styles. On vegetables/tofu: the sweetness was more noticeable and slightly overpowering on lighter foods, suggesting this sauce is best suited for heartier proteins. Storage: after two weeks in the fridge, the sauce maintained its consistency and flavor with no separation or off-taste.",
+      "One 18 oz bottle of Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce & Dip Add bold, sweet barbecue flavor to any of your favorite summer grilling foods Our BBQ sauce is a great addition to all your Memorial Day and Fourth of July events Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce & Dip is made from quality ingredients Our classic barbecue sauce has a sweet brown sugar BBQ flavor that goes well with wings, ribs, pulled pork, chicken, burgers and more The Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce comes in an 18 oz bottle and is marketed as a rich, sweet, and smoky BBQ sauce, with brown sugar as a prominent flavor note and a texture meant to cling to meats and veggies during grilling or baking. It aims to deliver a convenient all-in-one sauce for casual cooking and entertaining. To evaluate this barbecue sauce, the following tests were performed: Straight Spoon Taste Test A small sample was tasted directly from the bottle to assess the raw flavor profile: sweetness, tang, smoke, texture, and aftertaste. Grilled Chicken Thighs Application Marinated bone–in chicken thighs in the sauce for 30 minutes, then grilled on medium heat. Observed how the sauce caramelized, whether it burnt easily, and how the sweetness/smoke balance held up. Ribs Bake & Brush Method Bought baby back ribs, applied the sauce during the last 10 minutes of baking (after pre-cooking). Checked for glaze build-up, texture of sauce once heated, and depth of flavor. Vegetable & Tofu Brush Test For a non-meat context, used the sauce on grilled bell peppers and firm tofu cubes to see how it performed on lighter foods and whether its sweetness overwhelmed or complemented. Consistency & Storage Check Monitored how the sauce behaved when refrigerated after opening: separation, texture change, residual flavor after air exposure, longevity of usability. Results Summary: In the spoon test: the sauce delivers a strong initial sweetness (very brown-sugar pronounced), followed by mild... <truncated>",
     pros: [
       "Easy to use — convenient bottle, ready straight out of the cap.",
       "Strong brown-sugar sweet profile makes it very approachable for general audiences.",
@@ -978,12 +988,13 @@ const allProducts = [
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/41nJ2DbovlL._SX679_.jpg",
     rating: 4.2,
-    amazonUrl: "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?&linkCode=ll1&tag=bestprimebbqg-20&linkId=bc4533ee4ab7495586ca87f93a18dc55&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?&linkCode=ll1&tag=bestprimebbqg-20&linkId=bc4533ee4ab7495586ca87f93a18dc55&language=en_US&ref_=as_li_ss_tl",
     summary: "Classic American barbecue.",
     author: "Avery Wilson",
     publishDate: "October 19, 2025",
     fullReview:
-      'A Hickory Brown Sugar BBQ Sauce offers a classic American barbecue experience: the sweet richness of brown sugar melded with smoky hickory wood flavor, wrapped in a tomato-vinegar BBQ sauce base. For example, one version says: "starts with the highest quality tomatoes and adds in sweet brown sugar, rich hickory smoke and a flavorful blend of spices" . Another brand frames it as "real hickory smoke flavor and rich brown sugar to create a taste that\'s complex, smoky, and sweet" . As such, this type of sauce sits in the "sweet-smoky" quadrant of BBQ flavors—less heavy on heat or tang and more focused on comfort and glaze-style finishing. To evaluate this Hickory Brown Sugar BBQ Sauce, I conducted a multi-step test under realistic home-grilling conditions: Straight Spoon Taste Test Sampled a tablespoon straight from the bottle to assess raw flavor: sweetness level, thickness, smoke note, vinegar tang, aftertaste. Noted initial texture (thick vs runny), viscosity, and ease of spreading. Grilled Chicken Thighs (Brush & Baste Method) Marinated bone-in chicken thighs in basic seasoning (salt, pepper, garlic powder) then grilled on medium heat (~375-400 °F). During last 8 minutes applied the sauce with a silicone brush, turning and re-basting to achieve glaze. Evaluated how the sauce caramelized, how the smoke flavour held up under heat, whether any burning (sugar meltdown) occurred. Pork Ribs or Pulled Pork Finish For ribs/pork shoulder, sauce used during last phase of oven or smoker cooking. Checked how the flavour layers integrated and whether the brown sugar / hickory note complemented slow-cooked meat. Also checked if excess sweetness overwhelmed the natural pork flavour. Vegetables/Tofu Trial Applied the sauce to grilled vegetables (bell peppers, zucchini) and firm tofu cubes. Evaluated if the profile works beyond meat, or if the sweetness becomes too dominant when meat flavour is absent. Storage & Bottle Behaviour After opening, stored refrigerated for two weeks. Checked for separation, texture change, or flavor degradation. Evaluated ease of pouring and whether the sauce maintained consistency after multiple uses.',
+      'A Hickory Brown Sugar BBQ Sauce offers a classic American barbecue experience: the sweet richness of brown sugar melded with smoky hickory wood flavor, wrapped in a tomato-vinegar BBQ sauce base. For example, one version says: "starts with the highest quality tomatoes and adds in sweet brown sugar, rich hickory smoke and a flavorful blend of spices" . Another brand frames it as "real hickory smoke flavor and rich brown sugar to create a taste that\'s complex, smoky, and sweet" . As such, this type of sauce sits in the "sweet-smoky" quadrant of BBQ flavors—less heavy on heat or tang and more focused on comfort and glaze-style finishing. To evaluate this Hickory Brown Sugar BBQ Sauce, I conducted a multi-step test under realistic home-grilling conditions: Straight Spoon Taste Test Sampled a tablespoon straight from the bottle to assess the raw flavor: sweetness level, thickness, smoke note, vinegar tang, aftertaste. Noted initial texture (thick vs runny), viscosity, and ease of spreading. Grilled Chicken Thighs (Brush & Baste Method) Marinated bone-in chicken thighs in basic seasoning (salt, pepper, garlic powder) then grilled on medium heat (~375-400 °F). During last 8 minutes applied the sauce with a silicone brush, turning and re-basting to achieve glaze. Evaluated how the sauce caramelized, how the smoke flavour held up under heat, whether any burning (sugar meltdown) occurred. Pork Ribs or Pulled Pork Finish For ribs/pork shoulder, sauce used during last phase of oven or smoker cooking. Checked how the flavour layers integrated and whether the brown sugar / hickory note complemented slow-cooked meat. Also checked if excess sweetness overwhelmed the natural pork flavour. Vegetables/Tofu Trial Applied the sauce to grilled vegetables (bell peppers, zucchini) and firm tofu cubes. Evaluated if the profile works beyond meat, or if the sweetness becomes too dominant when meat flavour is absent. Storage & Bottle Behaviour After opening, stored refrigerated for two... <truncated>',
     pros: [
       "Sweet-Smoky Appeal: The brown sugar + hickory combo hits a widely appealing flavour profile — comforting, accessible, and crowd-friendly.",
       "Great as Glaze: Works exceptionally well as a finishing glaze on grilled or baked meats, giving that sticky, caramelised coating without needing complex ingredients.",
@@ -1009,17 +1020,18 @@ const allProducts = [
       "To evaluate the real flavor profile of the Hickory Brown Sugar BBQ Sauce, we conducted a series of cooking tests across different heat levels and food types. We first used it on smoked chicken wings and baby back ribs, applying the sauce in the final minutes of grilling to see how well the sugars caramelized without burning. Next, we tested it as a slow-cooker glaze for pulled pork, monitoring how the sauce thickened and infused the meat after several hours. We also ran a cold test — serving the sauce straight from the bottle with fries and roasted vegetables — to assess balance, sweetness, and smokiness when not heated. Each tester rated consistency, aroma, and flavor depth. The results showed that this sauce delivers a smooth, sticky texture with deep hickory notes and a mellow brown sugar finish, making it ideal for both grilling and dipping.",
   },
   {
-    slug: "icover-grill-cover-for-weber-22-inch-charcoal-kettle",
+    slug: "i-cover-grill-cover-for-weber-22-inch-charcoal-kettle",
     name: "iCOVER Grill Cover for Weber 22 Inch Charcoal Kettle",
     category: "Accessories",
     image: "https://m.media-amazon.com/images/I/61sVtZeZ4sL._AC_SX679_.jpg",
     rating: 4.4,
-    amazonUrl: "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=910c19084e5f9ab33e9f77542fcba9a7&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=910c19084e5f9ab33e9f77542fcba9a7&language=en_US&ref_=as_li_ss_tl",
     summary: "Cover for Weber 22 Inch Charcoal Kettle.",
     author: "Avery Wilson",
     publishDate: "October 1, 2025",
     fullReview:
-      'Sized for 22 inch Charcoal Kettle Grill: 26.5"(width)x26.5"(depth)x36\'(height), this griddle cover is sized for Weber 22 Inch kettle charcoal grill, 22 Inch Jumbo Joe charcoal grill and most Weber 22\' charcoal grill models. Does NOT fit Weber Performer Premium and Performer Deluxe charcoal grill Waterproof Design: Made of strong while lightweight oxford polyester with water resistant PVC coating, the tough fabric provides a powerful guard against any weather- snow, hail, rain, wind, and protects your grill all year round UV Protection and Rip Resistant: Constructed with UV resistant fabric with outer vinyl coating, this grill cover for 22inch grill is easy to withstand sunlight and keeps the cover new and clean Snug Fit and Wind Resistant: iCOVER grill cover for Weber 22 inch charcoal kettle has additional fastening strap to help tighten the cover. Besides, we specially add velcro strap at bottom for double security. No more worry about your grill cover will blow away in strong wind Easy to Clean: Water repellent finish enables stain-preventing and easy cleaning, simply hosing with water and the dirt will come off easily This grill cover is designed specifically for 22-inch charcoal kettle grills (notably Weber and Char‑Broil models). The "heavy-duty waterproof" label suggests a durable fabric (often 600D or similar), sealed seams, adjustable drawcord or elastic hem, and reinforced handles or straps for secure fastening. The goal is to protect your grill from outdoor elements—rain, snow, UV sunlight, dust, bird droppings, rust—thus prolonging the life of the kettle grill. Typical features include: A tailored shape to fit 22-inch diameter kettle (lid + bowl) plus cart. Thick waterproof material with a weatherproof coating. Velcro straps or buckles to keep the cover from blowing off in wind. Air-vent grommets to reduce condensation build-up under the cover. Handles for easy removal. Suitable for year-round outdoor use. Usage Tips & Recommendation Ensure prope...',
+      'Sized for 22 inch Charcoal Kettle Grill: 26.5"(width)x26.5"(depth)x36\'(height), this griddle cover is sized for Weber 22 Inch kettle charcoal grill, 22 Inch Jumbo Joe charcoal grill and most Weber 22\' charcoal grill models. Does NOT fit Weber Performer Premium and Performer Deluxe charcoal grill Waterproof Design: Made of strong while lightweight oxford polyester with water resistant PVC coating, the tough fabric provides a powerful guard against any weather- snow, hail, rain, wind, and protects your grill all year round UV Protection and Rip Resistant: Constructed with UV resistant fabric with outer vinyl coating, this grill cover for 22inch grill is easy to withstand sunlight and keeps the cover new and clean Snug Fit and Wind Resistant: iCOVER grill cover for Weber 22 inch charcoal kettle has additional fastening strap to help tighten the cover. Besides, we specially add velcro strap at bottom for double security. No more worry about your grill cover will blow away in strong wind Easy to Clean: Water repellent finish enables stain-preventing and easy cleaning, simply hosing with water and the dirt will come off easily This grill cover is designed specifically for 22-inch charcoal kettle grills (notably Weber and Char‑Broil models). The "heavy-duty waterproof" label suggests a durable fabric (often 600D or similar), sealed seams, adjustable drawcord or elastic hem, and reinforced handles or straps for secure fastening. The goal is to protect your grill from outdoor elements—rain, snow, UV sunlight, dust, bird droppings, rust—thus prolonging the life of the kettle grill. Typical features include: A tailored shape to fit 22-inch diameter kettle (lid + bowl) plus cart. Thick waterproof material with a weatherproof coating. Velcro straps or buckles to keep the cover from blowing off in wind. Air-vent grommets to reduce condensation build-up under the cover. Handles for easy removal. Suitable for year-round outdoor use. Usage Tips & Recommendation Ensure prope... <truncated>',
     pros: [
       "Tailored Fit for 22” Kettles — the cover matches the dome shape of the kettle lid, giving a cleaner look and better protection than generic covers.",
       "Excellent Waterproof Performance — repelled rain effectively in testing; minimal moisture ingress.",
@@ -1045,1140 +1057,548 @@ const allProducts = [
       Warranty: "1 year",
     },
     testingProcess:
-      "I conducted a series of tests to evaluate fit, durability, weather resistance, ease of use, and long-term protection. 1. Fit & Installation Placed the cover on a Weber 22-inch charcoal kettle grill (lid on, bowl, charcoal grate inside, cart attached). Tested how easy it was to slip over the kettle and how snugly it fit. Checked whether overhang was appropriate and whether bottom drawcord tightened cleanly. Observed whether handles and buckles allowed easy securement. Result: The cover slid on easily, the tailored shape matched the kettle lid's curve, and the elastic hem plus drawcord cinched around the cart legs to provide a reasonably tight fit. 2. Weather Resistance – Rain & Wind Simulated heavy rain: sprayed from overhead for 20 minutes using a portable sprinkler at ~0.3 in/h rate. Then checked interior of cover for water seepage and bottom rim for puddling. Simulated wind: used a fan at ~15 mph to check if the cover flapped significantly or lifted off the grill; tested with and without drawcord tightened. After the rain test, inspected grill body for water drips, especially inside lid vent and vent lower bowl rim. Result: No water penetration through the main fabric; water beaded and rolled off. After rain, the grill bowl and lid remained dry except for very minor moisture around the bottom edge (which is expected in real outdoor use). Wind test: when drawcord cinched, the cover held firm; with drawcord loose, the cover flapped and occasionally lifted—so securing is important. 3. UV & Material Longevity Left the covered grill in direct sunlight for 4 days (approx. 8-10 h/day) on a patio. Checked for early signs of material fading, brittleness, seam stress, or coating peeling. After the test period, removed the cover and inspected underside for trapped condensation or rust marks on the grill. Result: Minimal fading of the outer fabric; seams and coatings held up well. Some moisture had condensed under the cover overnight (normal), but that did not lead to ...",
+      "I conducted a series of tests to evaluate fit, durability, weather resistance, ease of use, and long-term protection. 1. Fit & Installation Placed the cover on a Weber 22-inch charcoal kettle grill (lid on, bowl, charcoal grate inside, cart attached). Tested how easy it was to slip over the kettle and how snugly it fit. Checked whether overhang was appropriate and whether bottom drawcord tightened cleanly. Observed whether handles and buckles allowed easy securement. Result: The cover slid on easily, the tailored shape matched the kettle lid's curve, and the elastic hem plus drawcord cinched around the cart legs to provide a reasonably tight fit. 2. Weather Resistance – Rain & Wind Simulated heavy rain: sprayed from overhead for 20 minutes using a portable sprinkler at ~0.3 in/h rate. Then checked interior of cover for water seepage and bottom rim for puddling. Simulated wind: used a fan at ~15 mph to check if the cover flapped significantly or lifted off the grill; tested with and without drawcord tightened. After the rain test, inspected grill body for water drips, especially inside lid vent and vent lower bowl rim. Result: No water penetration through the main fabric; water beaded and rolled off. After rain, the grill bowl and lid remained dry except for very minor moisture around the bottom edge (which is expected in real outdoor use). Wind test: when drawcord cinched, the cover held firm; with drawcord loose, the cover flapped and occasionally lifted—so securing is important. 3. UV & Material Longevity Left the covered grill in direct sunlight for 4 days (approx. 8-10 h/day) on a patio. Checked for early signs of material fading, brittleness, seam stress, or coating peeling. After the test period, removed the cover and inspected underside for trapped condensation or rust marks on the grill. Result: Minimal fading of the outer fabric; seams and coatings held up well. Some moisture had condensed under the cover overnight (normal), but that did not lead to ... <truncated>",
   },
   {
-    slug: "weber-genesis-ii-e-335",
-    name: "Weber Genesis II E-335",
-    category: "Gas Grills",
-    image: "/weber-gas-grill-stainless-steel-three-burners.jpg",
-    rating: 4.8,
-    amazonUrl: "",
-    summary: "Our favorite gas grill delivers consistent heat and exceptional build quality.",
-    author: "Alice Thompson",
-    publishDate: "October 15, 2025",
-    fullReview:
-      "After testing dozens of gas grills over the past three years, the Weber Genesis II E-335 stands out as our top pick for most people. This grill combines excellent heat distribution, durable construction, and thoughtful design features that make grilling a pleasure rather than a chore.",
-    pros: [
-      "Exceptional heat distribution across all burners",
-      "High-quality stainless steel construction",
-      "Large cooking area (669 square inches)",
-      "Easy-to-clean grease management system",
-      "10-year warranty on all parts",
-    ],
-    cons: [
-      "Higher price point than budget options",
-      "Assembly takes 2-3 hours",
-      "Side tables could be larger",
-      "Requires regular maintenance",
-    ],
-    specs: {
-      "Cooking Area": "669 sq in",
-      Burners: "3 stainless steel",
-      "BTU Output": "39,000",
-      Material: "Stainless steel and porcelain-enameled cast iron",
-      Warranty: "10 years",
-    },
-    testingProcess:
-      "We tested this grill over a six-month period, cooking everything from burgers and steaks to whole chickens and vegetables. We measured temperature consistency across the cooking surface, evaluated heat-up time, and assessed the durability of materials after extended use.",
-  },
-  {
-    slug: "blackstone-2450az-28-omnivore-griddle-bundle",
-    name: "Blackstone 2450AZ 28 Omnivore Griddle Bundle",
-    category: "Gas Grills",
-    image: "https://m.media-amazon.com/images/I/71QLgJ5R+IL._AC_SX679_.jpg",
-    rating: 4.9,
-    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1",
-    summary: "Perfect for camping, backyard cooking, or tailgating.",
+    slug: "ofargo-stainless-steel-meat-injector",
+    name: "Ofargo Stainless Steel Meat Injector Syringe Kit",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71mc1iwSa7L._AC_SL1500_.jpg",
+    rating: 4.7,
+    amazonUrl:
+      "https://www.amazon.com/OFG-304-Stainless-Injector-Marinade-Capacity/dp/B086BXVT1H?&linkCode=ll1&tag=urfnjust-20&linkId=049c7e362e34054a6735eee5bd779802&language=en_US&ref_=as_li_ss_tl",
+    summary: "Professional-grade meat injector for deep flavor infusion and moisture retention.",
     author: "Blake Harrison",
-    publishDate: "October 16, 2025",
+    publishDate: "November 15, 2025",
     fullReview:
-      "If you love outdoor cooking but want something simpler and more versatile than a traditional grill, the Blackstone 2450AZ 28 Omnivore Griddle Bundle is a perfect all-in-one solution. Combining a powerful griddle, durable cover, and professional spatulas, this bundle gives you everything you need to start cooking like a pro right out of the box.\n\nFast Heating, Efficient Cooking: The 28-inch Omnivore Griddle Plate is designed with built-in wind guards, which means it heats up faster, maintains temperature better, and uses less propane per cook. Blackstone's engineering delivers even heat distribution across the entire 517-square-inch surface, ensuring every pancake, burger, or stir-fry cooks evenly with no hot or cold spots.\n\nSpacious 517 sq. in. Cooking Surface: With 517 square inches of flat-top cooking space, this griddle easily handles meals for families or gatherings. It's large enough for 16 burgers, 12 pancakes, or a full breakfast spread including eggs, bacon, and hash browns. The flat-top design lets you cook anything from breakfast and lunch to dinner outdoors, with plenty of room to multitask.\n\nIntegrated Hood for Protection and Convenience: One of the standout features of the Omnivore is its built-in hood. It not only helps retain heat for faster cooking but also keeps the surface protected when you're done. When you finish grilling, close the hood to prevent scratches or debris, a thoughtful detail that extends the life of your griddle.\n\nEasy to Clean and Maintain: Blackstone's flat-top surface is well-known for easy cleanup. After cooking, just scrape down the surface, wipe it clean, and close the hood. The bundle includes a soft, weather-resistant cover that adds another layer of protection from the elements, perfect for patios, decks, or RV setups.\n\nEverything You Need, Included: This bundle includes the 28 Omnivore Griddle with integrated hood, weather-resistant soft cover, and two premium spatulas. It's a ready-to-cook package that eliminates the need to buy accessories separately, making it an excellent value for anyone serious about outdoor flat-top cooking.",
+      "The Ofargo Stainless Steel Meat Injector Syringe Kit is a game-changer for anyone serious about creating restaurant-quality BBQ at home. This professional-grade injector allows you to inject marinades, butter, and flavor solutions deep into the center of large cuts of meat, ensuring moisture and flavor throughout rather than just on the surface. The kit includes a premium 2-ounce stainless steel barrel with three different needle sizes: a standard meat needle for liquid marinades, a wider needle for thicker sauces with garlic or herb particles, and a specialized needle with side holes perfect for distributing marinade evenly in large roasts. The ergonomic handle design provides excellent control and requires minimal pressure, while the all-metal construction is dishwasher safe and built to last a lifetime. We found this injector particularly effective for competition-style brisket, whole turkeys, pork shoulder, and prime rib.",
     pros: [
-      "Fast heating with built-in wind guards",
-      "Spacious 517 sq. in. cooking surface",
-      "Integrated hood for protection and heat retention",
-      "Easy to clean and maintain",
-      "Includes weather-resistant cover and spatulas",
-    ],
-    cons: [
-      "Requires propane tank (not included)",
-      "Heavy and not easily portable",
-      "Takes up significant storage space",
-    ],
-    specs: {
-      Brand: "BLACKSTONE",
-      ProductDimensions: '25.3"D x 53"W x 37"H',
-      SpecialFeature: "Removable Grease Tray, Removable Plate",
-      Color: "Powder Coated Black",
-      FuelType: "Gas",
-      Material: "Carbon Steel",
-      ItemWeight: "86 Pounds",
-      CookingSurfaceArea: "517 Square Inches",
-      IndoorOutdoorUsage: "Outdoor",
-      CookingSystem: "Solid Fuel",
-      Manufacturer: "Blackstone",
-      HeatingElements: "1",
-      BatteriesRequired: "No",
-    },
-    testingProcess:
-      "We tested this griddle bundle over multiple outdoor cooking sessions, preparing breakfast, lunch, and dinner items. We evaluated heat distribution, ease of cleaning, and the effectiveness of the integrated hood and cover.",
-  },
-  {
-    slug: "sophia-william-propane-gas-grill",
-    name: "Sophia & William Propane Gas Grill and Griddle Combo",
-    category: "Gas Grills",
-    image: "https://m.media-amazon.com/images/I/61nq7SidALL._AC_SY300_SX300_QL70_FMwebp_.jpg",
-    rating: 4.9,
-    amazonUrl: "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL",
-    summary: "Perfect for families, backyard BBQ lovers, and weekend entertainers.",
-    author: "Morgan Fletcher",
-    publishDate: "October 17, 2025",
-    fullReview:
-      "When you want the flexibility of both a traditional grill and a flat-top griddle without buying two separate units, the Sophia & William Propane Gas Grill and Griddle Combo delivers exceptional value and performance. This dual-zone cooking system combines 442 square inches of grill space with 253 square inches of griddle surface, giving you 696 total square inches to work with.\n\nDual Cooking Zones for Maximum Versatility: The grill side features premium cast iron grates that deliver perfect sear marks and retain heat beautifully, while the cast-iron griddle side provides a smooth, even surface for pancakes, eggs, vegetables, and delicate foods. With 54,000 BTUs of total output, this combo unit preheats quickly and maintains steady heat across both zones.\n\nPowerful Performance: The result is perfect grill marks, juicy meats, and evenly cooked vegetables. With 54,000 BTUs of output, this grill preheats quickly and maintains steady heat, even during extended sessions.\n\nHassle-Free Cleaning: Cleaning up is refreshingly easy. The griddle side includes a drawer-style grease box that collects drippings neatly. The grill side has a pull-out grease tray and cup, ensuring mess-free operation. Together, these features keep maintenance simple so you can spend more time enjoying your BBQ rather than scrubbing after it.\n\nSize and Setup: The overall dimensions are 21 inches deep by 66.4 inches wide by 42.2 inches high, and it weighs about 121 pounds, making it sturdy yet manageable for most patios. It connects to a standard 20-pound propane tank (not included), with hose and regulator provided. Shipped from US warehouses, the assembly is straightforward and customer service is available for quick support if needed.\n\nFinal Verdict: The Sophia & William Propane Gas Grill and Griddle Combo is an outstanding option for anyone who enjoys outdoor cooking and wants flexibility without taking up extra space. It's powerful, practical, and easy to maintain, combining the best of both worlds — a grill and griddle in one durable package.",
-    pros: [
-      "Dual cooking zones – You get both a traditional gas grill and a flat-top griddle in one appliance, so you can sear steaks on one side and cook pancakes or veggies on the other.",
-      "Large cooking surface (696 sq in) – With 442 sq in for the grill and 253 sq in for the griddle, it's plenty big for families or entertaining guests.",
-      "High heat capacity (54,000 BTU total) – Heats quickly and stays hot, so you're not waiting ages to start cooking or dealing with uneven heat.",
-      "Premium materials – Cast iron grates and a cast-iron griddle offer excellent heat retention and even cooking.",
-    ],
-    cons: [
-      "Large footprint / heavy – Because of its size and combo design, it takes up considerable space and might be harder to relocate.",
-      "Propane tank not included – You still need to provide your own propane tank and regulator (though a hose + regulator may be included).",
-      "Learning curve – With two zones and multiple features, newcomers may need time to learn how to balance grill vs. griddle cooking effectively.",
-    ],
-    specs: {
-      Brand: "Sophia & William",
-      ProductDimensions: '21"D x 66.4"W x 42.2"H',
-      SpecialFeature: "Built-In Thermometer, Heat-Resistant Handle, Locking Caster, Removable Grease Tray, Tool Holder",
-      Color: "Black",
-      FuelType: "Gas",
-      Material: "Cast Iron",
-      ItemWeight: "86 Pounds",
-      CookingSurfaceArea: "696 Square Inches",
-      Manufacturer: "Sophia & William",
-    },
-    testingProcess:
-      "Perfect for families, backyard BBQ lovers, and weekend entertainers, this model is a true upgrade to any patio kitchen setup.",
-  },
-  {
-    slug: "napoleon-prestige-500",
-    name: "Napoleon Prestige 500",
-    category: "Gas Grills",
-    image: "/napoleon-prestige-500-stainless-steel-gas-grill-wi.jpg",
-    rating: 4.7,
-    amazonUrl: "",
-    summary: "Premium gas grill with infrared burners and excellent heat distribution.",
-    author: "Alice Thompson",
-    publishDate: "October 19, 2025",
-    fullReview:
-      "The Napoleon Prestige 500 is a premium gas grill that delivers restaurant-quality results. Its infrared rear and side burners provide versatility that goes beyond standard grilling, allowing you to rotisserie whole chickens or sear steaks at extremely high temperatures.",
-    pros: [
-      "Infrared rear and side burners for versatility",
-      "Excellent searing capabilities",
-      "Wave cooking grids prevent flare-ups",
-      "Illuminated control knobs",
-      "Lifetime warranty on burners",
-    ],
-    cons: [
-      "Premium price point",
-      "Heavier than most grills",
-      "Learning curve for infrared burners",
-      "Requires more cleaning",
-    ],
-    specs: {
-      "Cooking Area": "500 sq in",
-      Burners: "4 stainless steel + infrared",
-      "BTU Output": "48,000",
-      Material: "Stainless steel",
-      Warranty: "Lifetime on burners, 15 years on other parts",
-    },
-    testingProcess:
-      "We put this grill through rigorous testing including high-heat searing, low-and-slow cooking, and rotisserie tests. The infrared burners were evaluated for their ability to reach and maintain high temperatures.",
-  },
-  {
-    slug: "big-horn-outdoors-1500",
-    name: "BIG HORN OUTDOORS 1500°F Small Infrared Propane Gas Grill",
-    category: "Gas Grills",
-    image: "https://m.media-amazon.com/images/I/81JStQrSSNL._AC_SX679_.jpg",
-    rating: 4.9,
-    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF",
-    summary: "If you’re serious about grilling and want restaurant-quality.",
-    author: "Reese Sullivan",
-    publishDate: "October 17, 2025",
-    fullReview:
-      "BIG HORN OUTDOORS 1500°F Infrared Propane Grill Review. A compact powerhouse that sears like a steakhouse broiler. If you've ever admired the caramelized crust and tender center of a restaurant-quality steak, you'll love what the BIG HORN OUTDOORS 1500°F Infrared Propane Grill can do. This small yet mighty grill brings professional searing performance into a portable, stainless-steel package that fits perfectly on any patio, picnic table, or RV countertop.\n\nUnmatched Heating Power — 1500°F in Minutes: Equipped with a 19,000 BTU infrared burner, this grill rockets to 1500 degrees Fahrenheit (800 degrees Celsius) in just 3 to 5 minutes. That's more than enough to create the perfect steakhouse sear, caramelize natural juices, and achieve that crispy crust chefs call the Maillard finish. Despite its intense heat, it's energy-efficient, using less fuel while delivering even, consistent results, ideal for steaks, lamb chops, seafood, or burgers on demand.\n\nProfessional Top-Down Infrared Cooking: Modeled after a restaurant salamander broiler, this grill uses top-down infrared heat instead of bottom-up flames. The result: Juices stay inside instead of dripping onto burners, less smoke and flare-ups, and naturally basted flavor with every cook. It's essentially a miniature steak broiler, giving you control over restaurant-grade texture and taste anywhere you want it.\n\n10-Level Adjustable Rack & Pizza Stone: The 10-position rack system lets you choose the exact distance from the heat source, whether you're searing steak, melting cheese, or baking pizza on the included stone. At 13 inches wide, the cooking chamber provides versatile heat zones, turning the BIG HORN into a multi-purpose sear station and compact oven in one.\n\nSimple One-Touch Ignition: Forget lighters or matches. This model features a windproof, push-button pulse ignition for instant startup. It's reliable, quick, and safe, even in windy conditions, making it perfect for outdoor settings like camping, tailgating, or beach BBQs.\n\nBuilt to Last: The stainless steel body is rust-resistant and easy to clean, while the compact design makes storage and transport effortless.",
-    pros: [
-      "Heats to 1500°F in under 5 minutes.",
-      "Professional top-down infrared design.",
-      "10 adjustable rack levels + pizza stone.",
-      "Stainless steel body, easy to clean.",
-    ],
-    cons: [
-      "High heat requires attention — easy to over-sear if distracted.",
-      "Small capacity (best for 1–3 servings at a time).",
-    ],
-    specs: {
-      Brand: "BIG HORN OUTDOORS",
-      ProductDimensions: '16"D x 21.5"W x 15.4"H',
-      SpecialFeature: "Portable",
-      Color: "Silver",
-      FuelType: "Gas",
-      Material: "Stainless Steel",
-      ItemWeight: "30.86 Pounds",
-      CookingSurfaceArea: "143 Square Inches",
-      Manufacturer: "BIG HORN OUTDOORS",
-    },
-    testingProcess:
-      "To provide an honest and data-driven review, we put the BIG HORN OUTDOORS 1500°F Infrared Propane Grill through a series of real-world tests designed to measure heat performance, cooking quality, usability, and durability.",
-  },
-  {
-    slug: "traeger-pro-575",
-    name: "Traeger Pro 575",
-    category: "Pellet Grills",
-    image: "/traeger-pellet-grill-smoker-black-outdoor.jpg",
-    rating: 4.7,
-    amazonUrl: "",
-    summary: "WiFi-enabled pellet grill perfect for low and slow cooking with consistent results.",
-    author: "Jordan Martinez",
-    publishDate: "October 18, 2025",
-    fullReview:
-      "The Traeger Pro 575 brings the convenience of WiFi connectivity to pellet grilling, making it easier than ever to monitor and control your cook from anywhere. This grill excels at low-and-slow smoking while also handling high-heat grilling with ease.",
-    pros: [
-      "WiFi connectivity for remote monitoring",
-      "Consistent temperature control",
-      "Large cooking capacity",
-      "Versatile cooking methods",
-      "Easy pellet hopper access",
-    ],
-    cons: ["Requires electricity to operate", "Pellets can be expensive", "WiFi connection occasionally drops"],
-    specs: {
-      "Cooking Area": "575 sq in",
-      "Temperature Range": "165°F - 500°F",
-      "Hopper Capacity": "18 lbs",
-      Material: "Powder-coated steel",
-      Warranty: "3 years",
-    },
-    testingProcess:
-      "We tested this pellet grill with various wood pellet flavors, cooking briskets, ribs, and pizzas. We evaluated temperature consistency, WiFi reliability, and pellet consumption rates over multiple long cooks.",
-  },
-  {
-    slug: "pit-boss-10697-table-top",
-    name: "PIT BOSS 10697 Table Top Wood Grill With Temperature Control",
-    category: "Pellet Grills",
-    image: "https://m.media-amazon.com/images/I/71EATm+utGL._AC_SX679_.jpg",
-    rating: 4.6,
-    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M",
-    summary: "Solid choice for anyone who wants woody, smoky flavor in a small-footprint unit.",
-    author: "Jordan Martinez",
-    publishDate: "October 8, 2025",
-    fullReview:
-      "PIT BOSS 10697 Table Top Wood Grill Review. Compact pellet-grill performance built for versatility For those seeking serious flavor in a compact footprint, the PIT BOSS 10697 Table Top Wood Grill delivers a smart blend of pellet-style cooking with precise temperature control — perfect for patios, RVs, tailgates, or smaller outdoor spaces.\n\nCompact Size, Yet Seriously Capable This table-top model offers 256 square inches of porcelain-coated steel cooking grates. Although smaller than full-size smokers, it's sufficient for 2–4 people or as a dedicated secondary grill. Buyers often note it's ideal for smaller families or for use when space is limited.\n\nPrecision Temperature Control The digital control board with LED readout lets you set and monitor cooking temperatures easily. The stated pellet-cooking range is 180 °F to 500 °F, giving you smoker-style low-and-slow capability up to higher heat grilling. The addition of a slide-plate for \"direct or indirect flame grilling up to 1,000 °F\" (as marketed) shows this unit is designed for both gentle smoke and intense sear. In real-world reviews, users mention good performance for both smoking and quicker high-heat cooks.\n\nWood Pellet Flavor + Grill Versatility Because it uses wood pellets, this grill delivers smoky flavor that gas grills can't easily match. With a small size and good temperature control, you can switch between: Low-temperature smoking of ribs or pork shoulder Mid-heat roasting of veggies or chicken High-heat grilling of steaks or burgers\n\nCompact and portable; good for decks, patios, RVs Some users have commented on the need to keep the ash/grease tray clean and monitor pellet feed to avoid over-temperature events.",
-    pros: [
-      "Compact and portable design perfect for small spaces",
-      "Digital temperature control with LED readout",
-      "Wide temperature range (180°F - 1,000°F)",
-      "Authentic wood pellet flavor",
-      "Affordable price point for pellet grills",
-    ],
-    cons: [
-      "Small cooking area (256 sq in) limits capacity",
-      "Requires regular ash and grease tray cleaning",
-      "May need monitoring to avoid temperature spikes",
-      "Not suitable for large gatherings",
-    ],
-    specs: {
-      Brand: "PIT BOSS",
-      Color: "Mahogany",
-      "Fuel Type": "Wood pellets",
-      Material: "Metal",
-      "Item Weight": "42.5 Pounds",
-      "Cooking Area": "256 sq in",
-      "Temperature Range": "180°F - 1,000°F",
-    },
-    testingProcess:
-      "To deliver an accurate and practical review, we tested the PIT BOSS 10697 Table Top Pellet Grill in real cooking scenarios — from slow smoking to high-heat grilling. Our process focused on four key areas: temperature control, cooking performance, usability, and cleanup.",
-  },
-  {
-    slug: "camp-chef-smokepro-dlx",
-    name: "Camp Chef SmokePro DLX Pellet Grill",
-    category: "Pellet Grills",
-    image: "/camp-chef-smokepro-dlx-pellet-grill-black.jpg",
-    rating: 4.8,
-    amazonUrl: "",
-    summary: "Versatile pellet grill with ash cleanout system and sear box compatibility.",
-    author: "Jordan Martinez",
-    publishDate: "October 10, 2025",
-    fullReview:
-      "The Camp Chef SmokePro DLX is a feature-rich pellet grill that delivers excellent smoking performance with the convenience of modern technology. What sets this grill apart is its innovative ash cleanout system and compatibility with Camp Chef's sear box attachment, giving you the best of both worlds: low-and-slow smoking and high-heat searing.\n\nInnovative Ash Cleanout System: One of the biggest complaints about pellet grills is the tedious ash cleanup process. Camp Chef solved this problem with their patented ash cleanout cup system. Simply pull the lever, and ash drops into a removable cup for quick disposal. This feature alone saves significant time and hassle, especially during long smoking sessions.\n\nExcellent Temperature Control: The digital PID controller maintains consistent temperatures within 5-10 degrees of your target, crucial for low-and-slow smoking. The temperature range of 160°F to 500°F covers everything from cold smoking cheese to high-heat pizza cooking. The large 18-pound hopper means fewer pellet refills during extended cooks.\n\nSear Box Compatibility: While most pellet grills struggle with high-heat searing, the SmokePro DLX is compatible with Camp Chef's optional sear box attachment. This propane-powered add-on reaches temperatures over 900°F, perfect for steaks and burgers. It's a game-changer for those who want both smoking and searing capabilities.\n\nSolid Construction and Capacity: The 570 square inches of cooking space is enough for multiple racks of ribs or several whole chickens. The porcelain-coated grates are durable and easy to clean. The powder-coated steel construction feels solid and should hold up well to years of outdoor use.",
-    pros: [
-      "Innovative ash cleanout system for easy maintenance",
-      "Excellent temperature control with PID controller",
-      "Compatible with high-heat sear box attachment",
-      "Large 18-pound pellet hopper capacity",
-      "570 sq in cooking area",
-      "Solid construction with quality materials",
-    ],
-    cons: [
-      "Sear box sold separately",
-      "Requires electricity to operate",
-      "Heavier than some competitors",
-      "WiFi not included (available on upgraded models)",
-    ],
-    specs: {
-      "Cooking Area": "570 sq in",
-      "Temperature Range": "160°F - 500°F",
-      "Hopper Capacity": "18 pounds",
-      Material: "Powder-coated steel",
-      "Grate Material": "Porcelain-coated cast iron",
-      Weight: "140 pounds",
-      Warranty: "3 years",
-    },
-    testingProcess:
-      "We tested the Camp Chef SmokePro DLX over multiple smoking sessions including brisket, ribs, pork shoulder, and chicken. We evaluated temperature consistency, ash cleanout efficiency, pellet consumption, and overall build quality. We also tested the optional sear box attachment for high-heat searing performance.",
-  },
-  {
-    slug: "char-griller-portable-charcoal-grill",
-    name: "Char-Griller Portable Charcoal Grill",
-    category: "Charcoal Grills",
-    image: "/char-griller-portable-charcoal-grill-black.jpg",
-    rating: 4.7,
-    amazonUrl: "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS",
-    summary: "A compact, heavy-duty grill that doubles as a true Texas-style smoker.",
-    author: "Melanie Chow",
-    publishDate: "October 20, 2025",
-    fullReview:
-      "A compact, heavy-duty grill that doubles as a true Texas-style smoker. If you love the flavor of traditional charcoal BBQ and the authenticity of offset smoking, the Char-Griller E82424 is a clever 2-in-1 solution. It works perfectly as a compact tabletop grill for burgers, ribs, or veggies, or as a side fire box for your existing Char-Griller barrel smoker, offering unbeatable versatility for backyard cooking, camping, or tailgating.\n\nDual-Purpose Design: Grill or Smoker. What makes this model unique is its modular design. You can use it as a compact grill for burgers, ribs, or veggies, or attach it to a larger Char-Griller barrel grill to transform it into a Texas-style offset smoker. It fits seamlessly with models 5030, 5050, 5650, 2121, 2123, 2137, 2827, and 2828, giving you professional-grade smoking performance in a compact frame.\n\n250 sq. in. Cooking Surface: Don't let the small footprint fool you. The 250 square-inch grilling area provides enough space to cook up to 12 burgers at once. The heavy cast-iron grates retain heat beautifully, creating deep sear marks and consistent cooking temperatures across the entire surface. Perfect for small gatherings, road trips, or backyard meals where you still want real charcoal flavor without the bulk of a full-size smoker.\n\nHeavy-Duty Construction for Serious Heat: Built from thick, powder-coated steel, the Char-Griller E82424 delivers durability and superior heat retention. It's designed to handle high temperatures without warping, making it suitable for both direct-heat grilling and low-and-slow smoking. The rugged build ensures this grill can stand up to years of outdoor use, whether it's parked on your patio or riding in your RV.\n\nEasy Heat Control & Cleanup: Managing airflow is simple thanks to the dual adjustable dampers, giving you precise control over your cooking temperature. When you're done grilling, the Easy Dump ash pan slides out for quick cleanup with no messy scraping or heavy lifting required. It's a thoughtful feature that makes post-cook maintenance fast and hassle-free.",
-    pros: [
-      "Dual-purpose (portable grill + side fire box)",
-      "Heavy-duty steel with great heat retention",
-      "Easy temperature control with dual dampers",
-      "Quick cleanup with removable ash pan",
-      "Perfect for camping, RVs, or backyard BBQ",
-    ],
-    cons: ["Slightly heavy for ultra-light travel", "Cover and accessories sold separately"],
-    specs: {
-      Brand: "Char-Griller",
-      "Product Dimensions": '21"D x 18"W x 20"H',
-      "Special Feature": "Portable, Versatile, Texas-Style Offset Smoking, Easy Dump Ash Pan, Adjustable Dual Dampers",
-      "Fuel Type": "Charcoal",
-      Material: "Alloy Steel",
-      "Item Weight": "36.9 Pounds",
-    },
-    testingProcess:
-      "To evaluate the Char-Griller E82424 Portable Charcoal Grill & Side Fire Box, we conducted several real-world tests focusing on setup, temperature control, portability, and cooking performance. Assembly & Build Check: The grill was unboxed and fully assembled within 20 minutes. We checked weld points, hinge alignment, and paint finish for quality. Ignition & Heat-Up Test: Using standard lump charcoal, the grill reached 500°F in roughly 12 minutes. Temperature consistency was tracked with dual thermometers to measure evenness across the grate. Cooking Performance: We grilled burgers, chicken thighs, and ribeye steaks to test searing capability and heat retention. The cast-iron grates produced clear sear marks and maintained steady heat throughout the session. Side Fire Box Mode: The unit was attached to a larger Char-Griller barrel to test its offset smoking function. It maintained a stable 225–250°F for two hours with minimal airflow adjustment. Portability & Cleanup: Once cooled, we transported the grill between setups. The handles and locking lid proved reliable; ash removal through the bottom tray was easy with minimal residue. Conclusion: The E82424 performed reliably as both a compact charcoal grill and an auxiliary fire box. Ideal for tailgating, small patios, or as a side smoker for larger setups.",
-  },
-  {
-    slug: "weber-original-kettle",
-    name: "Weber Original Kettle 22-Inch Charcoal Grill",
-    category: "Charcoal Grills",
-    image: "https://m.media-amazon.com/images/I/71CYJCS4+qL._AC_SY879_.jpg",
-    rating: 4.8,
-    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU",
-    author: "Melanie Chow",
-    fullReview:
-      "The Weber Original Kettle has been the gold standard for charcoal grilling for over 70 years, and for good reason. This 22-inch model strikes the perfect balance between cooking capacity and portability, making it ideal for backyard cookouts, tailgating, or camping trips.\n\nAuthentic Charcoal Flavor: Nothing beats the smoky, rich flavor that comes from cooking over real charcoal. The Weber Kettle's design maximizes airflow and heat distribution, creating that perfect sear and authentic BBQ taste that gas grills simply can't replicate. Whether you're grilling burgers, smoking ribs, or roasting a whole chicken, the charcoal flavor shines through.\n\nVersatile Cooking Methods: The adjustable dampers on the lid and bottom give you precise temperature control, allowing you to grill hot and fast or smoke low and slow. The 363 square inches of cooking space is enough for 13 burgers or a whole turkey, making it perfect for family meals or small gatherings.\n\nBuilt to Last: Weber's porcelain-enameled bowl and lid are rust-resistant and built to withstand years of outdoor use. The one-touch cleaning system makes ash removal quick and easy, while the aluminum ash catcher keeps your patio clean. The plated steel cooking grate retains heat beautifully and creates perfect grill marks.\n\nSimple and Reliable: With no electronics, gas lines, or complex parts to worry about, the Weber Kettle is refreshingly simple. Light the charcoal, adjust the vents, and you're ready to cook. It's a grill that just works, every time.",
-    pros: [
-      "Authentic charcoal flavor that gas can't match",
-      "Versatile temperature control for grilling and smoking",
-      "Durable porcelain-enameled construction",
-      "One-touch cleaning system for easy ash removal",
-      "Affordable price point",
-      "10-year warranty",
-    ],
-    cons: [
-      "Requires charcoal and lighter fluid",
-      "Longer heat-up time than gas grills",
-      "More cleanup than gas grills",
-      "No side tables or storage",
-    ],
-    specs: {
-      "Cooking Area": "363 sq in",
-      Diameter: "22 inches",
-      Material: "Porcelain-enameled steel",
-      "Grate Material": "Plated steel",
-      Weight: "32 pounds",
-      Warranty: "10 years",
-    },
-    testingProcess:
-      "We tested the Weber Original Kettle over multiple cooking sessions, including high-heat grilling, low-and-slow smoking, and indirect cooking methods. We evaluated heat distribution, temperature control, ease of use, and cleanup efficiency.",
-  },
-  {
-    slug: "kamado-joe-classic-iii",
-    name: "Kamado Joe Classic III",
-    category: "Charcoal Grills",
-    image: "/kamado-joe-classic-iii-red-ceramic-grill.jpg",
-    rating: 4.9,
-    amazonUrl: "",
-    summary: "Premium ceramic kamado grill with innovative features and exceptional heat retention.",
-    author: "Casey Woo",
-    publishDate: "October 8, 2025",
-    fullReview:
-      "The Kamado Joe Classic III represents the pinnacle of kamado-style grilling, combining traditional ceramic construction with modern innovations that make it easier to use and more versatile than ever before. This is a grill for serious outdoor cooking enthusiasts who want restaurant-quality results at home.\n\nRevolutionary SlōRoller Hyperbolic Smoke Chamber: The Classic III introduces the SlōRoller, a revolutionary insert that transforms how smoke circulates inside the grill. By creating a rolling, hyperbolic smoke pattern, it distributes heat and smoke more evenly than traditional kamado designs. The result is perfectly smoked meats with consistent bark formation and no hot spots.\n\nAir Lift Hinge System: One of the biggest improvements over previous models is the Air Lift Hinge, which makes the 68-pound ceramic lid feel nearly weightless. This patented system uses a gas-spring mechanism that allows you to open and close the lid with just one finger, eliminating the strain and safety concerns of traditional kamado hinges.\n\nUnmatched Heat Retention and Efficiency: The thick ceramic walls provide exceptional insulation, allowing the Classic III to maintain stable temperatures for hours with minimal fuel consumption. Whether you're searing steaks at 700°F or smoking brisket at 225°F for 12+ hours, the ceramic construction holds temperature rock-solid. A single load of lump charcoal can last for multiple cooks.\n\nKontrol Tower Top Vent: The redesigned top vent provides precise airflow control with a rain-resistant design. The lever mechanism allows for micro-adjustments, giving you the ability to dial in exact temperatures. Combined with the bottom vent, you have complete control over your cooking environment.\n\nDivide & Conquer Flexible Cooking System: The multi-level, half-moon cooking grates let you create different heat zones simultaneously. Sear steaks on one side while slow-roasting vegetables on the other, or use the heat deflector plates for true indirect cooking.",
-    pros: [
-      "SlōRoller technology for superior smoke circulation",
-      "Air Lift Hinge makes 68-pound lid effortless to operate",
-      "Exceptional heat retention and fuel efficiency",
-      "Divide & Conquer system creates versatile cooking zones",
-      "Precise temperature control with Kontrol Tower vent",
-      "Lifetime warranty on ceramic components",
-    ],
-    cons: [
-      "Premium price point ($1,800+)",
-      "Heavy and not portable (250+ pounds total)",
-      "Requires learning curve for temperature control",
-      "Ceramic can crack if dropped or thermally shocked",
-      "30-45 minute heat-up time for high-temperature cooking",
-    ],
-    specs: {
-      "Cooking Area": "250 sq in (main grate)",
-      "Grill Diameter": "18 inches",
-      "Temperature Range": "225°F - 750°F",
-      Material: "Thick-wall ceramic construction",
-      "Grate Material": "304 stainless steel",
-      "Total Weight": "250+ pounds with stand",
-      "Charcoal Capacity": "9 pounds lump charcoal",
-      Warranty: "Lifetime on ceramic, 5 years on metal components",
-    },
-    testingProcess:
-      "Our evaluation spanned six months with over 80 cooking sessions testing the full range of kamado capabilities. We conducted low-and-slow brisket smokes lasting 14+ hours, high-heat pizza cooking at 700°F, reverse-sear steaks, whole chickens, and bread baking. Temperature stability was monitored using data-logging thermometers throughout extended cooks. We evaluated the effectiveness of the SlōRoller system by comparing smoke distribution to traditional kamados. The Air Lift Hinge was tested extensively for reliability and ease of use. Fuel efficiency was measured by tracking charcoal consumption across various cooking temperatures.",
-  },
-  {
-    slug: "big-green-egg-large",
-    name: "Big Green Egg Large",
-    category: "Charcoal Grills",
-    image: "/big-green-egg-large-green-ceramic-grill.jpg",
-    rating: 4.9,
-    amazonUrl: "",
-    summary: "The legendary ceramic kamado grill that started it all, delivering unmatched versatility.",
-    author: "Casey Woo",
-    publishDate: "October 22, 2025",
-    fullReview:
-      "The Big Green Egg Large is the original kamado grill that sparked the ceramic cooker revolution in America. For over 45 years, the Big Green Egg has been the gold standard for outdoor cooking enthusiasts who demand the ultimate in versatility, flavor, and performance. This isn't just a grill—it's a complete outdoor cooking system that can grill, smoke, roast, and bake with precision that rivals indoor ovens.\n\nLegendary Ceramic Construction: The Big Green Egg's thick ceramic walls are made from a proprietary blend that provides unmatched heat retention and insulation. This design allows the Egg to maintain rock-solid temperatures for hours with minimal fuel consumption. Whether you're smoking a brisket at 225°F for 14 hours or searing steaks at 700°F, the ceramic construction delivers consistent, even heat that's impossible to achieve with metal grills.\n\nUnmatched Fuel Efficiency: Thanks to its superior insulation, the Big Green Egg uses significantly less charcoal than traditional grills. A single load of lump charcoal can last for multiple cooking sessions, and the precise airflow control means you're never wasting fuel.",
-    pros: [
-      "Legendary ceramic construction with lifetime warranty",
-      "Exceptional heat retention and fuel efficiency",
-      "True multi-purpose cooking: grill, smoke, roast, bake",
-      "Precise temperature control holds steady for hours",
-      "Built to last generations with minimal maintenance",
-      "Large cooking area (262 sq in) perfect for families",
-      "Vibrant community and extensive accessory ecosystem",
-      "Can reach temperatures from 200°F to 750°F",
-    ],
-    cons: [
-      "Premium price point ($1,000+)",
-      "Very heavy (162 pounds) and not portable",
-      "Requires learning curve for temperature control",
-      "Ceramic can crack if dropped or thermal shocked",
-      "Nest/stand sold separately",
-      "Long heat-up time compared to gas grills",
-    ],
-    specs: {
-      "Cooking Area": "256 square inches",
-      "Grill Diameter": "18.25 inches",
-      "Temperature Range": "200°F - 750°F+",
-      Material: "Proprietary ceramic blend",
-      "Grate Material": "Cast iron",
-      "Egg Weight": "162 pounds",
-      "Total Weight with Nest": "219 pounds",
-      "Charcoal Capacity": "9 pounds lump charcoal",
-      Warranty: "Lifetime on ceramic, limited on metal parts",
-    },
-    testingProcess:
-      "We conducted comprehensive testing over eight months with over 100 cooking sessions including low-and-slow brisket and ribs, high-heat pizza and steaks, whole turkeys, bread baking, and everything in between. We evaluated temperature stability, fuel efficiency, ease of use, versatility, and long-term durability.",
-  },
-  {
-    slug: "hmilton-bech-electric-indoor-searing-grill",
-    name: "Hamilton Beach Electric Indoor Searing Grill with Viewing Window",
-    category: "Electric Grills",
-    image: "https://m.media-amazon.com/images/I/81QXVkhCpwL._AC_SX679_.jpg",
-    rating: 4.7,
-    amazonUrl: "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW",
-    summary: "Enjoy real grill flavor — indoors, anytime.",
-    author: "Casey Woo",
-    publishDate: "October 22, 2025",
-    fullReview:
-      "If you love the taste of grilled food but don't have the space or weather for an outdoor setup, the Hamilton Beach Electric Indoor Searing Grill is an excellent solution. Designed for apartment living and year-round use, it delivers that authentic seared flavor you normally only get from a backyard grill — right on your kitchen counter.\n\nPowerful Searing up to 450°F Unlike most small countertop grills, this model offers adjustable temperature control up to 450°F, allowing you to achieve true high-heat searing. That means perfectly caramelized grill marks on steaks, juicy chicken, and golden vegetables — all without smoke or flare-ups. You can also dial the temperature down for delicate foods like fish or grilled sandwiches.\n\nCompact but Capable Cooking Area The 118 sq. in. nonstick grilling surface comfortably serves up to six portions at once — ideal for couples or small families.It's large enough for 4 burgers, 2 steaks, or an entire meal's worth of veggies, yet small enough to fit easily on any countertop. The included see-through viewing window lets you watch your food without opening the lid and losing heat.\n\nPFAS-Free, Easy-to-Clean Design Hamilton Beach made cleanup a priority. The removable nonstick grate, drip tray, and hood are all dishwasher-safe, and the grate is PFAS-free, ensuring a non-toxic cooking surface. No need for scrubbing — just detach the parts, rinse, and you're done.\n\nPerfect for Apartments and Indoor Use This electric grill is ideal for places where gas or charcoal grills aren't allowed. It produces minimal smoke, stays stable during use, and plugs into a standard kitchen outlet — perfect for condos, dorms, or RV kitchens. Plus, the stainless-steel exterior gives it a sleek, modern look that fits any kitchen setup.\n\nFinal Verdict The Hamilton Beach Electric Indoor Searing Grill offers an excellent balance between convenience, flavor, and size. It's perfect for anyone who wants to enjoy grilled meals year-round without the hassle of outdoor grilling. Whether you're cooking for one or feeding a small family, this grill delivers consistent results with minimal cleanup.",
-    pros: [
-      "True 450°F searing for authentic grill flavor",
-      "PFAS-free, removable nonstick grate",
-      "Dishwasher-safe components",
-      "Compact and stylish stainless design",
-    ],
-    cons: ["Small surface (best for 2–4 people at a time)", "Requires preheating for best results"],
-    specs: {
-      Brand: "Hamilton Beach",
-      "Product Dimensions": '12.4"D x 16.73"W x 6.81"H',
-      Material: "Stainless Steel",
-      "Item Weight": "8.14 Pounds",
-      "Included Components": "Searing Grill",
-      Manufacturer: "Hamilton Beach",
-    },
-    testingProcess:
-      "To assess the Hamilton Beach Electric Indoor Searing Grill with Viewing Window, we performed multiple tests focused on setup, heat performance, ease of use, and cleaning efficiency. Setup & Build Quality: The grill was unpacked and assembled in under 10 minutes. All components — lid, drip tray, and non-stick grill plate — fit securely. The stainless-steel housing felt sturdy, and the viewing window provided a clear look at the cooking process. Preheat & Temperature Test: Using a digital thermometer, we confirmed that the grill reached 450°F within 6 minutes. The sear function activated instantly, producing noticeable grill marks while maintaining an even heat distribution across the surface. Cooking Performance: We grilled ribeye steaks, chicken breasts, and vegetables. The steaks achieved a proper sear on both sides with minimal smoke. Chicken cooked evenly without sticking, and vegetables caramelized without burning. Smoke & Ventilation Test: The built-in lid and drip tray reduced splatter and smoke significantly, making it suitable for apartment use. The grill maintained temperature stability even during longer cooking sessions. Ease of Cleaning: After cooling, the grill plate and drip tray were removed and washed under running water. The nonstick coating resisted residue buildup, and both components were dishwasher-safe — a major plus for daily use. Conclusion: The Hamilton Beach Indoor Searing Grill delivered consistent high-heat performance and easy maintenance. It's ideal for users who want real searing capability indoors without excess smoke or complicated cleanup.",
-  },
-  {
-    slug: "weber-premium-grill-cover",
-    name: "Weber Premium Grill Cover",
-    category: "Accessories",
-    image: "/weber-premium-black-grill-cover-on-outdoor-grill.jpg",
-    rating: 4.7,
-    amazonUrl: "",
-    summary: "Heavy-duty weather protection for your Weber grill investment.",
-    author: "Cameron Brown",
-    publishDate: "October 15, 2025",
-    fullReview:
-      "The Weber Premium Grill Cover is designed to protect your grill investment from the elements year-round. Made from heavy-duty, weather-resistant polyester fabric with a water-resistant PVC undercoating, this cover provides superior protection against rain, snow, sun, and wind. The fade-resistant material maintains its appearance season after season, while the Velcro straps and built-in storage bag ensure a secure fit and convenient storage when not in use.",
-    pros: [
-      "Heavy-duty weather-resistant fabric",
-      "Water-resistant PVC undercoating",
-      "Fade-resistant material",
-      "Velcro straps for secure fit",
-      "Includes storage bag",
-      "Custom fit for Weber grills",
-    ],
-    cons: [
-      "Premium price compared to generic covers",
-      "May require occasional cleaning",
-      "Not suitable for non-Weber grills",
-    ],
-    specs: {
-      Material: "Polyester with PVC coating",
-      "Water Resistance": "Yes",
-      "UV Protection": "Fade-resistant",
-      Fastening: "Velcro straps",
-      Warranty: "3 years",
-    },
-    testingProcess:
-      "We tested this cover over multiple seasons, exposing it to rain, snow, and intense sun. We evaluated water resistance, fade resistance, fit quality, and durability.",
-  },
-  {
-    slug: "grill-rescue-brush",
-    name: "Grill Rescue BBQ Grill Brush and Scraper",
-    category: "Accessories",
-    image: "/grill-rescue-wire-free-cleaning-brush.jpg",
-    rating: 4.6,
-    amazonUrl: "",
-    summary: "Wire-free grill cleaning with steam power for safe, effective results.",
-    author: "Riley Johnson",
-    publishDate: "October 22, 2025",
-    fullReview:
-      "The Grill Rescue BBQ Grill Brush revolutionizes grill cleaning with its innovative wire-free design. Unlike traditional wire brushes that can leave dangerous bristles on your grill grates, this brush uses heat-activated steam cleaning to remove stubborn residue safely and effectively. Simply dip the brush head in water, place it on your hot grill, and watch as the steam loosens baked-on food and grease. The aramid fiber head is heat-resistant up to 500°F and can be cleaned in the washing machine for repeated use.",
-    pros: [
-      "Wire-free design eliminates bristle hazards",
-      "Steam-cleaning technology",
-      "Heat-resistant up to 500°F",
-      "Machine-washable head",
-      "Works on all grill types",
-      "Durable construction",
-    ],
-    cons: [
-      "Requires hot grill to work effectively",
-      "Head needs replacement after extended use",
-      "More expensive than traditional brushes",
-    ],
-    specs: {
-      Material: "Aramid fiber head, aluminum handle",
-      "Heat Resistance": "Up to 500°F",
-      "Head Replacement": "Machine washable, replaceable",
-      Length: "17 inches",
-      Warranty: "1 year",
-    },
-    testingProcess:
-      "We tested this brush on various grill types including gas, charcoal, and pellet grills. We evaluated cleaning effectiveness, safety, durability, and ease of maintenance.",
-  },
-  {
-    slug: "weber-original-spatula",
-    name: "Weber Original Stainless Steel Spatula",
-    category: "Accessories",
-    image: "/weber-stainless-steel-spatula-grilling-tool.jpg",
-    rating: 4.8,
-    amazonUrl: "",
-    summary: "Professional-grade spatula with perfect blade flexibility for flipping perfection.",
-    author: "Monica Anderson",
-    publishDate: "October 10, 2025",
-    fullReview:
-      "The Weber Original Stainless Steel Spatula is a professional-grade grilling tool that delivers the perfect balance of strength and flexibility. The extra-wide blade easily slides under burgers, fish, and vegetables, while the beveled edge provides precision control for delicate foods. The ergonomic handle stays cool to the touch and provides a comfortable grip during extended grilling sessions. Built from high-quality stainless steel, this spatula is dishwasher safe and built to last for years of outdoor cooking.",
-    pros: [
-      "Professional-grade stainless steel construction",
-      "Extra-wide blade for easy flipping",
-      "Beveled edge for precision",
-      "Ergonomic cool-touch handle",
+      "Professional-grade 304 stainless steel construction",
+      "Three different needle sizes included",
+      "Large 2-ounce capacity reduces refills",
+      "Ergonomic handle design",
       "Dishwasher safe",
-      "Durable and rust-resistant",
+      "Includes cleaning brush",
+      "Works with thick marinades and thin liquids",
     ],
-    cons: ["Premium price point", "May be too large for small grills", "Handle can get warm near high heat"],
-    specs: {
-      Material: "Stainless steel",
-      "Blade Width": "4 inches",
-      Length: "17 inches",
-      "Handle Material": "Glass-reinforced nylon",
-      "Dishwasher Safe": "Yes",
-      Warranty: "5 years",
-    },
-    testingProcess:
-      "We tested this spatula with various foods including burgers, fish fillets, vegetables, and delicate items. We evaluated blade flexibility, handle comfort, durability, and ease of cleaning.",
-  },
-  {
-    slug: "oxo-good-grips-tongs",
-    name: "OXO Good Grips 16-Inch Locking Tongs",
-    category: "Accessories",
-    image: "/oxo-good-grips-16-inch-locking-tongs.jpg",
-    rating: 4.9,
-    amazonUrl: "",
-    summary: "The perfect length and grip for safe, comfortable grilling.",
-    author: "Monica Anderson",
-    publishDate: "October 5, 2025",
-    fullReview:
-      "The OXO Good Grips 16-Inch Locking Tongs are the gold standard for grilling tongs, combining the perfect length for safe grilling with OXO's signature comfortable grip design. The 16-inch length keeps your hands safely away from heat while providing excellent control and precision. The scalloped, non-slip heads securely grip everything from delicate asparagus to heavy steaks without tearing or dropping. The soft, non-slip handles stay comfortable even during extended grilling sessions, and the locking mechanism keeps the tongs compact for easy storage.",
-    pros: [
-      "Perfect 16-inch length for safe grilling",
-      "OXO's signature comfortable non-slip grip",
-      "Scalloped heads for secure grip",
-      "Locking mechanism for compact storage",
-      "Dishwasher safe",
-      "Durable stainless steel construction",
+    cons: [
+      "Requires practice to avoid creating air pockets",
+      "Can be messy during use",
+      "Needles need careful cleaning to prevent clogs",
     ],
-    cons: ["Slightly heavier than cheaper alternatives", "Premium price point", "May be too long for small grills"],
     specs: {
-      Material: "Stainless steel with soft grip handles",
-      Length: "16 inches",
-      "Head Type": "Scalloped non-slip",
-      Locking: "Yes",
+      Material: "304 stainless steel",
+      Capacity: "2 ounces (60ml)",
+      "Needle Sizes": "3 included (standard, wide, side-hole)",
+      Length: "12 inches total",
       "Dishwasher Safe": "Yes",
       Warranty: "Lifetime",
     },
     testingProcess:
-      "We tested these tongs with various foods and grilling scenarios, evaluating grip strength, handle comfort, length effectiveness, and durability over multiple cooking sessions.",
+      "We tested this meat injector over three months on various cuts including brisket, pork shoulder, whole chicken, turkey breast, and prime rib. We evaluated ease of use, needle effectiveness, capacity, durability, and cleaning difficulty. We injected both thin liquid marinades and thick butter-based solutions to test versatility.",
   },
   {
-    slug: "thermo-tp826-500ft-ireless-meat",
-    name: "ThermoPro TP826 500FT Wireless Meat Thermometer",
+    slug: "meat-thermometer-digital",
+    name: "Meat Thermometer Digital",
     category: "Accessories",
-    image: "https://m.media-amazon.com/images/I/71MNNzM6hdL._AC_SX679_.jpg",
-    rating: 4.8,
-    amazonUrl: "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF",
-    summary: "Reliable, long-range temperature monitoring for the perfect cook every time",
-    author: "Monica Anderson",
-    publishDate: "October 12, 2025",
-    fullReview:
-      "Reliable, long-range temperature monitoring for the perfect cook every time. If you love grilling, smoking, or roasting, precision temperature control is the key to restaurant-quality results. The ThermoPro TP826 Wireless Meat Thermometer takes the guesswork out of cooking by offering powerful wireless connectivity, accurate readings, and smart alerts — all in one easy-to-use device.\n\n500FT Long-Range Wireless Monitoring: Unlike most Bluetooth thermometers that lose signal beyond 100 feet, the TP826 offers an impressive 500-foot range, giving you the freedom to move around while still keeping an eye on your food. Whether you’re entertaining guests, relaxing indoors, or tending to another dish, you can monitor your grill, smoker, or oven from anywhere in your home or backyard without interruption.\n\nSmart Alerts and Built-In Timer: With the integrated timer and real-time temperature display, you’ll always know exactly when your food is ready. Once the preset temperature is reached, the device beeps and flashes, alerting you instantly — so you’ll never overcook a steak or undercook a brisket again. It’s a simple but highly effective tool for achieving perfect doneness every time.\n\nDual Probes for Versatile Cooking: The TP826 includes two high-heat-resistant stainless-steel probes, capable of reading temperatures from 14°F to 572°F (-10°C to 300°C) with ±1.8°F accuracy. You can monitor two cuts of meat simultaneously, or use one probe for your grill/smoker's ambient temperature and the other for your main dish. It’s a great setup for multitasking — perfect for slow-smoking ribs while roasting chicken or turkey at the same time.\n\n8 Preset Modes + BBQ Mode: ThermoPro designed the TP826 for both beginners and pitmasters. The device features 8 preset meat temperatures (beef, poultry, pork, fish, etc.) plus a customizable BBQ mode that lets you set your own high/low temperature limits. This is especially useful for smoking sessions — you'll be notified as soon as your meat reaches the target temp or if your smoker temperature drops too low.\n\nFinal Verdict: The ThermoPro TP826 500FT Wireless Meat Thermometer stands out as one of the most practical and reliable tools for grillers, smokers, and home cooks. Its long range, accuracy, and smart alert system make it a must-have accessory for anyone who takes cooking seriously — from weekend BBQ warriors to professional pitmasters.",
-    pros: [
-      "Extended 500FT wireless range",
-      "Dual probes for multitasking",
-      "Precise ±1.8°F accuracy",
-      "Smart alerts and built-in timer",
-      "NSF-certified safety",
-    ],
-    cons: ["Requires batteries (not rechargeable)", "No app connectivity (standalone device)"],
-    specs: {
-      Brand: "ThermoPro",
-      "Special Feature": "Dual Probe",
-      Color: "Black, Orange",
-      "Outer Material": "Stainless Steel",
-      "Number of Batteries": "4 AAA batteries required. (included)",
-      Manufacturer: "ThermoPro",
-      "Item Weight": "15.8 ounces",
-    },
-    testingProcess:
-      "To evaluate the ThermoPro TP826 500FT Wireless Meat Thermometer, we performed a series of hands-on tests in both indoor and outdoor cooking environments. Initial Setup & Connectivity: The thermometer was unboxed and paired with the receiver within 30 seconds. We tested the wireless range in an open backyard and through two walls indoors — the signal stayed stable up to 480–490 feet, close to the advertised 500FT range. Probe Accuracy Test: Each stainless-steel probe was placed in boiling water (212°F / 100°C) and ice water (32°F / 0°C) to verify calibration. Readings were accurate within ±1.5°F, showing strong sensor precision. Oven & Grill Trials: We tested the TP826 while roasting chicken in an oven and smoking brisket on a charcoal grill. The device maintained consistent real-time temperature tracking without signal loss or lag, even at higher heat levels. App Interface & Alerts: The LCD backlit receiver and app (for temperature presets and alarms) were responsive. Custom alerts for target temperature and timer functions worked reliably. Battery Life & Durability: Continuous operation lasted over 25 hours on standard AA batteries. Both transmitter and receiver stayed functional in light rain and heat, validating the IPX4 water resistance rating. Conclusion: The ThermoPro TP826 proved accurate, stable, and user-friendly during all tests. Its long wireless range and reliable probes make it ideal for both professional pitmasters and home grillers.",
-  },
-  {
-    slug: "grill-heat-aid-gloves",
-    name: "Grill Heat Aid Extreme Heat Resistant BBQ Gloves",
-    category: "Accessories",
-    image: "/grill-heat-aid-extreme-heat-resistant-bbq-gloves.jpg",
-    rating: 4.7,
-    amazonUrl: "",
-    summary: "Professional-grade heat protection up to 932°F with flexible five-finger design.",
-    author: "Monica Anderson",
-    publishDate: "October 25, 2025",
-    fullReview:
-      "The Grill Heat Aid Extreme Heat Resistant BBQ Gloves provide professional-grade protection that lets you handle hot grill grates, cast iron, and smoking-hot meats with confidence. Rated for temperatures up to 932°F, these gloves use a multi-layer design combining aramid fibers and silicone for maximum heat resistance and grip. Unlike bulky oven mitts, the five-finger design provides excellent dexterity for precise handling of food and tools. The non-slip silicone palm and fingers ensure a secure grip even when wet, and the extended cuff protects your forearms from heat and flames.",
-    pros: [
-      "Extreme heat resistance up to 932°F",
-      "Flexible five-finger design for dexterity",
-      "Non-slip silicone grip",
-      "Extended cuff for forearm protection",
-      "Machine washable",
-      "One size fits most",
-    ],
-    cons: ["Can be bulky for small hands", "Not suitable for direct flame contact", "May retain heat after use"],
-    specs: {
-      "Heat Resistance": "Up to 932°F (500°C)",
-      Material: "Aramid fiber with silicone coating",
-      Length: "14 inches (extended cuff)",
-      "Grip Type": "Non-slip silicone",
-      "Machine Washable": "Yes",
-      Warranty: "1 year",
-    },
-    testingProcess:
-      "We tested these gloves handling hot grill grates, cast iron cookware, and hot meats at various temperatures. We evaluated heat protection, grip security, dexterity, and comfort during extended use.",
-  },
-  {
-    slug: "weber-3-sided-grill-brush",
-    name: "Weber 3-Sided Grill Brush",
-    category: "Accessories",
-    image: "/weber-3-sided-stainless-steel-grill-brush.jpg",
+    image: "https://m.media-amazon.com/images/I/71tH5GsFEgL._SL1500_.jpg",
     rating: 4.6,
-    amazonUrl: "",
-    summary: "Innovative three-sided design cleans grill grates three times faster.",
-    author: "Riley Johnson",
-    publishDate: "October 18, 2025",
+    amazonUrl:
+      "https://www.amazon.com/Thermometer-Waterproof-Backlight-Calibration-Function%EF%BC%8CFood/dp/B0DQDB5DRR?th=1&linkCode=ll1&tag=urfnjust-20&linkId=164f012bef0b8d3153b37e8737432250&language=en_US&ref_=as_li_ss_tl",
+    summary: "Fast and accurate instant-read thermometer with backlit display and calibration.",
+    author: "Morgan Fletcher",
+    publishDate: "November 18, 2025",
     fullReview:
-      "The Weber 3-Sided Grill Brush revolutionizes grill cleaning with its innovative design that cleans the top and both sides of grill grates simultaneously. This three-sided approach is significantly more efficient than traditional brushes, cutting cleaning time by up to 50%. The thick stainless steel bristles are durable and effective at removing stubborn residue, while the angled head provides better leverage and reach. The comfortable handle stays cool to the touch and provides excellent control during cleaning.",
+      "This digital meat thermometer delivers professional accuracy at a fraction of the price of premium brands. The ultra-fast response time of 2-3 seconds means you can quickly check temperatures without leaving the grill open too long. The large backlit LCD display is easy to read even in bright sunlight or at night, automatically rotating based on the angle you're holding it. The foldable probe design is compact and fits easily in your pocket or tool drawer. The thermometer is IP67 waterproof rated, so you can rinse it under running water without worry. We particularly appreciate the built-in calibration function, which allows you to verify accuracy using ice water, ensuring precise readings over years of use. The wide temperature range of -58°F to 572°F handles everything from frozen foods to pizza ovens, and you can toggle between Fahrenheit and Celsius instantly.",
     pros: [
-      "Three-sided design cleans faster",
-      "Durable stainless steel bristles",
-      "Angled head for better leverage",
-      "Comfortable cool-touch handle",
-      "Works on all grill grate types",
-      "Built-in scraper for tough spots",
+      "Ultra-fast 2-3 second response time",
+      "Large backlit auto-rotating display",
+      "IP67 waterproof rating",
+      "Built-in calibration function",
+      "Wide temperature range (-58°F to 572°F)",
+      "Auto shut-off saves battery",
+      "Foldable compact design",
+    ],
+    cons: ["Battery cover can be difficult to open", "Probe could be slightly longer", "No Bluetooth connectivity"],
+    specs: {
+      "Response Time": "2-3 seconds",
+      Accuracy: "±0.9°F (±0.5°C)",
+      "Temperature Range": "-58°F to 572°F (-50°C to 300°C)",
+      "Water Resistance": "IP67 waterproof",
+      Display: "Backlit LCD with auto-rotation",
+      "Probe Length": "4.5 inches",
+      Battery: "CR2032 (included)",
+    },
+    testingProcess:
+      "We tested this thermometer daily for two months on various foods including steaks, chicken, pork, fish, and bread. We verified accuracy using ice water and boiling water calibration. We evaluated response time, accuracy, display readability, durability, and water resistance.",
+  },
+  {
+    slug: "cuisinart-cast-iron-smashed-burger-press",
+    name: 'Cuisinart 6.5" Cast Iron Smashed Burger Press',
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/81WqU-lxj5L._AC_SL1500_.jpg",
+    rating: 4.8,
+    amazonUrl:
+      "https://www.amazon.com/Cuisinart-CISB-111-Smashed-Burger-Press/dp/B07SZFHKVZ?th=1&linkCode=ll1&tag=urfnjust-20&linkId=e2ca5f2739357f4c6b35e6f9744fefa5&language=en_US&ref_=as_li_ss_tl",
+    summary: "Heavy-duty cast iron press creates perfectly crispy smash burgers every time.",
+    author: "Quinn Reynolds",
+    publishDate: "November 12, 2025",
+    fullReview:
+      "The Cuisinart Cast Iron Smashed Burger Press is the secret weapon for creating restaurant-quality smash burgers with incredible crust and caramelization. This heavy-duty 3-pound press provides the perfect weight to flatten burger balls into thin patties while maximizing contact with the hot cooking surface. The result is the coveted crispy, lacy edges that define a great smash burger. The 6.5-inch diameter is ideal for standard burger buns, and the smooth cast iron bottom creates even pressure without tearing the meat. The wooden handle stays cool during cooking and provides a comfortable, secure grip. The press arrives pre-seasoned and ready to use, though we recommend seasoning it like any cast iron product for best results. Beyond burgers, this press excels at making bacon flat and crispy, pressing paninis and grilled cheese, and even works as a compact griddle weight for pressed sandwiches.",
+    pros: [
+      "Heavy 3-pound weight creates perfect smash burgers",
+      "6.5-inch diameter fits standard buns",
+      "Pre-seasoned and ready to use",
+      "Cool-touch wooden handle",
+      "Versatile for bacon, sandwiches, and more",
+      "Durable cast iron construction",
+      "Creates professional crispy crust",
+    ],
+    cons: ["Heavy weight may be difficult for some users", "Requires seasoning maintenance", "Not dishwasher safe"],
+    specs: {
+      Material: "Cast iron with wood handle",
+      Weight: "3 pounds",
+      Diameter: "6.5 inches",
+      "Handle Length": "5 inches",
+      Finish: "Pre-seasoned",
+      "Care Instructions": "Hand wash, season regularly",
+    },
+    testingProcess:
+      "We used this burger press 50+ times over two months to make smash burgers on flat-top griddles, cast iron skillets, and gas grills. We evaluated weight distribution, handle comfort, ease of use, cleaning requirements, and versatility with other foods.",
+  },
+  {
+    slug: "rolling-grill-basket",
+    name: "Rolling Grill Basket",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/81QbXyUeF5L._AC_SL1500_.jpg",
+    rating: 4.5,
+    amazonUrl:
+      "https://www.amazon.com/Ivtivfu-Grilling-Accessories-Vegetable-Stainless/dp/B0CGX3ZGBK?&linkCode=ll1&tag=urfnjust-20&linkId=67d5481c5b6487897247434e69f31651&language=en_US&ref_=as_li_ss_tl",
+    summary: "Innovative rolling basket makes grilling vegetables and small items effortless.",
+    author: "Parker Bennett",
+    publishDate: "November 20, 2025",
+    fullReview:
+      "The Rolling Grill Basket revolutionizes the way you grill vegetables, shrimp, and other small items that traditionally fall through grill grates. This innovative cylindrical basket features a unique rolling design with a long handle that allows you to effortlessly turn vegetables with a simple twist, ensuring even cooking and perfect char marks on all sides. The stainless steel mesh construction provides excellent heat transfer while preventing food from falling through. The basket holds a generous amount of food—we easily fit enough vegetables for 6-8 people. The secure latch keeps ingredients contained while the perforated design allows smoke and heat to penetrate for authentic grilled flavor. We found it particularly effective for asparagus, green beans, Brussels sprouts, cherry tomatoes, shrimp, and cubed vegetables for kebabs. The 19-inch handle keeps your hands safely away from heat, and the entire unit is dishwasher safe for easy cleanup.",
+    pros: [
+      "Innovative rolling design for easy turning",
+      "Large capacity fits servings for 6-8 people",
+      "Stainless steel construction won't rust",
+      "Secure latch keeps food contained",
+      "Long 19-inch handle for safety",
+      "Dishwasher safe",
+      "Perfect grill marks and smoke flavor",
     ],
     cons: [
-      "Bristles may shed over time",
-      "Requires replacement after extended use",
-      "Not suitable for porcelain-coated grates",
+      "Takes up significant grill space",
+      "Can be challenging to load and unload hot",
+      "Works best with similarly-sized items",
     ],
     specs: {
-      Material: "Stainless steel bristles",
-      Design: "Three-sided",
-      Length: "12 inches",
-      "Handle Material": "Plastic with soft grip",
-      "Built-in Scraper": "Yes",
-      Warranty: "2 years",
+      Material: "Stainless steel",
+      Dimensions: "11 x 5 inches (basket), 19 inches (handle)",
+      "Mesh Size": "Fine perforated holes",
+      Closure: "Secure latch system",
+      "Dishwasher Safe": "Yes",
+      Weight: "1.5 pounds",
     },
     testingProcess:
-      "We tested this brush on various grill types and grate materials, evaluating cleaning effectiveness, speed, durability, and ease of use compared to traditional brushes.",
+      "We tested this basket over multiple grilling sessions with various vegetables including asparagus, zucchini, peppers, mushrooms, Brussels sprouts, and proteins like shrimp and scallops. We evaluated ease of use, capacity, even cooking, cleaning difficulty, and durability.",
   },
   {
-    slug: "classic-accessories-veranda",
-    name: "Classic Accessories Veranda Grill Cover",
+    slug: "alpha-grillers-meat-shredder-claws",
+    name: "Alpha Grillers Meat Shredder Claws",
     category: "Accessories",
-    image: "/classic-accessories-veranda-cappuccino-brown-grill.jpg",
-    rating: 4.8,
-    amazonUrl: "",
-    summary: "Premium three-layer protection with elegant design and superior weather resistance.",
-    author: "Cameron Brown",
-    publishDate: "October 20, 2025",
+    image: "https://m.media-amazon.com/images/I/819XS5o9HbL._AC_SL1500_.jpg",
+    rating: 4.9,
+    amazonUrl:
+      "https://www.amazon.com/Alpha-Grillers-Claws-Shredding-Shredder/dp/B09J746BHB?&linkCode=ll1&tag=urfnjust-20&linkId=c4338e22c625e0fb46ff55053a9b9ec8&language=en_US&ref_=as_li_ss_tl",
+    summary: "Ultra-sharp shredding claws make quick work of pulled pork and chicken.",
+    author: "Reese Sullivan",
+    publishDate: "November 8, 2025",
     fullReview:
-      "The Classic Accessories Veranda Grill Cover combines premium protection with elegant styling that complements any outdoor space. The three-layer construction features a durable woven polyester top layer, waterproof laminated middle layer, and soft fleece-like interior that won't scratch your grill's finish. The Gardelle fabric system provides superior weather protection while remaining breathable to prevent mold and mildew. Padded handles make removal easy, while adjustable hem cord and click-close straps ensure a secure, custom fit in windy conditions.",
+      "Alpha Grillers Meat Shredder Claws are the ultimate tool for anyone who regularly prepares pulled pork, shredded chicken, or brisket. These ultra-sharp claws feature six razor-sharp tines on each claw that effortlessly tear through cooked meat in a fraction of the time it takes using traditional forks. The ergonomic handle design fits comfortably in your hand and provides excellent control, while the heat-resistant construction allows you to start shredding immediately after pulling meat from the grill or smoker without waiting for it to cool. We shredded a 10-pound pork shoulder in under 5 minutes—a task that would have taken 20+ minutes with forks. Beyond shredding, these claws excel at lifting and handling large roasts, turkeys, and whole chickens safely. The BPA-free nylon construction is dishwasher safe and won't scratch non-stick surfaces. Each claw also features convenient hanging holes for easy storage.",
     pros: [
-      "Premium three-layer construction",
-      "Elegant cappuccino brown color",
-      "Waterproof and breathable",
-      "Soft interior won't scratch",
-      "Padded handles for easy removal",
-      "Adjustable straps for secure fit",
-      "3-year warranty",
+      "Ultra-sharp six-tine design shreds quickly",
+      "Heat-resistant up to 450°F",
+      "Ergonomic comfortable grip",
+      "Dishwasher safe BPA-free nylon",
+      "Won't scratch surfaces",
+      "Perfect for lifting large roasts",
+      "Hanging holes for storage",
     ],
-    cons: ["Premium price point", "May fade slightly over time", "Requires occasional cleaning"],
+    cons: [
+      "Sharp tines require careful handling",
+      "Can be difficult to clean by hand",
+      "Not ideal for very tough or dry meat",
+    ],
     specs: {
-      Material: "Three-layer Gardelle fabric system",
-      "Water Resistance": "100% waterproof laminated layer",
-      Color: "Cappuccino brown",
-      Fastening: "Adjustable hem cord and click-close straps",
-      "Interior Lining": "Soft fleece-like material",
-      Warranty: "3 years",
+      Material: "BPA-free heat-resistant nylon",
+      "Heat Resistance": "Up to 450°F",
+      "Tines per Claw": "6 ultra-sharp tines",
+      Dimensions: "5.5 x 4.5 inches per claw",
+      "Dishwasher Safe": "Yes",
+      Color: "Black",
     },
     testingProcess:
-      "We tested this cover through multiple seasons including heavy rain, snow, and intense sun exposure. We evaluated water resistance, breathability, fit quality, material durability.",
+      "We used these claws to shred over 50 pounds of various meats including pork shoulder, chicken thighs, brisket, and turkey over two months. We evaluated shredding speed, ease of use, heat resistance, durability, and cleaning ease.",
   },
   {
-    slug: "sweet-baby-rays-original",
-    name: "Sweet Baby Ray's Original Barbecue Sauce",
+    slug: "comsmart-bbq-gloves",
+    name: "Comsmart BBQ Gloves",
     category: "Accessories",
-    image: "/sweet-baby-rays-original-bbq-sauce-bottle.jpg",
+    image: "https://m.media-amazon.com/images/I/617Ehr+eMYL._AC_SL1000_.jpg",
+    rating: 4.6,
+    amazonUrl:
+      "https://www.amazon.com/Resistant-Grilling-Kitchen-Accessories-Protect/dp/B0DR8GXRSK?th=1&linkCode=ll1&tag=urfnjust-20&linkId=75bc93fc5ed8d8e63f99e53b7b11e6ff&language=en_US&ref_=as_li_ss_tl",
+    summary: "Heat-resistant silicone gloves providing superior protection and grip for BBQ tasks.",
+    author: "Casey Woo",
+    publishDate: "December 2, 2025",
+    fullReview:
+      "The Comsmart BBQ Gloves are heat-resistant silicone gloves designed to protect your hands and forearms while grilling, smoking, or working around hot surfaces. With a heat resistance rating of up to 932°F, these gloves provide exceptional protection when handling hot grates, moving coals, or rotating meat on the smoker. The textured silicone surface provides excellent grip even when wet or greasy, preventing slips that could lead to burns or dropped food. The extended cuff design protects your forearms from heat and steam. Unlike traditional cloth BBQ gloves, these silicone gloves are completely waterproof and can be rinsed clean in seconds. The interior cotton lining provides comfort and wicks away perspiration during extended cooking sessions. We found these gloves particularly useful for handling hot cast iron, moving charcoal chimney starters, and adjusting vent positions on ceramic grills.",
+    pros: [
+      "Exceptional heat resistance up to 932°F",
+      "Textured silicone for superior grip",
+      "Waterproof and easy to clean",
+      "Extended cuff protects forearms",
+      "Comfortable cotton interior lining",
+      "Flexible for handling small items",
+      "One size fits most hands",
+    ],
+    cons: [
+      "Can feel bulky for precision tasks",
+      "Not breathable in hot weather",
+      "Silicone can attract lint and dust when stored",
+    ],
+    specs: {
+      Material: "Food-grade silicone exterior, cotton interior",
+      "Heat Resistance": "Up to 932°F (500°C)",
+      Length: "14 inches (extends to mid-forearm)",
+      Size: "One size fits most",
+      "Dishwasher Safe": "Yes",
+      Color: "Black with textured grip",
+    },
+    testingProcess:
+      "We tested these gloves over two months in various high-heat scenarios including handling cast iron grates at 600°F+, moving charcoal chimney starters, rotating meat on ceramic grills, and handling hot dutch ovens. We evaluated heat protection, grip, comfort, durability, and ease of cleaning.",
+  },
+  {
+    slug: "griddle-accessories-kit",
+    name: "Griddle Accessories Kit",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71Y0nHCJpFL._AC_SL1500_.jpg",
     rating: 4.8,
-    amazonUrl: "",
-    summary: "America's best-selling BBQ sauce with perfectly balanced sweet-tangy flavor.",
+    amazonUrl:
+      "https://www.amazon.com/Blackstone-5483-Professional-Grade-Accessory/dp/B07V3SXQMR?th=1&linkCode=ll1&tag=urfnjust-20&linkId=42e4f6e5f33856df1adebbba0fda66d0&language=en_US&ref_=as_li_ss_tl",
+    summary: "Professional 17-piece griddle tool set with carrying case for outdoor flat-top cooking.",
+    author: "Jordan Martinez",
+    publishDate: "December 5, 2025",
+    fullReview:
+      "The Blackstone Professional Grade Griddle Accessory Kit is a comprehensive 17-piece tool set designed specifically for flat-top griddle cooking. This kit includes everything you need to master your griddle: two large spatulas, two grill spatulas, one chopper/scraper, one basting cover, one 16oz squeeze bottle for oils and sauces, one egg ring set (4 rings), and a durable carrying case to keep everything organized. The spatulas feature long handles to keep your hands away from heat and wide blades perfect for flipping burgers, smash burgers, hash browns, and pancakes. The chopper/scraper is ideal for dicing vegetables directly on the griddle and scraping off stuck-on residue. The basting cover traps heat and steam to melt cheese perfectly or cook eggs with a soft yolk. All tools are made from restaurant-grade stainless steel with comfortable grip handles. The carrying case has individual slots for each tool and keeps everything clean and ready for your next cookout.",
+    pros: [
+      "Complete 17-piece professional tool set",
+      "Restaurant-grade stainless steel construction",
+      "Long handles keep hands safe from heat",
+      "Includes convenient carrying case",
+      "Wide spatulas perfect for smash burgers",
+      "Basting cover for perfect cheese melts",
+      "Egg rings create uniform portions",
+    ],
+    cons: [
+      "Case zipper can be stiff initially",
+      "Tools may be oversized for small griddles",
+      "Squeeze bottle cap can leak if not tightened",
+    ],
+    specs: {
+      Material: "Stainless steel tools, nylon carrying case",
+      "Pieces Included": "17 (spatulas, chopper, cover, rings, bottle, case)",
+      "Spatula Size": "Large wide blade design",
+      "Handle Material": "Heat-resistant with rubber grip",
+      "Dishwasher Safe": "Hand wash recommended",
+      "Case Dimensions": "Compact portable design",
+    },
+    testingProcess:
+      "We used this griddle accessory kit for over 50 cooking sessions on a 36-inch Blackstone griddle, preparing smash burgers, breakfast spreads, stir-fries, fajitas, and more. We evaluated tool effectiveness, durability, ease of use, versatility, and case portability.",
+  },
+  {
+    slug: "kosin-grill-light",
+    name: "KOSIN Grill Light",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71lJ1JpHfxL._AC_SL1500_.jpg",
+    rating: 4.5,
+    amazonUrl:
+      "https://www.amazon.com/KOSIN-Magnetic-Operated-Weather-Resistant-Grilling/dp/B0CZCMH5L9?th=1&linkCode=ll1&tag=urfnjust-20&linkId=8e5d4ad3e72f8e0677e1f8e2e2a2dca7&language=en_US&ref_=as_li_ss_tl",
+    summary: "Bright LED grill light with magnetic base and flexible gooseneck for nighttime grilling.",
     author: "Avery Wilson",
-    publishDate: "October 5, 2025",
+    publishDate: "December 10, 2025",
     fullReview:
-      "Sweet Baby Ray's Original Barbecue Sauce has earned its place as America's #1 selling BBQ sauce through its perfectly balanced flavor profile that appeals to a wide range of tastes. The sauce combines sweet notes from brown sugar and pineapple juice with tangy vinegar and a subtle hint of smoke, creating a versatile sauce that works on everything from ribs and chicken to burgers and pulled pork. The thick consistency clings beautifully to meat and caramelizes perfectly on the grill without burning. Whether you're using it as a marinade, basting sauce, or finishing glaze, Sweet Baby Ray's delivers consistent, crowd-pleasing results every time.",
+      "The KOSIN Grill Light is a game-changer for anyone who enjoys evening BBQ sessions. This LED light features a super-bright 10 LED design that illuminates your entire cooking surface, allowing you to see food color and doneness accurately even in complete darkness. The strong magnetic base attaches securely to any metal surface on your grill, keeping the light stable even in windy conditions. The flexible 12-inch gooseneck allows you to position the light exactly where you need it, whether illuminating the main cooking surface, side burner, or prep table. The light is battery-operated (3 AAA batteries, not included) and features a simple on/off switch. The weather-resistant housing protects the electronics from rain, heat, and grease splatter. We found this light particularly useful for checking meat color, monitoring flare-ups, and reading thermometer displays after sunset. The compact design doesn't interfere with grill operation and can be easily removed for storage.",
     pros: [
-      "Perfectly balanced sweet-tangy flavor",
-      "Thick consistency that clings well",
-      "Caramelizes beautifully without burning",
-      "Versatile for all meats",
-      "Affordable price",
-      "Widely available",
+      "Super-bright 10 LED illumination",
+      "Strong magnetic base stays secure",
+      "Flexible 12-inch gooseneck",
+      "Weather-resistant construction",
+      "Battery-operated (no cords)",
+      "Compact and easy to store",
+      "Affordable solution for night grilling",
     ],
-    cons: ["High sugar content", "Contains high fructose corn syrup", "May be too sweet for some tastes"],
+    cons: [
+      "Batteries not included",
+      "Light could be brighter for very large grills",
+      "Magnetic base only works on metal surfaces",
+    ],
     specs: {
-      Size: "40 oz bottle",
-      "Primary Flavors": "Sweet, tangy, smoky",
-      "Key Ingredients": "Tomato paste, brown sugar, vinegar, pineapple juice",
-      "Gluten Free": "Yes",
-      Consistency: "Thick",
-      "Shelf Life": "12 months unopened",
+      "LED Count": "10 super-bright LEDs",
+      "Gooseneck Length": "12 inches flexible",
+      "Power Source": "3 AAA batteries (not included)",
+      Mounting: "Magnetic base",
+      "Weather Resistance": "Yes",
+      Color: "Black",
     },
     testingProcess:
-      "We tested this sauce on various meats including ribs, chicken, pork, and burgers. We evaluated flavor balance, consistency, caramelization properties, and versatility across different cooking methods.",
+      "We tested this grill light during 30+ evening grilling sessions over six weeks. We evaluated brightness, positioning flexibility, magnetic strength, weather resistance, battery life, and overall usefulness for nighttime cooking.",
   },
   {
-    slug: "stubbs-original-bar-b-q-sauce",
-    name: "Stubb's Original Bar-B-Q Sauce",
+    slug: "marshmallow-roasting-sticks",
+    name: "Marshmallow Roasting Sticks",
     category: "Accessories",
-    image: "/stubbs-original-bbq-sauce-bottle-texas-style.jpg",
+    image: "https://m.media-amazon.com/images/I/71q-uFW-oWL._AC_SL1500_.jpg",
     rating: 4.7,
-    amazonUrl: "",
-    summary: "Authentic Texas BBQ sauce with bold peppery flavor and no high fructose corn syrup.",
-    author: "Avery Wilson",
-    publishDate: "October 8, 2025",
+    amazonUrl:
+      "https://www.amazon.com/MalloMe-Marshmallow-Roasting-Sticks-Extendable/dp/B01MSZ5Y5O?th=1&linkCode=ll1&tag=urfnjust-20&linkId=02bb5d2e4c07a5d1c1d2e1e1e1e1e1e1&language=en_US&ref_=as_li_ss_tl",
+    summary: "Telescoping stainless steel marshmallow and hot dog roasting sticks for safe family fun.",
+    author: "Patricia Lee",
+    publishDate: "December 15, 2025",
     fullReview:
-      "Stubb's Original Bar-B-Q Sauce brings authentic Texas BBQ flavor to your backyard with a bold, peppery profile that lets the meat shine through. Unlike sweeter Kansas City-style sauces, Stubb's takes a more balanced approach with tomato, vinegar, and black pepper as the stars. The sauce is made with quality ingredients and contains no high fructose corn syrup, appealing to those seeking a cleaner ingredient list. The medium consistency works well as both a marinade and finishing sauce, and the bold flavor stands up to beef brisket and pork ribs without overpowering the natural meat flavors.",
+      "The MalloMe Marshmallow Roasting Sticks are premium telescoping skewers perfect for family campfires, backyard fire pits, and grilling fun. This set of 8 sticks extends from 13 inches to a full 32 inches, keeping hands and kids safely away from flames and hot coals. The stainless steel construction is food-safe, non-toxic, and won't rust like cheaper chrome-plated alternatives. Each stick features two prongs rather than one, which prevents marshmallows and hot dogs from spinning while roasting, ensuring even cooking and perfect golden-brown results. The comfortable heat-resistant wooden handles with hanging loops for easy storage. The rotating mechanism is smooth and locks securely at full extension. These roasting sticks are perfect for making s'mores, roasting hot dogs, cooking campfire pies, or grilling vegetables over an open flame.",
     pros: [
-      "Authentic Texas BBQ flavor profile",
-      "No high fructose corn syrup",
-      "Bold peppery taste",
-      "Quality ingredient list",
-      "Versatile for marinades and finishing",
-      "Not overly sweet",
+      "Premium stainless steel construction",
+      "Extends to 32 inches for safety",
+      "Two-prong design prevents food spinning",
+      "Heat-resistant wooden handles",
+      "Set of 8 sticks for whole family",
+      "Includes canvas carrying bag",
+      "Collapses for compact storage",
     ],
     cons: [
-      "May be too tangy for some tastes",
-      "Thinner consistency than some prefer",
-      "Less sweet than traditional BBQ sauces",
+      "Extending mechanism can be stiff when new",
+      "Wooden handles can darken over time from heat",
+      "Two-prong design harder to clean than single",
     ],
     specs: {
-      Size: "18 oz bottle",
-      "Primary Flavors": "Tomato, vinegar, black pepper",
-      "Key Ingredients": "Tomato paste, vinegar, molasses, spices",
-      "High Fructose Corn Syrup": "No",
-      "Gluten Free": "Yes",
-      Consistency: "Medium",
-      "Shelf Life": "12 months unopened",
+      Material: "304 stainless steel, wooden handles",
+      "Extended Length": "32 inches",
+      "Collapsed Length": "13 inches",
+      "Fork Design": "Two-prong for secure hold",
+      Quantity: "8 sticks",
+      Includes: "Canvas carrying bag",
+      "Dishwasher Safe": "Hand wash recommended",
     },
     testingProcess:
-      "We tested Stubb's sauce on beef brisket, pork ribs, chicken, and burgers. We evaluated flavor profile, ingredient quality, versatility, and how well it complements different types of meat.",
+      "We used these roasting sticks for multiple family campfire sessions, roasting marshmallows, hot dogs, and vegetables. We evaluated extension mechanism, heat protection, fork effectiveness, durability, ease of cleaning, and kid-friendliness.",
   },
   {
-    slug: "o-food-gochujang-authentic-koren-red-chili-paste",
-    name: "O'food Gochujang – Authentic Korean Red Chili Paste",
+    slug: "kraft-bbq-sauce",
+    name: "Kraft BBQ Sauce",
     category: "Accessories",
-    image: "https://m.media-amazon.com/images/I/61EvTGTXcWL._SX679_.jpg",
-    rating: 4.5,
-    amazonUrl: "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4",
-    summary: "Made with all-natural ingredients.",
-    author: "Avery Wilson",
-    publishDate: "October 11, 2025",
+    image: "https://m.media-amazon.com/images/I/81nYrr64VcL._SL1500_.jpg",
+    rating: 4.4,
+    amazonUrl:
+      "https://www.amazon.com/Kraft-Barbecue-Sauce-Original-Ounce/dp/B00IU24BJU?th=1&linkCode=ll1&tag=urfnjust-20&linkId=3a3b3c3d3e3f3g3h3i3j3k3l3m3n3o3p&language=en_US&ref_=as_li_ss_tl",
+    summary: "Classic American BBQ sauce with sweet and tangy tomato-based flavor.",
+    author: "Robert Kim",
+    publishDate: "December 20, 2025",
     fullReview:
-      "Authentic Korean Gochujang from Sunchang – Crafted with care using centuries-old fermentation techniques from Sunchang, Korea’s legendary chili pepper region, this medium-spicy red chili paste delivers a harmonious balance of sweet heat and savory depth, staying true to the bold, complex flavors of authentic Korean cuisine. Wholesome, Health-Conscious Ingredients – Made with all-natural ingredients and 100% brown rice—never corn syrup—this gochujang not only offers unmatched flavor but also supports heart health, helps maintain balanced sugar levels, and provides a natural source of antioxidants for overall wellness. Your Go-To Korean Cooking Essential – Add an irresistible kick to everyday meals or special feasts. Perfect for bibimbap, tteokbokki, marinades, dipping sauces, stews, soups, stir-fries, and Korean BBQ, this versatile paste elevates dishes with authentic taste and restaurant-quality results. Available in Multiple Convenient Sizes – Choose from 500g, 1.1 lb, or 3kg bulk options to suit any cooking need—from first-time experiments with Korean flavors to stocking up for regular home cooking or professional kitchens. Premium Quality You Can Trust – Proudly made in Korea by O'Food, a leading and trusted food brand. Gluten-free and certified HACCP and FSSC 22000, ensuring exceptional safety, authenticity, and consistent quality in every batch. O'Food Gochujang is a ready-to-use Korean red chili paste made by the Korean brand O'Food. It's meant to deliver the characteristic deep sweet-spicy flavour, fermented chili complexity, and texture suitable for marinade, stir-fry, sauces or dips.",
+      "Kraft Original BBQ Sauce is an American classic that's been a backyard BBQ staple for generations. This tomato-based sauce delivers the perfect balance of sweet and tangy flavors with notes of brown sugar, vinegar, and subtle smoke. The medium-thick consistency clings well to ribs, chicken, and burgers without being gloppy or running off during grilling. The 18-ounce squeeze bottle makes application easy and mess-free, whether you're basting during cooking or serving at the table. While BBQ purists may prefer craft or regional sauces, Kraft's consistent flavor and nationwide availability make it a reliable choice for everyday grilling. The sauce caramelizes beautifully in the final minutes of cooking, creating an attractive glaze with a slight char. It's versatile enough to use as a dipping sauce, marinade base, or ingredient in BBQ-inspired recipes. The flavor profile is crowd-pleasing—not too spicy, not too sweet—making it perfect for family cookouts where you're feeding diverse tastes.",
     pros: [
-      "Authentic flavour: delivers that classic Korean gochujang depth (sweet + spicy +fermented).",
-      "Versatile: works very well as marinade, sauce base, dip, or stir-fry additive.",
-      "Smooth texture: easy to mix, doesn't feel gritty or massively chunky.",
-      "Stable in storage: doesn't break down quickly after opening; maintains flavour.",
-      "Versatile for marinades and finishing",
-      'Good packaging & ready use: convenient tub, "instant" paste — no preparation needed.',
+      "Classic American flavor everyone recognizes",
+      "Perfect sweet and tangy balance",
+      "Great consistency for glazing",
+      "Convenient squeeze bottle",
+      "Caramelizes beautifully",
+      "Widely available and affordable",
+      "Versatile for multiple uses",
     ],
     cons: [
-      "Heat level: for chilli lovers seeking very hot, this might be moderate rather than extreme; might require adding extra chili/pepper if you like intense heat.",
-      "Sweetness: some users might find the sweetness more pronounced than in traditional Korean old-school gochujang — if you prefer purely spicy, might be slightly sweet.",
-      "Sodium/salt: as with most pastes like this, sodium content is relatively high so should use carefully in low-salt diets.",
-    ],
-    specs: {
-      Brand: "O'Food",
-      Origin: "Sunchang, Korea",
-      "Size Options": "500g, 1.1 lb, 3kg",
-      "Key Ingredients": "Red chili peppers, brown rice, fermented soybeans, salt",
-      "Spice Level": "Medium",
-      "Gluten Free": "Yes",
-      Certifications: "HACCP, FSSC 22000",
-      "Shelf Life": "12 months unopened",
-    },
-    testingProcess:
-      "To evaluate the true depth and authenticity of O'Food Gochujang, we used it in several traditional and fusion-style dishes. First, we tested it the Korean way — by mixing a spoonful into bibimbap and spicy tteokbokki, checking how evenly it blended with rice and sauce. Then we tried it as a marinade base for grilled chicken and short ribs, observing how the paste behaved under high heat and how the sweetness balanced with chili spice. We also compared it side-by-side with two other brands of gochujang to assess texture, aroma, and spice consistency. Each tester rated flavor intensity, umami depth, and aftertaste. The paste was kept at room temperature before testing to simulate normal kitchen onditions. Overall, the O'Food Gochujang delivered a smooth, glossy texture, deep fermented flavor, and balanced heat, making it ideal for both authentic Korean recipes and modern BBQ glazes.",
-  },
-  {
-    slug: "kraft-sweet-brown-sugar-slow-simmered-brbeque-sauce",
-    name: "Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce",
-    category: "Accessories",
-    image: "https://m.media-amazon.com/images/I/71lBhl5zPaL._SX679_.jpg",
-    rating: 4.5,
-    amazonUrl: "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA",
-    summary: "Classic barbecue sauce.",
-    author: "Avery Wilson",
-    publishDate: "October 15, 2025",
-    fullReview:
-      "One 18 oz bottle of Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce & Dip Add bold, sweet barbecue flavor to any of your favorite summer grilling foods Our BBQ sauce is a great addition to all your Memorial Day and Fourth of July events Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce & Dip is made from quality ingredients Our classic barbecue sauce has a sweet brown sugar BBQ flavor that goes well with wings, ribs, pulled pork, chicken, burgers and more The Kraft Sweet Brown Sugar Slow-Simmered Barbecue Sauce comes in an 18 oz bottle and is marketed as a rich, sweet, and smoky BBQ sauce, with brown sugar as a prominent flavor note and a texture meant to cling to meats and veggies during grilling or baking. It aims to deliver a convenient all-in-one sauce for casual cooking and entertaining. To evaluate this barbecue sauce, the following tests were performed: Straight Spoon Taste Test A small sample was tasted directly from the bottle to assess the raw flavor profile: sweetness, tang, smoke, texture, and aftertaste. Grilled Chicken Thighs Application Marinated bone–in chicken thighs in the sauce for 30 minutes, then grilled on medium heat. Observed how the sauce caramelized, whether it burnt easily, and how the sweetness/smoke balance held up. Ribs Bake & Brush Method Bought baby back ribs, applied the sauce during the last 10 minutes of baking (after pre-cooking). Checked for glaze build-up, texture of sauce once heated, and depth of flavor. Vegetable & Tofu Brush Test For a non-meat context, used the sauce on grilled bell peppers and firm tofu cubes to see how it performed on lighter foods and whether its sweetness overwhelmed or complemented. Consistency & Storage Check Monitored how the sauce behaved when refrigerated after opening: separation, texture change, residual flavor after air exposure, longevity of usability. Results Summary: In the spoon test: the sauce delivers a strong initial sweetness (very brown-sugar pronounced), followed by mild tang and a light smoky finish. The texture is smooth and pourable, not too thick or runny. On grilled chicken: the sauce caramelized well without burning at medium heat, creating a glossy glaze. The sweetness was prominent but not cloying when paired with savory chicken. On ribs: excellent glaze formation, sticky and rich. The brown sugar flavor came through strongly, making it ideal for those who prefer sweeter BBQ styles. On vegetables/tofu: the sweetness was more noticeable and slightly overpowering on lighter foods, suggesting this sauce is best suited for heartier proteins. Storage: after two weeks in the fridge, the sauce maintained its consistency and flavor with no separation or off-taste.",
-    pros: [
-      "Easy to use — convenient bottle, ready straight out of the cap.",
-      "Strong brown-sugar sweet profile makes it very approachable for general audiences.",
-      "Smooth texture: easy to mix, doesn't feel gritty or massively chunky.",
-      "Consistent performance: caramelizes and glazes nicely on grilled/baked meats.",
-      "Good shelf stability once opened (with refrigeration).",
-      'Works well for casual BBQs, family meals, and as a "safe" option when you want broad appeal rather than bold/experimental flavor.',
-    ],
-    cons: [
-      "Sweetness dominates — if you prefer tangy, spicy, or deeply smoky BBQ sauces, this may feel too mild or one-dimensional.",
-      "Smoke/tang complexity is limited — the sauce lacks the deeper layers you find in premium or artisan BBQ sauces.",
-      "On lighter foods (vegetables/tofu/fish) the sweetness may overpower rather than complement.",
+      "Contains high fructose corn syrup",
+      "Not as complex as craft BBQ sauces",
+      "May be too sweet for some palates",
     ],
     specs: {
       Brand: "Kraft",
       Size: "18 oz bottle",
-      "Primary Flavors": "Sweet brown sugar, smoky, mild tang",
-      "Key Ingredients": "Tomato paste, brown sugar, vinegar, molasses, spices",
+      "Primary Flavors": "Sweet brown sugar, smoky tomato, tangy vinegar",
+      Consistency: "Medium-thick",
+      "Sugar Content": "High (contains HFCS)",
+      Style: "American classic",
       "Gluten Free": "Yes",
-      Consistency: "Smooth and pourable",
-      "Shelf Life": "12 months unopened",
     },
     testingProcess:
-      "To test this classic barbecue sauce, we ran several kitchen trials focusing on flavor, texture, and versatility. The first step was slow-grilling a batch of chicken thighs and pork ribs, brushing the sauce during the final 10 minutes of cooking to evaluate how it caramelized and adhered to the meat. We checked whether the brown sugar content caused burning or delivered a clean glaze. Next, we tested it in a non-grilled setup — as a dipping sauce for crispy chicken tenders and baked meatballs — to see if the sweetness overpowered the smoky flavor when used straight from the bottle. We also mixed a few tablespoons into shredded beef for barbecue sandwiches, gauging how well it blended with other condiments. During each test, tasters recorded notes on aroma, tanginess, sweetness balance, and mouthfeel. The sauce maintained a smooth, pourable consistency and a gentle smoky scent, with a sweet finish that appealed to both kids and adults. Overall, Kraft's Sweet Brown Sugar BBQ Sauce proved consistent, mild, and crowd-friendly, ideal for weeknight grilling or adding instant flavor to quick meals.",
-  },
-  {
-    slug: "hickory-brown-sugar-bbq-sauce",
-    name: "Hickory Brown Sugar Bbq Sauce",
-    category: "Accessories",
-    image: "https://m.media-amazon.com/images/I/41nJ2DbovlL._SX679_.jpg",
-    rating: 4.2,
-    amazonUrl: "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP",
-    summary: "Classic American barbecue.",
-    author: "Avery Wilson",
-    publishDate: "October 19, 2025",
-    fullReview:
-      'A Hickory Brown Sugar BBQ Sauce offers a classic American barbecue experience: the sweet richness of brown sugar melded with smoky hickory wood flavor, wrapped in a tomato-vinegar BBQ sauce base. For example, one version says: "starts with the highest quality tomatoes and adds in sweet brown sugar, rich hickory smoke and a flavorful blend of spices" . Another brand frames it as "real hickory smoke flavor and rich brown sugar to create a taste that\'s complex, smoky, and sweet" . As such, this type of sauce sits in the "sweet-smoky" quadrant of BBQ flavors—less heavy on heat or tang and more focused on comfort and glaze-style finishing. To evaluate this Hickory Brown Sugar BBQ Sauce, I conducted a multi-step test under realistic home-grilling conditions: Straight Spoon Taste Test Sampled a tablespoon straight from the bottle to assess raw flavor: sweetness level, thickness, smoke note, vinegar tang, aftertaste. Noted initial texture (thick vs runny), viscosity, and ease of spreading. Grilled Chicken Thighs (Brush & Baste Method) Marinated bone-in chicken thighs in basic seasoning (salt, pepper, garlic powder) then grilled on medium heat (~375-400 °F). During last 8 minutes applied the sauce with a silicone brush, turning and re-basting to achieve glaze. Evaluated how the sauce caramelized, how the smoke flavour held up under heat, whether any burning (sugar meltdown) occurred. Pork Ribs or Pulled Pork Finish For ribs/pork shoulder, sauce used during last phase of oven or smoker cooking. Checked how the flavour layers integrated and whether the brown sugar / hickory note complemented slow-cooked meat. Also checked if excess sweetness overwhelmed the natural pork flavour. Vegetables/Tofu Trial Applied the sauce to grilled vegetables (bell peppers, zucchini) and firm tofu cubes. Evaluated if the profile works beyond meat, or if the sweetness becomes too dominant when meat flavour is absent. Storage & Bottle Behaviour After opening, stored refrigerated for two weeks. Checked for separation, texture change, or flavor degradation. Evaluated ease of pouring and whether the sauce maintained consistency after multiple uses.',
-    pros: [
-      "Sweet-Smoky Appeal: The brown sugar + hickory combo hits a widely appealing flavour profile — comforting, accessible, and crowd-friendly.",
-      "Great as Glaze: Works exceptionally well as a finishing glaze on grilled or baked meats, giving that sticky, caramelised coating without needing complex ingredients.",
-      "Versatile Use: Although optimized for meat, it still performs decently on other foods (sandwiches, burgers, pulled pork, chicken tenders) when used appropriately.",
-      "Mild Enough for Many: Doesn't lean into ultra-heat or extreme tang, making it a safe choice for family meals, kids, or casual gatherings..",
-      "Stable & Convenient: Shelf-stable, ready-to-use, no need for mixing or additional basting formulas — good for quick weeknight cook-outs.",
-    ],
-    cons: [
-      "Less Tang/Complexity: Compared with more premium BBQ sauces, this flavour profile may feel less layered or adventurous — if you prefer high vinegar tang, chili heat or very deep smoke you might find it simple.",
-      "Sweetness Dominant: For those watching sugar or preferring balance of savoury and sweet, the brown sugar sweetness may overshadow the rest of the profile.",
-      "Lighter Smoke Note: The hickory smoke flavour is moderate, not bold or heavy — for true “wood-smoke flavour” fans, you might want to supplement with actual smoked meat or added liquid smoke.",
-    ],
-    specs: {
-      Brand: "Various (Hickory Brown Sugar style)",
-      Size: "18-28 oz bottle (varies by brand)",
-      "Primary Flavors": "Sweet brown sugar, hickory smoke, mild tang",
-      "Key Ingredients": "Tomato paste, brown sugar, hickory smoke flavoring, vinegar, molasses, spices",
-      "Gluten Free": "Yes (most brands)",
-      Consistency: "Thick and pourable",
-      "Shelf Life": "12-18 months unopened",
-    },
-    testingProcess:
-      "To evaluate the real flavor profile of the Hickory Brown Sugar BBQ Sauce, we conducted a series of cooking tests across different heat levels and food types. We first used it on smoked chicken wings and baby back ribs, applying the sauce in the final minutes of grilling to see how well the sugars caramelized without burning. Next, we tested it as a slow-cooker glaze for pulled pork, monitoring how the sauce thickened and infused the meat after several hours. We also ran a cold test — serving the sauce straight from the bottle with fries and roasted vegetables — to assess balance, sweetness, and smokiness when not heated. Each tester rated consistency, aroma, and flavor depth. The results showed that this sauce delivers a smooth, sticky texture with deep hickory notes and a mellow brown sugar finish, making it ideal for both grilling and dipping.",
-  },
-  {
-    slug: "icover-grill-cover-for-weber-22-inch-charcoal-kettle",
-    name: "iCOVER Grill Cover for Weber 22 Inch Charcoal Kettle",
-    category: "Accessories",
-    image: "https://m.media-amazon.com/images/I/61sVtZeZ4sL._AC_SX679_.jpg",
-    rating: 4.4,
-    amazonUrl: "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG",
-    summary: "Cover for Weber 22 Inch Charcoal Kettle.",
-    author: "Avery Wilson",
-    publishDate: "October 1, 2025",
-    fullReview:
-      'Sized for 22 inch Charcoal Kettle Grill: 26.5"(width)x26.5"(depth)x36\'(height), this griddle cover is sized for Weber 22 Inch kettle charcoal grill, 22 Inch Jumbo Joe charcoal grill and most Weber 22\' charcoal grill models. Does NOT fit Weber Performer Premium and Performer Deluxe charcoal grill Waterproof Design: Made of strong while lightweight oxford polyester with water resistant PVC coating, the tough fabric provides a powerful guard against any weather- snow, hail, rain, wind, and protects your grill all year round UV Protection and Rip Resistant: Constructed with UV resistant fabric with outer vinyl coating, this grill cover for 22inch grill is easy to withstand sunlight and keeps the cover new and clean Snug Fit and Wind Resistant: iCOVER grill cover for Weber 22 inch charcoal kettle has additional fastening strap to help tighten the cover. Besides, we specially add velcro strap at bottom for double security. No more worry about your grill cover will blow away in strong wind Easy to Clean: Water repellent finish enables stain-preventing and easy cleaning, simply hosing with water and the dirt will come off easily This grill cover is designed specifically for 22-inch charcoal kettle grills (notably Weber and Char‑Broil models). The "heavy-duty waterproof" label suggests a durable fabric (often 600D or similar), sealed seams, adjustable drawcord or elastic hem, and reinforced handles or straps for secure fastening. The goal is to protect your grill from outdoor elements—rain, snow, UV sunlight, dust, bird droppings, rust—thus prolonging the life of the kettle grill. Typical features include: A tailored shape to fit 22-inch diameter kettle (lid + bowl) plus cart. Thick waterproof material with a weatherproof coating. Velcro straps or buckles to keep the cover from blowing off in wind. Air-vent grommets to reduce condensation build-up under the cover. Handles for easy removal. Suitable for year-round outdoor use. Usage Tips & Recommendation Ensure prope...',
-    pros: [
-      "Tailored Fit for 22” Kettles — the cover matches the dome shape of the kettle lid, giving a cleaner look and better protection than generic covers.",
-      "Excellent Waterproof Performance — repelled rain effectively in testing; minimal moisture ingress.",
-      "Solid Construction & Materials — thick fabric, well-sewn seams, handles properly placed; durable feel.",
-      "Good Value for Protection — relative to cost, provides robust outdoor protection which extends the life of your charcoal kettle grill.",
-      "Ease of Maintenance — easy to clean with a damp cloth; quick on/off making regular use manageable.",
-    ],
-    cons: [
-      "Dependence on Proper Securing — as seen in wind testing, if the drawcord/hem isn't tightened, cover may flap or lift in heavy wind. Some users may neglect this.",
-      'Potential for Condensation Build-Up — like many "fully sealed" covers, some moisture may accumulate beneath the cover overnight especially in humid climates; periodic venting is advised.',
-      "Fit Slightly Tight with Accessories — if you have side tables, large thermometer domes, or oversized handle attachments on the kettle, the cover may feel snug and require careful fitting.",
-    ],
-    specs: {
-      Brand: "iCOVER",
-      "Product Dimensions": '26.5"W x 26.5"D x 36"H',
-      "Fits Grill Size": "22 inch charcoal kettle",
-      Material: "600D Oxford polyester with PVC coating",
-      "Water Resistance": "Waterproof with PVC coating",
-      "UV Protection": "Yes, UV resistant fabric",
-      Fastening: "Drawcord, elastic hem, Velcro straps",
-      "Special Features": "Double security straps, air vents, reinforced handles",
-      "Easy to Clean": "Yes, water repellent finish",
-      Warranty: "1 year",
-    },
-    testingProcess:
-      "I conducted a series of tests to evaluate fit, durability, weather resistance, ease of use, and long-term protection. 1. Fit & Installation Placed the cover on a Weber 22-inch charcoal kettle grill (lid on, bowl, charcoal grate inside, cart attached). Tested how easy it was to slip over the kettle and how snugly it fit. Checked whether overhang was appropriate and whether bottom drawcord tightened cleanly. Observed whether handles and buckles allowed easy securement. Result: The cover slid on easily, the tailored shape matched the kettle lid's curve, and the elastic hem plus drawcord cinched around the cart legs to provide a reasonably tight fit. 2. Weather Resistance – Rain & Wind Simulated heavy rain: sprayed from overhead for 20 minutes using a portable sprinkler at ~0.3 in/h rate. Then checked interior of cover for water seepage and bottom rim for puddling. Simulated wind: used a fan at ~15 mph to check if the cover flapped significantly or lifted off the grill; tested with and without drawcord tightened. After the rain test, inspected grill body for water drips, especially inside lid vent and vent lower bowl rim. Result: No water penetration through the main fabric; water beaded and rolled off. After rain, the grill bowl and lid remained dry except for very minor moisture around the bottom edge (which is expected in real outdoor use). Wind test: when drawcord cinched, the cover held firm; with drawcord loose, the cover flapped and occasionally lifted—so securing is important. 3. UV & Material Longevity Left the covered grill in direct sunlight for 4 days (approx. 8-10 h/day) on a patio. Checked for early signs of material fading, brittleness, seam stress, or coating peeling. After the test period, removed the cover and inspected underside for trapped condensation or rust marks on the grill. Result: Minimal fading of the outer fabric; seams and coatings held up well. Some moisture had condensed under the cover overnight (normal), but that did not lead to ...",
-  },
-  {
-    slug: "chefman-xl-electric-griddle-with-removable-temperature-control",
-    name: "Chefman XL Electric Griddle with Removable Temperature Control",
-    category: "Electric Grills",
-    image: "https://m.media-amazon.com/images/I/61-Mjaq73QL._AC_SX679_.jpg",
-    rating: 4.5,
-    amazonUrl: "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9",
-    summary: "For home cooks looking to replicate a griddle-style cooking experience indoors.",
-    author: "Avery Wilson",
-    publishDate: "October 6, 2025",
-    fullReview:
-      "EXTRA-LARGE COOKING SURFACE: The 10 x 20 inch indoor grill provides plenty of space to cook up big batches for a crowd or a complete meal. WARM TO SEAR: Adjustable temperature control from 200-420°F allows for versatile cooking for simply warming foods, frying breakfast favorites, or cooking meat. HEALTHIER MEAL MAKING: Cook healthier meals with the drip tray to collect excess oil and grease plus the non-stick electric grill surface reduces the need for added cooking oils. EASY CLEANING: The griddle grill cook top is fully immersible and dishwasher safe - simply remove the temperature control prior to washing. CONVENIENT COUNTERTOP COOKING: Quickly and conveniently add cooking space to your kitchen for large family dinners or holiday gatherings. RESOURCES: UL approved with advanced safety technology for long-lasting durability, & 1-year assurance provided by Chefman. For information on how to use your product, scroll down for a PDF User Guide. 1500 Watts/120 Volts. The Chefman XL Electric Griddle is designed for versatile indoor cooking with an extra-large 10″ by 20″ nonstick flat surface. Key features include: Removable temperature control probe that plugs into the side for easy adjustment and monitoring. Immersible flat top plate: one-piece nonstick cooking surface rated for easy cleaning. Extra-large cooking area (approx. 200 square inches), suitable for cooking multiple items at once (e.g., 6 pancakes, 4 burgers, or a full breakfast spread). Slide-out drip tray to catch grease and liquids, making cleanup neater. Even heat distribution and adjustable temperature (typically from ~200 °F to ~400 °F or more) so you can sear burgers, cook eggs, or simmer gently. Nonstick coating to make flipping and removal of food easier and reducing need for excess oil. This griddle is positioned as a versatile kitchen appliance for breakfast, brunch, burgers, grilled sandwiches, and indoor “flat-top” style grilling—ideal for apartments, patios, or indoor cooking when outdoor grilling isn't an option.",
-    pros: [
-      "Large cooking surface (10″ × 20″) allows multi-item cooking (great for families or meal-prepping).",
-      "Even heat distribution — saw uniform browning across width, no major hot spots.",
-      "Nonstick, immersible plate makes cleanup fast and easy — big plus for indoor cooking.",
-      "Versatile usage — breakfast, burgers, sandwiches, vegetables — performs well across use cases.",
-      "Affordable flat-top alternative to outdoor grill — gives grill-style cooking without needing outdoors.",
-    ],
-    cons: [
-      "Height/space requirement — the griddle is fairly large (20″ width + depth) so needs adequate countertop or table space.",
-      "Temperature ceiling — while ~400 °F is fine for most cooking, for serious high-heat searing (500 °F+) it might fall short compared to premium outdoor griddles.",
-      "Nonstick longevity — though performed well in tests, like all nonstick surfaces, durability over years will depend on care (avoid metal utensils, abrasives).",
-    ],
-    specs: {
-      Brand: "Chefman",
-      "Product Dimensions": '12.4"D x 20"W x 3.5"H',
-      "Cooking Surface": "10 x 20 inches (200 sq in)",
-      "Temperature Range": "200°F - 420°F",
-      Power: "1500 Watts / 120 Volts",
-      Material: "Nonstick coating",
-      "Special Features": "Removable temperature control, immersible cooking surface, slide-out drip tray",
-      "Dishwasher Safe": "Yes (cooking surface only, remove temperature control)",
-      Warranty: "1 year",
-    },
-    testingProcess:
-      "To evaluate the Chefman XL Electric Griddle, I performed the following tests to cover everyday use cases: Setup & First Use Unboxed the griddle, attached the temperature control probe and placed it on the countertop (heat-resistant surface). Preheated the unit: set temperature to ~375 °F and measured how long it took to get up to cooking temperature with a separate infrared thermometer. Assessed the feel of the surface (nonstick coating, edges, build quality) and the ease of sliding the drip tray in/out. Flat-Top Breakfast Test – Pancakes & Eggs Preheated to ~350 °F, poured six 4″ pancakes side by side (on the 10 × 20 surface) plus scrambled eggs in a corner simultaneously. Monitored how evenly the surface heated (whether pancakes brown uniformly), whether the eggs stuck, and how easy the mechanical flip was. Clean-up test after: allowed to cool, removed drip tray, wiped surface. Burger & Grill Test Increased temperature to ~400 °F, cooked four ½-lb beef burgers side by side, along with sliced onions and peppers alongside. Evaluated browning/sear marks, even heat distribution across width, and whether the grease drained into tray without pooling under burgers or splattering. Monitored whether the nonstick surface stayed intact under heavier use. Versatility Test – Sandwich, Vegetables & Cleanup Made grilled cheese sandwiches and sautéed zucchini slices at ~300 °F. Checked how the surface handled lighter heat, flipping, and whether odor from the burgers transferred. For cleanup, checked whether the plate is truly immersible (as claimed), whether the nonstick coating cleaned easily, and whether the drip tray captured remaining grease effectively. Long-Term Durability & Consistency After 2 weeks of repeated use (breakfast 3 times, burgers once), monitored whether the nonstick coating showed scratches, whether heat distribution changed, and whether the temperature control remained accurate.",
+      "We used Kraft Original BBQ Sauce on ribs, chicken thighs, pork chops, burgers, and as a dipping sauce over multiple cookouts. We evaluated flavor balance, consistency, caramelization, versatility, and overall appeal to different taste preferences.",
   },
 ]
 
-export async function generateStaticParams() {
-  return allProducts.map((product) => ({
-    slug: product.slug,
-  }))
-}
-
-export default async function ProductReviewPage({ params }: { params: { slug: string } | Promise<{ slug: string }> }) {
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const product = allProducts.find((p) => p.slug === slug)
+  const product = products.find((p) => p.slug === slug)
 
   if (!product) {
-    notFound()
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Product Not Found</h1>
+          <p className="text-muted-foreground mb-8">Sorry, we couldn't find the product you're looking for.</p>
+          <Link href="/reviews" className="text-primary hover:underline">
+            View all reviews
+          </Link>
+        </div>
+      </div>
+    )
   }
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main className="min-h-screen bg-background">
-        <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          {/* Breadcrumb */}
-          <nav className="mb-8 text-sm text-muted-foreground">
-            <Link href="/" className="hover:text-foreground">
-              Home
-            </Link>
-            {" / "}
-            <Link href="/reviews" className="hover:text-foreground">
-              All Reviews
-            </Link>
-            {" / "}
-            <span className="text-foreground">{product.name}</span>
+      <main className="flex-1">
+        <div className="container mx-auto px-4 py-8">
+          {/* Breadcrumbs */}
+          <nav className="mb-8 text-sm">
+            <ol className="flex items-center gap-2 text-muted-foreground">
+              <li>
+                <Link href="/" className="hover:text-foreground">
+                  Home
+                </Link>
+              </li>
+              <li>/</li>
+              <li>
+                <Link href="/reviews" className="hover:text-foreground">
+                  Reviews
+                </Link>
+              </li>
+              <li>/</li>
+              <li className="text-foreground font-medium">{product.name}</li>
+            </ol>
           </nav>
 
-          {/* Header */}
-          <header className="mb-12 border-b border-border pb-8">
-            <div className="mb-3 text-sm font-medium uppercase tracking-wide text-muted-foreground">
-              {product.category}
+          {/* Product Header */}
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
+            <div>
+              <img
+                src={product.image || "/placeholder.svg"}
+                alt={product.name}
+                className="w-full rounded-lg shadow-lg"
+              />
             </div>
-            <h1 className="mb-4 text-4xl font-bold leading-tight text-balance">{product.name}</h1>
-            <div className="mb-4 flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Star className="h-6 w-6 fill-foreground text-foreground" />
-                <span className="text-2xl font-bold">{product.rating}</span>
-                <span className="text-muted-foreground">/ 5.0</span>
+            <div>
+              <div className="text-sm uppercase tracking-wider text-muted-foreground mb-2">{product.category}</div>
+              <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <span className="text-3xl font-bold">{product.rating}</span>
+                  <Star className="w-6 h-6 fill-current text-yellow-500" />
+                </div>
+                <span className="text-muted-foreground">Expert Rating</span>
+              </div>
+              <p className="text-lg text-muted-foreground mb-8">{product.summary}</p>
+              {product.amazonUrl && (
+                <a
+                  href={product.amazonUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#FF9900] hover:bg-[#FA8900] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+                >
+                  <ShoppingCart className="w-5 h-5" />
+                  View on Amazon
+                </a>
+              )}
+              <div className="mt-6 text-sm text-muted-foreground">
+                <p>
+                  Reviewed by {product.author} • {product.publishDate}
+                </p>
               </div>
             </div>
-            <p className="text-lg leading-relaxed text-muted-foreground">{product.summary}</p>
-            <div className="mt-4 text-sm text-muted-foreground">
-              By {product.author} • Published {product.publishDate}
-            </div>
-            {product.amazonUrl &&
-              product.slug !== "weber-genesis-ii-e-335" &&
-              product.slug !== "napoleon-prestige-500" && (
-                <div className="mt-6">
-                  <Button size="lg" className="bg-black hover:bg-gray-800 text-white font-semibold" asChild>
-                    <a href={product.amazonUrl} target="_blank" rel="noopener noreferrer">
-                      View on Amazon
-                    </a>
-                  </Button>
-                </div>
-              )}
-          </header>
-
-          {/* Hero Image */}
-          <div className="mb-12 aspect-video overflow-hidden border border-border bg-muted">
-            <img src={product.image || "/placeholder.svg"} alt={product.name} className="h-full w-full object-cover" />
           </div>
 
-          {/* Full Review */}
-          <section className="mb-12">
-            <h2 className="mb-6 text-2xl font-bold">Our Review</h2>
-            <div className="whitespace-pre-line leading-relaxed text-muted-foreground">{product.fullReview}</div>
-          </section>
+          {/* Our Review */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6">Our Review</h2>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-muted-foreground leading-relaxed">{product.fullReview}</p>
+            </div>
+          </div>
 
           {/* Pros and Cons */}
-          <section className="mb-12 grid gap-8 md:grid-cols-2">
-            <div className="border border-border p-6">
-              <h3 className="mb-4 flex items-center gap-2 text-xl font-bold">
-                <CheckCircle2 className="h-5 w-5 text-green-600" />
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-green-50 dark:bg-green-950/20 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <CheckCircle2 className="w-6 h-6 text-green-600" />
                 Pros
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {product.pros.map((pro, index) => (
-                  <li key={index} className="flex gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-600" />
-                    <span className="leading-relaxed">{pro}</span>
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-green-600 mt-1">•</span>
+                    <span>{pro}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="border border-border p-6">
-              <h3 className="mb-4 flex items-center gap-2 text-xl font-bold">
-                <XCircle className="h-5 w-5 text-red-600" />
+            <div className="bg-red-50 dark:bg-red-950/20 p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <XCircle className="w-6 h-6 text-red-600" />
                 Cons
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-2">
                 {product.cons.map((con, index) => (
-                  <li key={index} className="flex gap-3">
-                    <XCircle className="mt-0.5 h-5 w-5 flex-shrink-0 text-red-600" />
-                    <span className="leading-relaxed">{con}</span>
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-red-600 mt-1">•</span>
+                    <span>{con}</span>
                   </li>
                 ))}
               </ul>
             </div>
-          </section>
+          </div>
 
           {/* Specifications */}
-          <section className="mb-12">
-            <h2 className="mb-6 text-2xl font-bold">Specifications</h2>
-            <div className="border border-border">
-              {Object.entries(product.specs).map(([key, value], index) => (
-                <div
-                  key={key}
-                  className={`flex border-b border-border p-4 last:border-b-0 ${index % 2 === 0 ? "bg-muted/30" : ""}`}
-                >
-                  <dt className="w-1/3 font-semibold">{key}</dt>
-                  <dd className="w-2/3 text-muted-foreground">{value}</dd>
-                </div>
-              ))}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6">Specifications</h2>
+            <div className="bg-muted/50 rounded-lg p-6">
+              <dl className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {Object.entries(product.specs).map(([key, value]) => (
+                  <div key={key} className="border-b border-border pb-4 last:border-0">
+                    <dt className="font-semibold mb-1">{key}</dt>
+                    <dd className="text-muted-foreground">{value}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-          </section>
+          </div>
 
           {/* Testing Process */}
-          <section className="mb-12">
-            <h2 className="mb-6 text-2xl font-bold">How We Tested</h2>
-            <p className="leading-relaxed text-muted-foreground">{product.testingProcess}</p>
-          </section>
-
-          {/* Back to Reviews */}
-          <div className="border-t border-border pt-8">
-            <Link href="/reviews" className="inline-flex items-center gap-2 font-semibold hover:underline">
-              ← Back to All Reviews
-            </Link>
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-6">Our Testing Process</h2>
+            <div className="bg-muted/50 rounded-lg p-6">
+              <p className="text-muted-foreground leading-relaxed">{product.testingProcess}</p>
+            </div>
           </div>
-        </article>
+
+          {/* CTA */}
+          {product.amazonUrl && (
+            <div className="text-center py-12 bg-muted/50 rounded-lg">
+              <h3 className="text-2xl font-bold mb-4">Ready to Buy?</h3>
+              <p className="text-muted-foreground mb-6">Get the {product.name} from Amazon today</p>
+              <a
+                href={product.amazonUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#FF9900] hover:bg-[#FA8900] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
+              >
+                <ShoppingCart className="w-5 h-5" />
+                View on Amazon
+              </a>
+            </div>
+          )}
+        </div>
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

@@ -22,7 +22,8 @@ const allProducts = [
     rating: 4.9,
     summary: "Perfect for camping, backyard cooking, or tailgating.",
     author: "Morgan Fletcher",
-    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "sophia-william-propane-gas-grill",
@@ -32,7 +33,8 @@ const allProducts = [
     rating: 4.8,
     summary: "Perfect for families, backyard BBQ lovers, and weekend entertainers.",
     author: "Reese Sullivan",
-    amazonUrl: "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=7984f9bd63c0ba17fde9991da7b7c17c&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=7984f9bd63c0ba17fde9991da7b7c17c&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "napoleon-prestige-500",
@@ -52,7 +54,8 @@ const allProducts = [
     rating: 4.9,
     summary: "If you're serious about grilling and want restaurant-quality.",
     author: "Parker Bennett",
-    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   // Pellet Grills
   {
@@ -73,7 +76,8 @@ const allProducts = [
     rating: 4.6,
     summary: "Solid choice for anyone who wants woody, smoky flavor in a small-footprint unit.",
     author: "Quinn Reynolds",
-    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "camp-chef-smokepro-dlx",
@@ -115,7 +119,8 @@ const allProducts = [
     rating: 4.7,
     summary: "A compact, heavy-duty grill that doubles as a true Texas-style smoker.",
     author: "River Caldwell",
-    amazonUrl: "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=07a0889d6d5077873b3624d335e692b6&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=07a0889d6d5077873b3624d335e692b6&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "weber-original-kettle",
@@ -125,7 +130,8 @@ const allProducts = [
     rating: 4.7,
     summary: "A timeless classic reinvented for the modern backyard cook.",
     author: "Parker Bennett",
-    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
 
   // Electric Grills
@@ -137,7 +143,8 @@ const allProducts = [
     rating: 4.7,
     summary: "Enjoy real grill flavor — indoors, anytime.",
     author: "River Caldwell",
-    amazonUrl: "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0bf433546b8fa4c609f9542429084e42&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0bf433546b8fa4c609f9542429084e42&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "chefman-xl-electric-griddle-with-removable-temperature-control",
@@ -147,7 +154,8 @@ const allProducts = [
     rating: 4.5,
     summary: "For home cooks looking to replicate a griddle-style cooking experience indoors.",
     author: "River Caldwell",
-    amazonUrl: "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=cd8548605d59124fbe570707bb2c3864&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=cd8548605d59124fbe570707bb2c3864&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
 
   // Accessories
@@ -179,7 +187,8 @@ const allProducts = [
     rating: 4.8,
     summary: "Reliable, long-range temperature monitoring for the perfect cook every time.",
     author: "Morgan Fletcher",
-    amazonUrl: "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0be3736575a2c6b1a8eed5f94de3e181&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0be3736575a2c6b1a8eed5f94de3e181&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "grill-heat-aid-gloves",
@@ -190,6 +199,105 @@ const allProducts = [
     summary: "Heat-resistant gloves rated to 932°F for safe handling of hot items.",
     author: "Quinn Reynolds",
     amazonUrl: "", // Added empty Amazon URL
+  },
+  {
+    slug: "ofargo-stainless-steel-meat-injector",
+    name: "Ofargo Stainless Steel Meat Injector Syringe Kit",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71mc1iwSa7L._AC_SL1500_.jpg",
+    rating: 4.7,
+    summary: "Professional-grade meat injector for deep flavor infusion and moisture retention.",
+    author: "Blake Harrison",
+    amazonUrl:
+      "https://www.amazon.com/OFG-304-Stainless-Injector-Marinade-Capacity/dp/B086BXVT1H?&linkCode=ll1&tag=urfnjust-20&linkId=049c7e362e34054a6735eee5bd779802&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "meat-thermometer-digital",
+    name: "Meat Thermometer Digital",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71tH5GsFEgL._SL1500_.jpg",
+    rating: 4.6,
+    summary: "Fast and accurate instant-read thermometer with backlit display and calibration.",
+    author: "Morgan Fletcher",
+    amazonUrl:
+      "https://www.amazon.com/Thermometer-Waterproof-Backlight-Calibration-Function%EF%BC%8CFood/dp/B0DQDB5DRR?th=1&linkCode=ll1&tag=urfnjust-20&linkId=164f012bef0b8d3153b37e8737432250&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "cuisinart-cast-iron-smashed-burger-press",
+    name: 'Cuisinart 6.5" Cast Iron Smashed Burger Press',
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/81WqU-lxj5L._AC_SL1500_.jpg",
+    rating: 4.8,
+    summary: "Heavy-duty cast iron press creates perfectly crispy smash burgers every time.",
+    author: "Quinn Reynolds",
+    amazonUrl:
+      "https://www.amazon.com/Cuisinart-CISB-111-Smashed-Burger-Press/dp/B07SZFHKVZ?th=1&linkCode=ll1&tag=urfnjust-20&linkId=e2ca5f2739357f4c6b35e6f9744fefa5&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "rolling-grill-basket",
+    name: "Rolling Grill Basket",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/81QbXyUeF5L._AC_SL1500_.jpg",
+    rating: 4.5,
+    summary: "Innovative rolling basket makes grilling vegetables and small items effortless.",
+    author: "Parker Bennett",
+    amazonUrl:
+      "https://www.amazon.com/Ivtivfu-Grilling-Accessories-Vegetable-Stainless/dp/B0CGX3ZGBK?&linkCode=ll1&tag=urfnjust-20&linkId=67d5481c5b6487897247434e69f31651&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "alpha-grillers-meat-shredder-claws",
+    name: "Alpha Grillers Meat Shredder Claws",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/819XS5o9HbL._AC_SL1500_.jpg",
+    rating: 4.9,
+    summary: "Ultra-sharp shredding claws make quick work of pulled pork and chicken.",
+    author: "Reese Sullivan",
+    amazonUrl:
+      "https://www.amazon.com/Alpha-Grillers-Claws-Shredding-Shredder/dp/B09J746BHB?&linkCode=ll1&tag=urfnjust-20&linkId=c4338e22c625e0fb46ff55053a9b9ec8&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "comsmart-bbq-gloves",
+    name: "Comsmart BBQ Gloves",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/617Ehr+eMYL._AC_SL1000_.jpg",
+    rating: 4.6,
+    summary: "Heat-resistant silicone gloves with non-slip grip for safe grill handling.",
+    author: "Quinn Reynolds",
+    amazonUrl:
+      "https://www.amazon.com/Resistant-Grilling-Silicone-Non-Slip-Barbecue/dp/B07YTVMRV4?th=1&linkCode=ll1&tag=urfnjust-20&linkId=1176c97731a667ed27aea627d6c7343f&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "griddle-accessories-kit-blackstone",
+    name: "27pcs Griddle Accessories Kit for Blackstone",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/81E9Ui5MvtL._AC_SL1500_.jpg",
+    rating: 4.7,
+    summary: "Complete griddle tool set with everything needed for flat-top cooking.",
+    author: "Sarah Martinez",
+    amazonUrl:
+      "https://www.amazon.com/Grilliance-Blackstone-Accessories-Chef%EF%BC%8CHibachi-Cover%EF%BC%8CBurger/dp/B0D46SH7QG?&linkCode=ll1&tag=urfnjust-20&linkId=ee803ab410b17ca1fb7fb43f0cb2d3e5&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "kosin-barbecue-grill-light",
+    name: "KOSIN Barbecue Grill Light Magnetic Base",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71KvZ2o6bDL._AC_SL1500_.jpg",
+    rating: 4.5,
+    summary: "Bright LED grill light with magnetic mount for nighttime grilling visibility.",
+    author: "River Caldwell",
+    amazonUrl:
+      "https://www.amazon.com/KOSIN-Light-Resistant-Multi-Purpose-Batteries/dp/B07PHQWR3V?th=1&linkCode=ll1&tag=urfnjust-20&linkId=7ced251f26a83a5bf4402a6f2b546e49&language=en_US&ref_=as_li_ss_tl",
+  },
+  {
+    slug: "marshmallow-roasting-sticks",
+    name: "Marshmallow Roasting Sticks",
+    category: "Accessories",
+    image: "https://m.media-amazon.com/images/I/71HaGgA5CsL._AC_SL1500_.jpg",
+    rating: 4.4,
+    summary: "Telescoping roasting sticks perfect for campfire s'mores and hot dogs.",
+    author: "Melanie Chow",
+    amazonUrl:
+      "https://www.amazon.com/Marshmallow-Roasting-Telescoping-Toasting-Barbecue/dp/B09CZ475Q6?th=1&linkCode=ll1&tag=urfnjust-20&linkId=db2a0bd059b382e7866b66e2a58470a8&language=en_US&ref_=as_li_ss_tl",
   },
   // Brushes
   {
@@ -241,7 +349,8 @@ const allProducts = [
     rating: 4.4,
     summary: "Cover for Weber 22 Inch Charcoal Kettle.",
     author: "Parker Bennett",
-    amazonUrl: "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=910c19084e5f9ab33e9f77542fcba9a7&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=910c19084e5f9ab33e9f77542fcba9a7&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   // Sauces
   {
@@ -272,7 +381,8 @@ const allProducts = [
     rating: 4.5,
     summary: "Made with all-natural ingredients.",
     author: "Avery Mitchell",
-    amazonUrl: "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=323b47602a0e29d76a8deb2f059999cf&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=323b47602a0e29d76a8deb2f059999cf&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "kraft-sweet-brown-sugar-slow-simmered-brbeque-sauce",
@@ -282,7 +392,8 @@ const allProducts = [
     rating: 3.9,
     summary: "Classic barbecue sauce.",
     author: "Avery Mitchell",
-    amazonUrl: "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=a83c6cbb37c37fb7a4e4913c001e3290&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=a83c6cbb37c37fb7a4e4913c001e3290&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
   {
     slug: "hickory-brown-sugar-bbq-sauce",
@@ -292,7 +403,8 @@ const allProducts = [
     rating: 4.2,
     summary: "Classic American barbecue experience.",
     author: "Avery Mitchell",
-    amazonUrl: "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?&linkCode=ll1&tag=bestprimebbqg-20&linkId=bc4533ee4ab7495586ca87f93a18dc55&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
+    amazonUrl:
+      "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?&linkCode=ll1&tag=bestprimebbqg-20&linkId=bc4533ee4ab7495586ca87f93a18dc55&language=en_US&ref_=as_li_ss_tl", // Added Amazon URL
   },
 ]
 
