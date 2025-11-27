@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react'
+import { Star } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
@@ -12,7 +12,8 @@ const grills = [
     summary: "Perfect for camping, backyard cooking, or tailgating.",
     author: "Sarah Martinez",
     href: "/reviews/blackstone-2450az-28-omnivore-griddle-bundle",
-    amazonUrl: "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=urfnjust-20&linkId=61d76a0dd952d8ca773c32f9a33eff7d&language=en_US&ref_=as_li_ss_tl",
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ const grills = [
     summary: "Portable pellet grill combining wood-fired flavor with digital precision in a compact design.",
     author: "Michael Chang",
     href: "/reviews/pit-boss-10697-table-top",
-    amazonUrl: "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=urfnjust-20&linkId=f578d661e6691fe6d210d4739d83e495&language=en_US&ref_=as_li_ss_tl",
   },
   {
     id: 3,
@@ -34,7 +36,8 @@ const grills = [
     summary: "The classic charcoal grill that delivers authentic BBQ flavor.",
     author: "Patricia Lee",
     href: "/reviews/weber-original-kettle",
-    amazonUrl: "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=urfnjust-20&linkId=59ecc280e11053630526161a4ca8d237&language=en_US&ref_=as_li_ss_tl",
   },
   {
     id: 4,
@@ -45,7 +48,8 @@ const grills = [
     summary: "Compact infrared powerhouse delivering steakhouse-quality searing in a portable package.",
     author: "Robert Kim",
     href: "/reviews/big-horn-outdoors-1500",
-    amazonUrl: "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl",
+    amazonUrl:
+      "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=urfnjust-20&linkId=ec11cb7eaa1220e2f43c59ec3e3ed0a3&language=en_US&ref_=as_li_ss_tl",
   },
 ]
 
@@ -69,7 +73,6 @@ export function FeaturedGrills() {
                     src={grill.image || "/placeholder.svg"}
                     alt={grill.name}
                     className="w-full h-48 object-contain transition-transform group-hover:scale-105 bg-white"
-
                   />
                 </div>
                 <div className="space-y-2">

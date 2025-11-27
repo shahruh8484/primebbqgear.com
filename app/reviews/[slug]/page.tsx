@@ -49,7 +49,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/71QLgJ5R+IL._AC_SX679_.jpg",
     rating: 4.8,
     amazonUrl:
-      "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=f5bdebae20bb22267bfb99f00c93e54b&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Blackstone-2450AZ-Omnivore-Griddle-Spatulas/dp/B0DGY312P1?th=1&linkCode=ll1&tag=urfnjust-20&linkId=61d76a0dd952d8ca773c32f9a33eff7d&language=en_US&ref_=as_li_ss_tl",
     summary: "Versatile flat-top griddle with integrated hood and wind guards for superior outdoor cooking.",
     author: "Sarah Martinez",
     publishDate: "November 5, 2025",
@@ -90,7 +90,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/61nq7SidALL._AC_SY300_SX300_QL70_FMwebp_.jpg",
     rating: 4.7,
     amazonUrl:
-      "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=7984f9bd6c0ba17fde9991da7b7c17c&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Sophia-William-Propane-Porcelain-Enameled-Barbecue/dp/B0DDBPYTXL?th=1&linkCode=ll1&tag=urfnjust-20&linkId=b034a3c2728e5155463882a7c3a5313c&language=en_US&ref_=as_li_ss_tl",
     summary: "Innovative dual-zone cooking system combining traditional grill and flat-top griddle functionality.",
     author: "David Thompson",
     publishDate: "November 8, 2025",
@@ -170,7 +170,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/81JStQrSSNL._AC_SX679_.jpg",
     rating: 4.6,
     amazonUrl:
-      "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B0869Y1HXSF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0fd55b61a18b48f57a2d990f07b61bd7&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/BIG-HORN-OUTDOORS-Portable-Stainless/dp/B089Y1HXSF?th=1&linkCode=ll1&tag=urfnjust-20&linkId=ec11cb7eaa1220e2f43c59ec3e3ed0a3&language=en_US&ref_=as_li_ss_tl",
     summary: "Compact infrared powerhouse delivering steakhouse-quality searing in a portable package.",
     author: "Robert Kim",
     publishDate: "November 15, 2025",
@@ -251,7 +251,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/71EATm+utGL._AC_SX679_.jpg",
     rating: 4.5,
     amazonUrl:
-      "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=2916838eecbb0bab161b21de2b2dfb8d&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/PIT-BOSS-10697-Pellet-Mahogany/dp/B08Y66479M?th=1&linkCode=ll1&tag=urfnjust-20&linkId=f578d661e6691fe6d210d4739d83e495&language=en_US&ref_=as_li_ss_tl",
     summary: "Portable pellet grill combining wood-fired flavor with digital precision in a compact design.",
     author: "Michael Chang",
     publishDate: "November 22, 2025",
@@ -331,7 +331,7 @@ const products = [
     image: "/char-griller-portable-charcoal-grill-black.jpg",
     rating: 4.6,
     amazonUrl:
-      "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=07a0889d6d5077873b3624d335e692b6&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Char-Griller-E82424-Charcoal-Grill-Black/dp/B07YNGRRHS?th=1&linkCode=ll1&tag=urfnjust-20&linkId=370985d5509d84b8eac82a22f10eeacb&language=en_US&ref_=as_li_ss_tl",
     summary: "Versatile portable charcoal grill that doubles as an offset smoker attachment for ultimate flexibility.",
     author: "James Wilson",
     publishDate: "November 28, 2025",
@@ -372,7 +372,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/71CYJCS4+qL._AC_SY879_.jpg",
     rating: 4.9,
     amazonUrl:
-      "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=4925f3e2c8117bb2451335d384ccf7f7&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Weber-741001-Original-22-Inch-Charcoal/dp/B00004RALU?th=1&linkCode=ll1&tag=urfnjust-20&linkId=59ecc280e11053630526161a4ca8d237&language=en_US&ref_=as_li_ss_tl",
     author: "Patricia Lee",
     publishDate: "November 1, 2025",
     fullReview:
@@ -493,7 +493,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/81QXVkhCpwL._AC_SX679_.jpg",
     rating: 4.6,
     amazonUrl:
-      "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0bf433546b8fa4c609f9542429084e42&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Hamilton-Beach-25361-Removable-Stainless/dp/B00KLVY3TW?th=1&linkCode=ll1&tag=urfnjust-20&linkId=75f018bc0fce2efe0dacb1bae3332805&language=en_US&ref_=as_li_ss_tl",
     summary: "High-temperature indoor electric grill delivering authentic sear marks without outdoor setup.",
     author: "Casey Woo",
     publishDate: "November 12, 2025",
@@ -534,7 +534,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/61-Mjaq73QL._AC_SX679_.jpg",
     rating: 4.7,
     amazonUrl:
-      "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=cd8548605d59124fbe570707bb2c3864&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Chefman-Electric-Removable-Temperature-Immersible/dp/B0C4Z39TK9?th=1&linkCode=ll1&tag=urfnjust-20&linkId=3c379a69d4a27a731f54889e7350144c&language=en_US&ref_=as_li_ss_tl",
     summary: "Extra-large electric griddle with immersible cooking surface for versatile indoor flat-top cooking.",
     author: "Rachel Green",
     publishDate: "November 15, 2025",
@@ -709,7 +709,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/71MNNzM6hdL._AC_SX679_.jpg",
     rating: 4.8,
     amazonUrl:
-      "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=0be3736575a2c6b1a8eed5f94de3e181&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/ThermoPro-Wireless-Digital-Cooking-Thermometer/dp/B08KZQG3ZF?th=1&linkCode=ll1&tag=urfnjust-20&linkId=d74d6ce4288857e6fc0ddb4c61cacc00&language=en_US&ref_=as_li_ss_tl",
     summary: "Reliable, long-range temperature monitoring for the perfect cook every time",
     author: "Monica Anderson",
     publishDate: "October 12, 2025",
@@ -912,7 +912,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/61EvTGTXcWL._SX679_.jpg",
     rating: 4.5,
     amazonUrl:
-      "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=323b47602a0e29d76a8deb2f059999cf&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/OFood-Gochujang-Authentic-Traditional-Gluten-Free/dp/B013HB0CC4?th=1&linkCode=ll1&tag=urfnjust-20&linkId=122fa7b0a0ff34e40c28d6ccfb56a3b3&language=en_US&ref_=as_li_ss_tl",
     summary: "Made with all-natural ingredients.",
     author: "Avery Wilson",
     publishDate: "October 11, 2025",
@@ -951,7 +951,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/71lBhl5zPaL._SX679_.jpg",
     rating: 4.5,
     amazonUrl:
-      "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=a83c6cbb37c37fb7a4e4913c001e3290&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Kraft-Sweet-Barbecue-Sauce-Bottle/dp/B00VC5BWYA?th=1&linkCode=ll1&tag=urfnjust-20&linkId=ffdc5d7ec3cdd07e9db7136a9fd72f75&language=en_US&ref_=as_li_ss_tl",
     summary: "Classic barbecue sauce.",
     author: "Avery Wilson",
     publishDate: "October 15, 2025",
@@ -989,7 +989,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/41nJ2DbovlL._SX679_.jpg",
     rating: 4.2,
     amazonUrl:
-      "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?&linkCode=ll1&tag=bestprimebbqg-20&linkId=bc4533ee4ab7495586ca87f93a18dc55&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/Hickory-Barbecue-Marinade-Fructose-Authentic/dp/B0D12MRWKP?th=1&linkCode=ll1&tag=urfnjust-20&linkId=dcdda3e8012af276d4974bbbcedde369&language=en_US&ref_=as_li_ss_tl",
     summary: "Classic American barbecue.",
     author: "Avery Wilson",
     publishDate: "October 19, 2025",
@@ -1026,7 +1026,7 @@ const products = [
     image: "https://m.media-amazon.com/images/I/61sVtZeZ4sL._AC_SX679_.jpg",
     rating: 4.4,
     amazonUrl:
-      "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=bestprimebbqg-20&linkId=910c19084e5f9ab33e9f77542fcba9a7&language=en_US&ref_=as_li_ss_tl",
+      "https://www.amazon.com/iCOVER-Charcoal-Kettle-Waterproof-Char-Broil/dp/B0C3QBBQZG?th=1&linkCode=ll1&tag=urfnjust-20&linkId=5f3ebc0b1fc70c76ecb54748c81699d6&language=en_US&ref_=as_li_ss_tl",
     summary: "Cover for Weber 22 Inch Charcoal Kettle.",
     author: "Avery Wilson",
     publishDate: "October 1, 2025",
