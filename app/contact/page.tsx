@@ -5,7 +5,7 @@ import type React from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MessageSquare, Send, Upload, X } from "lucide-react"
+import { Mail, MessageSquare, Send, Upload, X, Building2, MapPin } from "lucide-react"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useState } from "react"
@@ -44,6 +44,28 @@ export default function ContactPage() {
             </p>
 
             <div className="space-y-6">
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white">
+                  <Building2 className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="mb-1 font-semibold">Company</h3>
+                  <p className="text-sm text-foreground/70">IE Bahriichuk Liliia</p>
+                  <p className="text-sm text-foreground/70">Contact: Bahriichuk Liliia</p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white">
+                  <MapPin className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="mb-1 font-semibold">Address</h3>
+                  <p className="text-sm text-foreground/70">Ukraine, Proskurivka</p>
+                  <p className="text-sm text-foreground/70">Michuryna st. 7</p>
+                </div>
+              </div>
+
               <div className="flex gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-black text-white">
                   <Mail className="h-5 w-5" />
